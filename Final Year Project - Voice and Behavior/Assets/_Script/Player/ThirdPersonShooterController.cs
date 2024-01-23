@@ -8,7 +8,7 @@ using UnityEngine.Animations.Rigging;
 
 public class ThirdPersonShooterController : MonoBehaviour
 {
-	[SerializeField] private Rig aimRig;
+	//[SerializeField] private Rig aimRig;
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
 	[SerializeField] private float normalSensitivity;
 	[SerializeField] private float aimSensitivity;
@@ -17,11 +17,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 	[SerializeField] private Transform pfBulletProjectile;
 	[SerializeField] private Transform spawnBulletPosition;
 	[SerializeField] private GameObject crosshairCanva;
-	[SerializeField] private GameObject MeleeClone1;
-	[SerializeField] private GameObject MeleeClone2;
-	[SerializeField] private GameObject MeleeClone3;
-	[SerializeField] private GameObject MeleeClone4;
-	[SerializeField] private int meleeCounter = 1;
+	//[SerializeField] private int meleeCounter = 1;
 	[SerializeField] private float MeleeAttackCD = 0.5f;
 	[SerializeField] private bool canMeleeAttack = true;
 	[SerializeField] private bool hasMeleeAttacked;
@@ -29,14 +25,12 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] public float spreadAngle = 30f;
 	[SerializeField] private float RangeAttackCD = 0.3f;
 	[SerializeField] private bool canRangeAttack = true;
+	[SerializeField] private GameObject bowGameObject;
+	[SerializeField] private GameObject swordGameObject;
 	
 	private ThirdPersonController thirdPersonController;
 	private StarterAssetsInputs starterAssetsInputs;
 	private Animator animator;
-	private Animator cloneAnimator1;
-	private Animator cloneAnimator2;
-	private Animator cloneAnimator3;
-	private Animator cloneAnimator4;
 	private float aimRigWeight;
     private float rangeLastUsedTime;
 	private float meleeLastUsedTime;
@@ -48,52 +42,15 @@ public class ThirdPersonShooterController : MonoBehaviour
 		thirdPersonController = GetComponent<ThirdPersonController>();
 		starterAssetsInputs = GetComponent<StarterAssetsInputs>();
 		animator = GetComponent<Animator>();
-		GameObject nyxClone1 = GameObject.Find("NyxClone1");
-        if (nyxClone1 != null)
-		{
-			cloneAnimator1 = nyxClone1.GetComponent<Animator>();
-			MeleeClone1.SetActive(false);
-		}
-		else
-		{
-			Debug.Log("Cant find clone 1");
-		}
-		GameObject nyxClone2 = GameObject.Find("NyxClone2");
-        if (nyxClone2 != null)
-		{
-			cloneAnimator2 = nyxClone2.GetComponent<Animator>();
-			MeleeClone2.SetActive(false);
-		}
-		else
-		{
-			Debug.Log("Cant find clone 2");
-		}
-		GameObject nyxClone3 = GameObject.Find("NyxClone3");
-		if (nyxClone3 != null)
-		{
-			cloneAnimator3 = nyxClone3.GetComponent<Animator>();
-			MeleeClone3.SetActive(false);
-		}
-		else
-		{
-			Debug.Log("Cant find clone 3");
-		}
-		GameObject nyxClone4 = GameObject.Find("NyxClone4");
-		if (nyxClone4 != null)
-		{
-			cloneAnimator4 = nyxClone4.GetComponent<Animator>();
-			MeleeClone4.SetActive(false);
-		}
-		else
-		{
-			Debug.Log("Cant find clone 4");
-		}
+		
 	}
 	
 	private void Start()
 	{
 		meleeLastUsedTime = -MeleeAttackCD;
 		rangeLastUsedTime = -RangeAttackCD;
+		bowGameObject.SetActive(false);
+		swordGameObject.SetActive(false);
 	}
 	
 	private void Update()
@@ -124,6 +81,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 		
 		if (starterAssetsInputs.aim)
 		{
+			swordGameObject.SetActive(false);
+			bowGameObject.SetActive(true);
 			crosshairCanva.SetActive(true);
 			aimVirtualCamera.gameObject.SetActive(true);
 			thirdPersonController.SetSensitivity(aimSensitivity);
@@ -136,20 +95,23 @@ public class ThirdPersonShooterController : MonoBehaviour
 			
 			transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
 			
-			aimRig.weight = 1f;
+			//aimRig.weight = 1f;
 		}
 		else
 		{
+			animator.ResetTrigger("MeleeAttack");
+			//swordGameObject.SetActive(true);
+			bowGameObject.SetActive(false);
 			crosshairCanva.SetActive(false);
 			aimVirtualCamera.gameObject.SetActive(false);
 			thirdPersonController.SetSensitivity(normalSensitivity);
 			thirdPersonController.SetRotateOnMove(true);
 			animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
-			aimRig.weight = 0f;
+			//aimRig.weight = 0f;
 			
 			if(canMeleeAttack)
 			{
-				animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
+				//animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
 				hasMeleeAttacked = false;
 				
 			}
@@ -158,7 +120,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 				if(!hasMeleeAttacked)
 				{
 					thirdPersonController.SetRotateOnMove(true);
-					animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 1f, Time.deltaTime * 200f));
+					//animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 1f, Time.deltaTime * 200f));
 					
 					/*Vector3 worldAimTarget = mouseWorldPosition;
 					worldAimTarget.y = transform.position.y;
@@ -171,6 +133,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 				}
 			}
 		}
+	
 		
 		if (starterAssetsInputs.shoot)
 		{
@@ -178,6 +141,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 			{
 				if(canRangeAttack)
 				{
+					animator.SetTrigger("Recoil");
 					Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
 					Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
 					for (int i = 0; i < bulletCount; i++)
@@ -199,64 +163,63 @@ public class ThirdPersonShooterController : MonoBehaviour
 			{
 				if (canMeleeAttack)
 				{
+					meleeLastUsedTime = Time.time;
+					animator.SetTrigger("MeleeAttack");	
+					starterAssetsInputs.shoot = false;
+					/*
 					if(meleeCounter == 1)
 					{				
 						meleeLastUsedTime = Time.time;
-						MeleeClone1.SetActive(true);
-						cloneAnimator1.SetTrigger("isMelee");
+						//swordGameObject.SetActive(true);
+						animator.SetTrigger("MeleeAttack");
+						
 						starterAssetsInputs.shoot = false;
-						Invoke("HideClone1",0.7f);
 						meleeCounter++;
 					}
 					else if(meleeCounter == 2)
 					{		
 						meleeLastUsedTime = Time.time;
-						MeleeClone2.SetActive(true);
-						cloneAnimator2.SetTrigger("isMelee");
+						//swordGameObject.SetActive(true);
+						animator.SetTrigger("MeleeAttack");
+						
 						starterAssetsInputs.shoot = false;
-						Invoke("HideClone2",0.7f);
-						meleeCounter++;
+						
+						meleeCounter--;
 					}
-					else if(meleeCounter == 3)
+					/*else if(meleeCounter == 3)
 					{	
 						meleeLastUsedTime = Time.time;
-						MeleeClone3.SetActive(true);
-						cloneAnimator3.SetTrigger("isMelee");
+						//swordGameObject.SetActive(true);
+						animator.SetTrigger("MeleeAttack");
 						starterAssetsInputs.shoot = false;
-						Invoke("HideClone3",1.5f);
+						
 						meleeCounter++;
 					}
 					else if(meleeCounter == 4)
 					{	
 						meleeLastUsedTime = Time.time;
-						MeleeClone4.SetActive(true);
-						cloneAnimator4.SetTrigger("isMelee");
+						//swordGameObject.SetActive(true);
+						animator.SetTrigger("MeleeAttack");
 						starterAssetsInputs.shoot = false;
-						Invoke("HideClone4",2f);
+					
 						meleeCounter = 1;
-					}
+					} */
+					Debug.Log("Attack");
 				}
 			}
 		}	
 	}
 	
-	private void HideClone1()
-	{
-		MeleeClone1.SetActive(false);
+	private void OnAttackStart(AnimationEvent animationEvent)
+	{	
+		swordGameObject.SetActive(true);
+		Debug.Log("Show Sword");
 	}
 	
-	private void HideClone2()
+	private void OnAttackEnd(AnimationEvent animationEvent)
 	{
-		MeleeClone2.SetActive(false);
-	}
-	
-	private void HideClone3()
-	{
-		MeleeClone3.SetActive(false);
-	}
-	
-	private void HideClone4()
-	{
-		MeleeClone4.SetActive(false);
+
+		swordGameObject.SetActive(false);
+		Debug.Log("Hide Sword");
 	}
 }
