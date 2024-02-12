@@ -9,22 +9,20 @@ using UnityEngine.Animations.Rigging;
 public class ThirdPersonShooterController : MonoBehaviour
 {
 	//[SerializeField] private Rig aimRig;
+	[Header("Character Component")]
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
-	[SerializeField] private float normalSensitivity;
-	[SerializeField] private float aimSensitivity;
-	[SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
-	[SerializeField] private Transform debugTransform;
-	[SerializeField] private Transform pfBulletProjectile;
-	[SerializeField] private Transform spawnBulletPosition;
-	[SerializeField] private GameObject crosshairCanva;
+	[SerializeField] private MonoBehaviour leaningAnimator;
+
 	//[SerializeField] private int meleeCounter = 1;
 	
 	[Header("Character Melee Attack")]
 	[SerializeField] private float MeleeAttackCD = 0.5f;
 	[SerializeField] private bool canMeleeAttack = true;
-	[SerializeField] private bool hasMeleeAttacked;
+	[SerializeField] private bool meleeLayer = true;
 	
 	[Header("Character Charged Attack")]
+	[SerializeField] private float ChargedAttackCD = 2f;
+	[SerializeField] private bool canChargedAttack = true;
 	[SerializeField] private float chargedAttackTimeNeeded = 0.5f;
 	[SerializeField] private float chargedAttackDistance = 3f;
 	
@@ -33,6 +31,13 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] public float spreadAngle = 30f;
 	[SerializeField] private float RangeAttackCD = 0.3f;
 	[SerializeField] private bool canRangeAttack = true;
+	[SerializeField] private float normalSensitivity;
+	[SerializeField] private float aimSensitivity;
+	[SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
+	[SerializeField] private Transform debugTransform;
+	[SerializeField] private Transform pfBulletProjectile;
+	[SerializeField] private Transform spawnBulletPosition;
+	[SerializeField] private GameObject crosshairCanva;
 	
 	[Header("Character Weapon")]
 	[SerializeField] private GameObject bowGameObject;
@@ -44,6 +49,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 	private float aimRigWeight;
     private float rangeLastUsedTime;
 	private float meleeLastUsedTime;
+	private float chargedLastUsedTime;
 	
 	
 	private void Awake()
@@ -59,8 +65,15 @@ public class ThirdPersonShooterController : MonoBehaviour
 	{
 		meleeLastUsedTime = -MeleeAttackCD;
 		rangeLastUsedTime = -RangeAttackCD;
+		chargedLastUsedTime = -ChargedAttackCD;
 		bowGameObject.SetActive(false);
 		swordGameObject.SetActive(false);
+		if (leaningAnimator == null)
+        {
+            Debug.LogError("Please assign a script to control.");
+            return;
+        }
+		animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0.8f, Time.deltaTime * 10f));
 	}
 	
 	private void Update()
@@ -70,9 +83,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 		Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
 		
 		canMeleeAttack = Time.time - meleeLastUsedTime > MeleeAttackCD; //melee attack cooldown check
-		canRangeAttack = Time.time - rangeLastUsedTime > RangeAttackCD; //melee attack cooldown check
-		
-		
+		canRangeAttack = Time.time - rangeLastUsedTime > RangeAttackCD; //ranged attack cooldown check
+		canChargedAttack = Time.time - chargedLastUsedTime > ChargedAttackCD; //charged attack cooldown check
 		
 		if (Physics.Raycast(ray,out RaycastHit raycastHit, 999f, aimColliderLayerMask))
 		{
@@ -88,9 +100,10 @@ public class ThirdPersonShooterController : MonoBehaviour
             mouseWorldPosition = ray.GetPoint(10);
             debugTransform.position = ray.GetPoint(10);
         }
-		
+	
 		if (starterAssetsInputs.aim)
 		{
+			leaningAnimator.enabled = false;
 			animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
 			swordGameObject.SetActive(false);
 			bowGameObject.SetActive(true);
@@ -111,7 +124,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 		}
 		else
 		{
-			animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0.8f, Time.deltaTime * 10f));
+			leaningAnimator.enabled = true;
+			
 			animator.ResetTrigger("MeleeAttack");
 			animator.ResetTrigger("ChargedAttack");
 			//swordGameObject.SetActive(true);
@@ -123,35 +137,43 @@ public class ThirdPersonShooterController : MonoBehaviour
 			animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
 			//aimRig.weight = 0f;
 			
-			Vector3 worldAimTarget = mouseWorldPosition;
-			worldAimTarget.y = transform.position.y;
-			Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
+			if(meleeLayer)
+			{
+				animator.SetLayerWeight(2, 0.8f);	
+			}
 			
-			transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
-			
-			if(canMeleeAttack)
+			if(!canMeleeAttack)
 			{
 				//animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
-				hasMeleeAttacked = false;
+				//hasMeleeAttacked = false;
+				Vector3 worldAimTarget = mouseWorldPosition;
+				worldAimTarget.y = transform.position.y;
+				Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 				
+				transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
 			}
-			else
+			/*else
 			{
 				if(!hasMeleeAttacked)
 				{
 					thirdPersonController.SetRotateOnMove(true);
 					//animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 1f, Time.deltaTime * 200f));
 					
-					/*Vector3 worldAimTarget = mouseWorldPosition;
+					Vector3 worldAimTarget = mouseWorldPosition;
 					worldAimTarget.y = transform.position.y;
 					Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 					
-					transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 50f);*/
+					transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 50f);
 					//Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+					
 					
 					hasMeleeAttacked = true;
 				}
-			}
+				
+				
+			}*/
+			
+
 		}
 	
 		
@@ -196,14 +218,25 @@ public class ThirdPersonShooterController : MonoBehaviour
 		
 		if (starterAssetsInputs.chargedAttack)
 		{
-			// Trigger the charged attack animation
-			animator.SetTrigger("ChargedAttack");
+			if (starterAssetsInputs.aim)
+			{
+				return;
+			}
+			else
+			{
+				if (canChargedAttack)
+				{
+					chargedLastUsedTime = Time.time;
+					// Trigger the charged attack animation
+					animator.SetTrigger("ChargedAttack");
 
-			// Move the character forward gradually
-			StartCoroutine(LerpCharacterForward());
+					// Move the character forward gradually
+					StartCoroutine(LerpCharacterForward());
 
-			// Reset the chargedAttack state
-			starterAssetsInputs.chargedAttack = false;
+					// Reset the chargedAttack state
+					starterAssetsInputs.chargedAttack = false;
+				}
+			}
 		}
 	}
 	
@@ -214,44 +247,35 @@ public class ThirdPersonShooterController : MonoBehaviour
 		float duration = chargedAttackTimeNeeded; // Desired duration for the lerp (in seconds)
 		float startTime = Time.time;
 
-		// Add a Rigidbody component if not already present
-		Rigidbody rb = GetComponent<Rigidbody>();
-
 		while (Time.time - startTime < duration)
 		{
-			float t = (Time.time - startTime) / duration;
-			Vector3 newPosition = Vector3.Lerp(startPosition, targetPosition, t);
+			// Calculate the progress of the lerping based on the elapsed time and duration
+			float progress = (Time.time - startTime) / duration;
 
-			// Apply the movement to the character's Rigidbody
-			if (rb)
+			// Calculate the new position based on lerping
+			Vector3 newPosition = Vector3.Lerp(startPosition, targetPosition, progress);
+
+			// Perform collision check using Raycast
+			RaycastHit hit;
+			if (Physics.Raycast(newPosition, targetPosition - newPosition, out hit, Vector3.Distance(newPosition, targetPosition)))
 			{
-				// Use Rigidbody.MovePosition to move the character's Rigidbody
-				rb.MovePosition(newPosition);
+				// Collision detected, adjust target position to hit point
+				targetPosition = hit.point;
 			}
-			else
-			{
-				// If Rigidbody component is not present, directly set the position
-				transform.position = newPosition;
-			}
+
+			// Update the character's position
+			transform.position = newPosition;
 
 			yield return null;
 		}
 
 		// Ensure that the character ends up at the correct position
-		if (rb)
-		{
-			// Use Rigidbody.MovePosition to move the character's Rigidbody
-			rb.MovePosition(targetPosition);
-		}
-		else
-		{
-			transform.position = targetPosition;
-		}
+		transform.position = targetPosition;
 
 		// Trigger the jump action
 		starterAssetsInputs.jump = true;
 	}
-		
+
 	private void OnAttackStart(AnimationEvent animationEvent)
 	{	
 		swordGameObject.SetActive(true);
@@ -261,10 +285,23 @@ public class ThirdPersonShooterController : MonoBehaviour
 	
 	private void OnAttackEnd(AnimationEvent animationEvent)
 	{
-
-		swordGameObject.SetActive(false);
-		Debug.Log("Hide Sword");
-		
+		if (animationEvent.animatorClipInfo.weight > 0.5f)
+		{
+			swordGameObject.SetActive(false);
+			Debug.Log("Hide Sword");
+		}
+	}
+	
+	private void OnChargedAttackStart(AnimationEvent animationEvent)
+	{
+		meleeLayer = false;
+		animator.SetLayerWeight(2, 0f);
+	}
+	
+	private void OnChargedAttackEnd(AnimationEvent animationEvent)
+	{
+		meleeLayer = true;
+		animator.SetLayerWeight(2, 0.8f);	
 	}
 	
 	private void OnRangedAttackEnd(AnimationEvent animationEvent)

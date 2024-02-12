@@ -1054,8 +1054,22 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9708738
+      - time: 0.8320725
         functionName: OnAttackEnd
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.81553394
+        functionName: OnChargedAttackEnd
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: OnChargedAttackStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
