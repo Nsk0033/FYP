@@ -18,13 +18,23 @@ public class ThirdPersonShooterController : MonoBehaviour
 	[SerializeField] private Transform spawnBulletPosition;
 	[SerializeField] private GameObject crosshairCanva;
 	//[SerializeField] private int meleeCounter = 1;
+	
+	[Header("Character Melee Attack")]
 	[SerializeField] private float MeleeAttackCD = 0.5f;
 	[SerializeField] private bool canMeleeAttack = true;
 	[SerializeField] private bool hasMeleeAttacked;
+	
+	[Header("Character Charged Attack")]
+	[SerializeField] private float chargedAttackTimeNeeded = 0.5f;
+	[SerializeField] private float chargedAttackDistance = 3f;
+	
+	[Header("Character Ranged Attack")]
 	[SerializeField] public int bulletCount = 5;
     [SerializeField] public float spreadAngle = 30f;
 	[SerializeField] private float RangeAttackCD = 0.3f;
 	[SerializeField] private bool canRangeAttack = true;
+	
+	[Header("Character Weapon")]
 	[SerializeField] private GameObject bowGameObject;
 	[SerializeField] private GameObject swordGameObject;
 	
@@ -81,6 +91,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 		
 		if (starterAssetsInputs.aim)
 		{
+			animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
 			swordGameObject.SetActive(false);
 			bowGameObject.SetActive(true);
 			crosshairCanva.SetActive(true);
@@ -96,10 +107,13 @@ public class ThirdPersonShooterController : MonoBehaviour
 			transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
 			
 			//aimRig.weight = 1f;
+			
 		}
 		else
 		{
+			animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0.8f, Time.deltaTime * 10f));
 			animator.ResetTrigger("MeleeAttack");
+			animator.ResetTrigger("ChargedAttack");
 			//swordGameObject.SetActive(true);
 			bowGameObject.SetActive(false);
 			crosshairCanva.SetActive(false);
@@ -108,6 +122,12 @@ public class ThirdPersonShooterController : MonoBehaviour
 			thirdPersonController.SetRotateOnMove(true);
 			animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
 			//aimRig.weight = 0f;
+			
+			Vector3 worldAimTarget = mouseWorldPosition;
+			worldAimTarget.y = transform.position.y;
+			Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
+			
+			transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
 			
 			if(canMeleeAttack)
 			{
@@ -141,6 +161,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 			{
 				if(canRangeAttack)
 				{
+					//if can range attack but not attacking then do this
 					animator.SetTrigger("Recoil");
 					Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
 					Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
@@ -155,6 +176,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 					}
 					starterAssetsInputs.shoot = false;
 					rangeLastUsedTime = Time.time;
+					// if attacking then do ntg
+					
 				}
 				else
 					return;
@@ -162,58 +185,78 @@ public class ThirdPersonShooterController : MonoBehaviour
 			else
 			{
 				if (canMeleeAttack)
-				{
+				{				
 					meleeLastUsedTime = Time.time;
 					animator.SetTrigger("MeleeAttack");	
 					starterAssetsInputs.shoot = false;
-					/*
-					if(meleeCounter == 1)
-					{				
-						meleeLastUsedTime = Time.time;
-						//swordGameObject.SetActive(true);
-						animator.SetTrigger("MeleeAttack");
-						
-						starterAssetsInputs.shoot = false;
-						meleeCounter++;
-					}
-					else if(meleeCounter == 2)
-					{		
-						meleeLastUsedTime = Time.time;
-						//swordGameObject.SetActive(true);
-						animator.SetTrigger("MeleeAttack");
-						
-						starterAssetsInputs.shoot = false;
-						
-						meleeCounter--;
-					}
-					/*else if(meleeCounter == 3)
-					{	
-						meleeLastUsedTime = Time.time;
-						//swordGameObject.SetActive(true);
-						animator.SetTrigger("MeleeAttack");
-						starterAssetsInputs.shoot = false;
-						
-						meleeCounter++;
-					}
-					else if(meleeCounter == 4)
-					{	
-						meleeLastUsedTime = Time.time;
-						//swordGameObject.SetActive(true);
-						animator.SetTrigger("MeleeAttack");
-						starterAssetsInputs.shoot = false;
-					
-						meleeCounter = 1;
-					} */
 					Debug.Log("Attack");
 				}
 			}
 		}	
+		
+		if (starterAssetsInputs.chargedAttack)
+		{
+			// Trigger the charged attack animation
+			animator.SetTrigger("ChargedAttack");
+
+			// Move the character forward gradually
+			StartCoroutine(LerpCharacterForward());
+
+			// Reset the chargedAttack state
+			starterAssetsInputs.chargedAttack = false;
+		}
 	}
 	
+	IEnumerator LerpCharacterForward()
+	{
+		Vector3 startPosition = transform.position;
+		Vector3 targetPosition = transform.position + transform.forward * chargedAttackDistance;
+		float duration = chargedAttackTimeNeeded; // Desired duration for the lerp (in seconds)
+		float startTime = Time.time;
+
+		// Add a Rigidbody component if not already present
+		Rigidbody rb = GetComponent<Rigidbody>();
+
+		while (Time.time - startTime < duration)
+		{
+			float t = (Time.time - startTime) / duration;
+			Vector3 newPosition = Vector3.Lerp(startPosition, targetPosition, t);
+
+			// Apply the movement to the character's Rigidbody
+			if (rb)
+			{
+				// Use Rigidbody.MovePosition to move the character's Rigidbody
+				rb.MovePosition(newPosition);
+			}
+			else
+			{
+				// If Rigidbody component is not present, directly set the position
+				transform.position = newPosition;
+			}
+
+			yield return null;
+		}
+
+		// Ensure that the character ends up at the correct position
+		if (rb)
+		{
+			// Use Rigidbody.MovePosition to move the character's Rigidbody
+			rb.MovePosition(targetPosition);
+		}
+		else
+		{
+			transform.position = targetPosition;
+		}
+
+		// Trigger the jump action
+		starterAssetsInputs.jump = true;
+	}
+		
 	private void OnAttackStart(AnimationEvent animationEvent)
 	{	
 		swordGameObject.SetActive(true);
 		Debug.Log("Show Sword");
+		
 	}
 	
 	private void OnAttackEnd(AnimationEvent animationEvent)
@@ -221,5 +264,14 @@ public class ThirdPersonShooterController : MonoBehaviour
 
 		swordGameObject.SetActive(false);
 		Debug.Log("Hide Sword");
+		
 	}
+	
+	private void OnRangedAttackEnd(AnimationEvent animationEvent)
+	{
+
+		animator.ResetTrigger("Recoil");
+		Debug.Log("Stop Furthure Shooting");
+	}
+	
 }

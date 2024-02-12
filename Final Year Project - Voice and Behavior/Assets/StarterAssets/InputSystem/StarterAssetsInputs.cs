@@ -14,6 +14,7 @@ namespace StarterAssets
 		public bool sprint;
 		public bool aim;
 		public bool shoot;
+		public bool abilityF;
 		public bool chargedAttack;
 		
 		[Header("Movement Settings")]
@@ -23,6 +24,12 @@ namespace StarterAssets
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 		
+		private float flt_LeftClickAttackTimer;
+		
+		private void FixedUpdate()
+		{
+			//LeftClickAttackTimer();
+		}
 		
 		private void OnEnable()
 		{
@@ -67,7 +74,18 @@ namespace StarterAssets
 		{
 			ShootInput(value.isPressed);
 		}
-				
+		
+		public void OnChargedAttack(InputValue value)
+		{
+			ChargedAttackInput(value.isPressed);
+		}
+		
+		public void OnAbilityF(InputValue value)
+		{
+			AbilityFInput(value.isPressed);
+		}
+		
+		
 #endif
 
 
@@ -108,10 +126,35 @@ namespace StarterAssets
 		
 		public void ShootInput(bool newShootState)
 		{
+			/*if (flt_LeftClickAttackTimer <= 0)
+			{
+				flt_LeftClickAttackTimer = 0.4f;
+				return;
+			}*/
+			newShootState = true;
 			shoot = newShootState;
 			Debug.Log("Shoot: " + shoot);
 		}
 		
+		public void AbilityFInput(bool newAbilityFState)
+		{
+			abilityF = newAbilityFState;
+		}
+		
+		public void ChargedAttackInput(bool newChargedAttackState)
+		{
+			chargedAttack = newChargedAttackState;
+			
+			Debug.Log("Charged Attack: " + chargedAttack);
+		}
+		
+		private void LeftClickAttackTimer()
+		{
+			if (flt_LeftClickAttackTimer >= 0)
+			{
+				flt_LeftClickAttackTimer -= Time.fixedDeltaTime;
+			}
+		}
 	}
 	
 }

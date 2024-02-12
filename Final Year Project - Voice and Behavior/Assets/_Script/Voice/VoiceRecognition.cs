@@ -31,6 +31,7 @@ namespace StarterAssets
 			actions.Add("up", Up);
 			actions.Add("lift", Up);
 			actions.Add("action", Up);
+			actions.Add("jump", Up);
 			
 			actions.Add("down", Down);
 			actions.Add("don't", Down);
@@ -39,6 +40,7 @@ namespace StarterAssets
 			actions.Add("dal", Down);
 			actions.Add("da", Down);
 			actions.Add("skill", Down);
+			actions.Add("attack", Down);
 			
 			actions.Add("back", Back);
 			actions.Add("item", Back);
@@ -95,6 +97,7 @@ namespace StarterAssets
 		private void Down()
 		{
 			Debug.Log("Down");
+			starterAssetsInputs.ShootInput(true);
 		}
 	}
 }

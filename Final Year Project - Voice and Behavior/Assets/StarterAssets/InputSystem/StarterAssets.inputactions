@@ -56,13 +56,31 @@
                     "id": "eefdf51b-2632-4cf8-959e-de203d5ee80e",
                     "expectedControlType": "Button",
                     "processors": "",
+                    "interactions": "Tap",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ChargedAttack",
+                    "type": "Button",
+                    "id": "a86365bf-8720-4fdc-8cd9-db29cdc3d8b1",
+                    "expectedControlType": "Button",
+                    "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Ability",
+                    "name": "AbilityF",
                     "type": "Button",
                     "id": "bf62c7a2-4561-456a-b2aa-8f3ed9815721",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Speed",
+                    "type": "Button",
+                    "id": "421d921e-f865-4d37-891a-73050cfdad1e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -315,11 +333,44 @@
                 {
                     "name": "",
                     "id": "62d4f60c-50f5-4c47-bd4b-29c6e391716e",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "Ability",
+                    "action": "AbilityF",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4db01b69-3d14-416e-8b4d-ec11201ae565",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Speed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "93d2c464-5546-487f-ad32-9d43809312ad",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Speed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "238ba342-76a1-4e1f-b94b-9f092a9df918",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "ChargedAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
