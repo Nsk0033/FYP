@@ -54,7 +54,6 @@ public class ThirdPersonShooterController : MonoBehaviour
 	
 	private void Awake()
 	{
-		
 		thirdPersonController = GetComponent<ThirdPersonController>();
 		starterAssetsInputs = GetComponent<StarterAssetsInputs>();
 		animator = GetComponent<Animator>();
