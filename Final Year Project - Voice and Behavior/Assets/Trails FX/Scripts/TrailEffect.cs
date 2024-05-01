@@ -1215,6 +1215,7 @@ namespace TrailsFX {
             }
         }
 
+        [Obsolete]
         void SendToGPU(int meshIndex, int startIndex, int count) {
             if (meshIndex < 0 || meshIndex >= meshPool.Length)
                 return;
@@ -1370,7 +1371,7 @@ namespace TrailsFX {
             }
         }
 
-
+        [Obsolete]
         Mesh SetupMesh(bool bakeMeshNow) {
             if (bakeMeshNow) {
                 if (isSkinned || isParticle) {

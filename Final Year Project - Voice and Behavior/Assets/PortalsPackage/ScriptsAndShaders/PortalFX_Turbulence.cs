@@ -18,6 +18,7 @@ public class PortalFX_Turbulence : MonoBehaviour
     private ParticleSystem particleSys;
     private float time;
 
+    [Obsolete]
     private void Start()
     {
         particleSys = GetComponent<ParticleSystem>();
