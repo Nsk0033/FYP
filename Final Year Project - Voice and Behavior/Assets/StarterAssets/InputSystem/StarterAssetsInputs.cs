@@ -86,6 +86,8 @@ namespace StarterAssets
 		}
 		
 		
+		
+		
 #endif
 
 
@@ -147,6 +149,8 @@ namespace StarterAssets
 			
 			Debug.Log("Charged Attack: " + chargedAttack);
 		}
+		
+		
 		
 		private void LeftClickAttackTimer()
 		{
