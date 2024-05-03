@@ -157,6 +157,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NoiseValue: {r: 1, g: 1, b: 1, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TintColor: {r: 0, g: 3.0431376, b: 0.11355435, a: 1}
+    - _TintColor: {r: 0, g: 1.1100593, b: 2.3763707, a: 1}
     - _TintColor2: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

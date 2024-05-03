@@ -19,8 +19,8 @@ public class Sword : MonoBehaviour
 	[Header("Character Charged Attack")]
 	[SerializeField] private float ChargedAttackCD = 2f;
 	[SerializeField] private bool canChargedAttack = true;
-	//[SerializeField] private float chargedAttackTimeNeeded = 0.5f;
-	//[SerializeField] private float chargedAttackDistance = 3f;
+	[SerializeField] private float chargedAttackTimeNeeded = 0.5f;
+	[SerializeField] private float chargedAttackDistance = 3f;
 	
 	[Header("Character Ranged Attack")]
 	//[SerializeField] public int bulletCount = 5;
@@ -137,8 +137,9 @@ public class Sword : MonoBehaviour
 				if(canRangeAttack)
 				{
 					//if can range attack but not attacking then do this
-					//animator.SetTrigger("Recoil"); <------------------------------HERE
+					animator.SetTrigger("Recoil"); //<------------------------------HERE
 					Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+					
 					//Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
 					/*for (int i = 0; i < bulletCount; i++)
 					{
@@ -153,6 +154,7 @@ public class Sword : MonoBehaviour
 					rangeLastUsedTime = Time.time;
 					// if attacking then do ntg
 					
+					Invoke("StabAnimationChecking",0.3f);
 				}
 				else
 					return;
@@ -193,13 +195,14 @@ public class Sword : MonoBehaviour
 		}
 	}
 	
-	/*IEnumerator LerpCharacterForward()
+	IEnumerator LerpCharacterForward()
 	{
-		Vector3 startPosition = transform.position;
-		Vector3 targetPosition = transform.position + transform.forward * chargedAttackDistance;
+		Vector3 startPosition = mainCharacter.transform.position;
+		Vector3 targetPosition = mainCharacter.transform.position + mainCharacter.transform.forward * chargedAttackDistance;
 		float duration = chargedAttackTimeNeeded; // Desired duration for the lerp (in seconds)
 		float startTime = Time.time;
-
+		//Invoke("SmallJumping",0.1f);
+		
 		while (Time.time - startTime < duration)
 		{
 			// Calculate the progress of the lerping based on the elapsed time and duration
@@ -217,15 +220,39 @@ public class Sword : MonoBehaviour
 			}
 
 			// Update the character's position
-			transform.position = newPosition;
+			mainCharacter.transform.position = newPosition;
 
 			yield return null;
 		}
 
 		// Ensure that the character ends up at the correct position
-		transform.position = targetPosition;
-
+		mainCharacter.transform.position = targetPosition;
+		Invoke("MCCanMove",0.2f);
 		// Trigger the jump action
-		starterAssetsInputs.jump = true;
-	}*/
+		//starterAssetsInputs.jump = true;
+		
+	}
+	
+	private void SmallJumping()
+	{
+		thirdPersonController.SmallJump();
+	}
+	
+	private void MCCanMove()
+	{
+		thirdPersonController.MoveTrigger(true);
+	}
+	
+	private void StabAnimationChecking()
+	{
+		bool isPlaying = animator.GetCurrentAnimatorStateInfo(2).IsName("Stab Forward");
+		if (isPlaying)
+		{
+			thirdPersonController.MoveTrigger(false);
+			thirdPersonController.SmallJump();
+			StartCoroutine(LerpCharacterForward());
+		}
+	}
+
+	
 }

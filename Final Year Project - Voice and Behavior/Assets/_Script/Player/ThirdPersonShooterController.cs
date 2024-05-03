@@ -59,7 +59,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 				swordGameObject.SetActive(true);
 				bowGameObject.SetActive(false);
 				animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
-				animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0.8f, Time.deltaTime * 10f));
+				animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 1f, Time.deltaTime * 10f));
 				break;
 			case 2:
 				swordGameObject.SetActive(false);

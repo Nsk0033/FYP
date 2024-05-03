@@ -92,6 +92,7 @@ public class Bow : MonoBehaviour
 	
 		if (starterAssetsInputs.aim)
 		{
+			animator.SetBool("RangeAttacking",true);
 			//crosshairCanva.SetActive(true);
 			aimVirtualCamera.gameObject.SetActive(true);
 			thirdPersonController.SetSensitivity(aimSensitivity);
@@ -105,6 +106,7 @@ public class Bow : MonoBehaviour
 		}
 		else
 		{
+			animator.SetBool("RangeAttacking",false);
 			animator.ResetTrigger("MeleeAttack");
 			animator.ResetTrigger("ChargedAttack");
 			//crosshairCanva.SetActive(true);
@@ -130,23 +132,26 @@ public class Bow : MonoBehaviour
 			{
 				if(canRangeAttack)
 				{
-					//if can range attack but not attacking then do this
-					animator.SetTrigger("Recoil");
-					Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-					Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-					for (int i = 0; i < bulletCount; i++)
+					bool isPlaying = animator.GetCurrentAnimatorStateInfo(1).IsName("Bow_Idle");
+					if (isPlaying)
 					{
-						float Yangle = Random.Range(-spreadAngle, spreadAngle);
-						float Xangle = Random.Range((-spreadAngle*0.5f), (spreadAngle*0.5f));
-						Quaternion rotation = Quaternion.Euler(Xangle, Yangle, 0f);
+						//if can range attack but not attacking then do this
+						animator.SetTrigger("Recoil");
+						Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+						Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+						for (int i = 0; i < bulletCount; i++)
+						{
+							float Yangle = Random.Range(-spreadAngle, spreadAngle);
+							float Xangle = Random.Range((-spreadAngle*0.5f), (spreadAngle*0.5f));
+							Quaternion rotation = Quaternion.Euler(Xangle, Yangle, 0f);
 
-						Vector3 aimSpreadDir = rotation * aimDir;
-						Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimSpreadDir, Vector3.up));
+							Vector3 aimSpreadDir = rotation * aimDir;
+							Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimSpreadDir, Vector3.up));
+						}
+						starterAssetsInputs.shoot = false;
+						rangeLastUsedTime = Time.time;
+						// if attacking then do ntg
 					}
-					starterAssetsInputs.shoot = false;
-					rangeLastUsedTime = Time.time;
-					// if attacking then do ntg
-					
 				}
 				else
 					return;

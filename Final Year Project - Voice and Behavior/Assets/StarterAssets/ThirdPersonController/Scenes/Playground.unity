@@ -1931,10 +1931,12 @@ MonoBehaviour:
   mainCharacter: {fileID: 869374839}
   MeleeAttackCD: 0.5
   canMeleeAttack: 1
-  ChargedAttackCD: 2
+  ChargedAttackCD: 0.9
   canChargedAttack: 1
-  RangeAttackCD: 0.3
-  canRangeAttack: 1
+  chargedAttackTimeNeeded: 0.4
+  chargedAttackDistance: 10
+  RangeAttackCD: 1.1
+  canRangeAttack: 0
   normalSensitivity: 1
   aimSensitivity: 0.7
   aimColliderLayerMask:
@@ -2718,6 +2720,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 345761289}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &533276316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 533276317}
+  m_Layer: 8
+  m_Name: SpawnBulletPosition1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &533276317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533276316}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5208501, y: 0.046958182, z: 0.25269598, w: 0.8140362}
+  m_LocalPosition: {x: 0.23, y: 0.12, z: 3}
+  m_LocalScale: {x: 2.2222202, y: 2.22222, z: 2.2222197}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1883008217}
+  m_LocalEulerAnglesHint: {x: -80.234, y: -129.961, z: 217.319}
 --- !u!1 &535819860 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3ef2bccb26f51ca4f8e3c5dc8f7e917e,
@@ -4658,6 +4691,10 @@ PrefabInstance:
         type: 3}
       insertIndex: 0
       addedObject: {fileID: 480975697}
+    - targetCorrespondingSourceObject: {fileID: -5671910290767253545, guid: 3ed4a157feff3564dae96f72775a240a,
+        type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 533276317}
     - targetCorrespondingSourceObject: {fileID: -6881390770214846263, guid: 3ed4a157feff3564dae96f72775a240a,
         type: 3}
       insertIndex: 0
@@ -6440,6 +6477,7 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
+  CanMove: 1
   _rotateOnMove: 1
 --- !u!114 &869374851
 MonoBehaviour:
@@ -6535,11 +6573,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 378721710}
   mainCharacter: {fileID: 869374840}
-  attack4Slash: {fileID: 1715385927650515369, guid: 389fa5c68b3f6834cbc563fe2c4b7e68,
+  m_attack4Slash: {fileID: 1715385927650515369, guid: 389fa5c68b3f6834cbc563fe2c4b7e68,
     type: 3}
-  ChargedSlash: {fileID: 6986569026087158862, guid: 027749ecc436a6b489fc7ff7c353e40e,
+  m_ChargedSlash1: {fileID: 1294101409476956, guid: 231e3be01ac50c047bb16d07fd8d2ba5,
+    type: 3}
+  m_ChargedSlash2: {fileID: 1602379607235420, guid: 028b1ae485e846c4688aabad7557e474,
+    type: 3}
+  m_RangedSlash1: {fileID: 1200950891393156, guid: 52a726355873f9443b626e837ef94008,
     type: 3}
   shootPosition: {fileID: 383955026}
+  shootPosition1: {fileID: 533276317}
 --- !u!1 &869630406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7284587825a454342a3206b06a56210b,
@@ -28788,6 +28831,7 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
+  CanMove: 1
   _rotateOnMove: 1
 --- !u!143 &4416926083347132233
 CharacterController:
