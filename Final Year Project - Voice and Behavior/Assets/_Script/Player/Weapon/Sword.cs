@@ -82,10 +82,10 @@ public class Sword : MonoBehaviour
 		{
 			debugTransform.position = raycastHit.point;
 			mouseWorldPosition = raycastHit.point;
-			if (raycastHit.collider.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rigidbody))
+			/*if (raycastHit.collider.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rigidbody))
 			{
 				//rigidbody.AddExplosionForce(1000f,targetPosition,5f);
-			}
+			}*/
 		}
 		else
         {
@@ -157,7 +157,7 @@ public class Sword : MonoBehaviour
 					Invoke("StabAnimationChecking",0.3f);
 				}
 				else
-					return;
+					starterAssetsInputs.shoot = false;
 			}
 			else
 			{

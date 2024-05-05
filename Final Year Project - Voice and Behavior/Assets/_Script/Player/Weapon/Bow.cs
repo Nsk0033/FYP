@@ -154,7 +154,7 @@ public class Bow : MonoBehaviour
 					}
 				}
 				else
-					return;
+					starterAssetsInputs.shoot = false;
 			}
 			else
 			{

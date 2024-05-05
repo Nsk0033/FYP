@@ -58,7 +58,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0.5358636
-        functionName: OnRangedAttackEnd
+        functionName: ResetBowRecoil
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

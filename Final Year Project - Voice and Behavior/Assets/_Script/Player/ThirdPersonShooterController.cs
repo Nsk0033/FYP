@@ -11,6 +11,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 	[Header("Character Weapon")]
 	[SerializeField] private GameObject bowGameObject;
 	[SerializeField] private GameObject swordGameObject;
+	[SerializeField] private GameObject axeGameObject;
 	
 	[Header("Character Weapon Index")]
 	public int CurrentWeaponIndex = 1;
@@ -44,7 +45,16 @@ public class ThirdPersonShooterController : MonoBehaviour
 			CurrentWeaponIndex--;
 			if(CurrentWeaponIndex == 0)
 			{
-				CurrentWeaponIndex = 2;
+				CurrentWeaponIndex = 3;
+			}
+		}
+
+		if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+		{
+			CurrentWeaponIndex++;
+			if(CurrentWeaponIndex == 4)
+			{
+				CurrentWeaponIndex = 1;
 			}
 		}
 		
@@ -58,16 +68,27 @@ public class ThirdPersonShooterController : MonoBehaviour
 			case 1:
 				swordGameObject.SetActive(true);
 				bowGameObject.SetActive(false);
+				axeGameObject.SetActive(false);
 				animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
 				animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 1f, Time.deltaTime * 10f));
+				animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 0f, Time.deltaTime * 10f));
 				break;
 			case 2:
 				swordGameObject.SetActive(false);
+				axeGameObject.SetActive(false);
 				bowGameObject.SetActive(true);
 				animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f));
 				animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
+				animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 0f, Time.deltaTime * 10f));
 				break;
-			
+			case 3:
+				swordGameObject.SetActive(false);
+				bowGameObject.SetActive(false);
+				axeGameObject.SetActive(true);
+				animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
+				animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
+				animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 1f, Time.deltaTime * 10f));
+				break;
 		}
 	}
 	
