@@ -74,6 +74,28 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-8655871091824756780
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 6904719651407550685}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.7916667
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &-8050542769399874773
 AnimatorState:
   serializedVersion: 6
@@ -128,6 +150,33 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &-7866385382781509003
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SwordSummon
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -203655887218126122, guid: 7df9790cc561ca44592252feafa77dc5,
+    type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1109 &-7850088967011128006
 AnimatorTransition:
   m_ObjectHideFlags: 1
@@ -282,6 +331,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: ChargedAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2325948637966508272}
   m_Solo: 0
@@ -406,8 +458,12 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -6939907770940136669}
     m_Position: {x: 680, y: 490, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -844318125216246119}
+    m_Position: {x: -143.71912, y: 420.74673, z: 0}
   m_ChildStateMachines: []
-  m_AnyStateTransitions: []
+  m_AnyStateTransitions:
+  - {fileID: -5543549260938497481}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
@@ -438,6 +494,31 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &-5543549260938497481
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Dodge
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -844318125216246119}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 0
 --- !u!1102 &-5512114130257184528
 AnimatorState:
   serializedVersion: 6
@@ -506,7 +587,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.32070696
+  m_TransitionDuration: 0.1147694
   m_TransitionOffset: 0
   m_ExitTime: 0.40389633
   m_HasExitTime: 0
@@ -575,6 +656,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 955505694889696277}
   m_Solo: 0
@@ -725,6 +809,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4434422347592756598}
   m_Solo: 0
@@ -830,6 +917,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: ChargedAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7522166003937302467}
   m_Solo: 0
@@ -855,6 +945,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: RangeAttacking
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5677690052164940606}
   m_Solo: 0
@@ -999,6 +1092,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8462832361791497161}
   m_Solo: 0
@@ -1035,8 +1131,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: bdd50de9e3aa08547b6882130a69c425,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: 9ffd49b1de5e7e94c9717fcaf3015cd5, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1156,6 +1251,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: ChargedAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6666953917773248767}
   m_Solo: 0
@@ -1378,6 +1476,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Recoil
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5820827137206260876}
   m_Solo: 0
@@ -1432,6 +1533,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4188448657440274768}
   m_Solo: 0
@@ -1446,6 +1550,55 @@ AnimatorStateTransition:
   m_InterruptionSource: 2
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &-844318125216246119
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dodge
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -8655871091824756780}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 347fbfac4e6fefb42ab52b2bd96854e4, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1101 &-726332885508731499
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -7866385382781509003}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-402092516312395865
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1457,6 +1610,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: RangeAttacking
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4483845516177231186}
   m_Solo: 0
@@ -1540,6 +1696,18 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: Dodge
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: LayerSelection
+    m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1573,7 +1741,7 @@ AnimatorController:
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0.8
+    m_DefaultWeight: 1
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
@@ -1662,10 +1830,14 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 6666953917773248767}
     m_Position: {x: 40, y: -140, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -7866385382781509003}
+    m_Position: {x: -320, y: 100, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -7007853203463956146}
   - {fileID: 6418087844536714140}
+  - {fileID: -726332885508731499}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
@@ -1714,6 +1886,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8050542769399874773}
   m_Solo: 0
@@ -1815,6 +1990,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3394673551949608632}
   m_Solo: 0
@@ -2017,6 +2195,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: ChargedAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3102690595008504866}
   m_Solo: 0
@@ -2139,6 +2320,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 500647402082552121}
   m_Solo: 0
@@ -2269,6 +2453,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -941135986136171696}
   m_Solo: 0
@@ -2371,6 +2558,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7641363104220215475}
   m_Solo: 0
@@ -2396,6 +2586,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: RangeAttacking
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8018740323504035222}
   m_Solo: 0
@@ -2421,6 +2614,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: RangeAttacking
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7555920551462996790}
   m_Solo: 0
@@ -2571,6 +2767,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2555163823525581940}
   m_Solo: 0
@@ -2596,6 +2795,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1201085937399488010}
   m_Solo: 0
@@ -2778,6 +2980,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Recoil
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 176933510011545221}
   m_Solo: 0
@@ -2962,6 +3167,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4203055688231860397}
   m_Solo: 0
@@ -3170,6 +3378,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6498146368121597695}
   m_Solo: 0
@@ -3456,6 +3667,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Recoil
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1957799863605198634}
   m_Solo: 0
@@ -3503,6 +3717,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Pulling
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: LayerSelection
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6949401518102124559}
   m_Solo: 0

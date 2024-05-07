@@ -16,6 +16,7 @@ namespace StarterAssets
 		public bool shoot;
 		public bool abilityF;
 		public bool chargedAttack;
+		public bool dodge;
 		
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -85,7 +86,10 @@ namespace StarterAssets
 			AbilityFInput(value.isPressed);
 		}
 		
-		
+		public void OnDodge(InputValue value)
+		{
+			DodgeInput(value.isPressed);
+		}
 		
 		
 #endif
@@ -148,6 +152,13 @@ namespace StarterAssets
 			chargedAttack = newChargedAttackState;
 			
 			Debug.Log("Charged Attack: " + chargedAttack);
+		}
+		
+		public void DodgeInput(bool newDodgeState)
+		{
+			dodge = newDodgeState;
+			
+			Debug.Log("Dodge: " + dodge);
 		}
 		
 		

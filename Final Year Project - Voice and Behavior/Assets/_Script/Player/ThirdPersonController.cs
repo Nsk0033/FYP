@@ -165,6 +165,8 @@ namespace StarterAssets
 
             JumpAndGravity();
             GroundedCheck();
+			DodgeCheck();
+			AutoMove();
 			if(CanMove)
 			{
 				Move();
@@ -311,9 +313,11 @@ namespace StarterAssets
                 {
                     _verticalVelocity = -2f;
                 }
-
+				
+				bool isDodgePlaying = _animator.GetCurrentAnimatorStateInfo(0).IsName("Dodge");
+				
                 // Jump
-                if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+                if (_input.jump && _jumpTimeoutDelta <= 0.0f && !isDodgePlaying)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
@@ -324,6 +328,8 @@ namespace StarterAssets
                         _animator.SetBool(_animIDJump, true);
                     }
                 }
+				else
+					_input.jump = false;
 
                 // jump timeout
                 if (_jumpTimeoutDelta >= 0.0f)
@@ -421,6 +427,39 @@ namespace StarterAssets
 		public void MoveTrigger(bool value)
 		{
 			CanMove = value;
+		}
+		
+		public void DodgeCheck()
+		{
+			if(Grounded)
+			{
+				if (_input.dodge && _jumpTimeoutDelta <= 0.0f)
+                {
+					_animator.SetTrigger("Dodge");
+					_input.dodge = false;
+				}
+				else
+					_input.dodge = false;
+			}
+		}
+		
+		private void AutoMove()
+		{
+			bool _animationIsPlaying = _animator.GetCurrentAnimatorStateInfo(0).IsName("Dodge");
+			if (_animationIsPlaying)
+			{
+				_input.dodge = false;
+				_animator.ResetTrigger("Dodge");
+			}
+			if (_animationIsPlaying && _input.move == Vector2.zero)
+			{
+				// Get the forward direction relative to the camera
+				Vector3 forwardDirection = transform.forward;
+				forwardDirection.y = 0f; // Ensure the direction is horizontal
+
+				// Move the player forward
+				_controller.Move(forwardDirection.normalized * (4f * Time.deltaTime));
+			}
 		}
     }
 

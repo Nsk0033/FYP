@@ -21,11 +21,13 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private int chargedAttackArrowCount = 3;
 	[SerializeField] private GameObject b_attackProjectile;
 	[SerializeField] private GameObject b_ChargedProjectile;
+	[SerializeField] private GameObject b_ImpactParticle;
 	
 	[Header("Character Position")]
 	[SerializeField] private Transform shootPosition;
 	[SerializeField] private Transform shootPosition1;
 	[SerializeField] private Transform shootPosition_upAir;
+	[SerializeField] private Transform shootPosition_bowImpact;
 	
 	private ThirdPersonShooterController thirdPersonShooterController;
 	private Animator animator;
@@ -230,5 +232,20 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	private void ResetAxeThrow(AnimationEvent animationEvent)
 	{
 		starterAssetsInputs.shoot = false;
+	}
+	
+	private void BowImpact(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 2)
+		{
+			// Get the y-axis rotation of the main character
+			float characterRotationY = mainCharacter.rotation.eulerAngles.y;
+
+			// Create a new rotation based on the main character's y-axis rotation
+			Quaternion slashRotation = Quaternion.Euler(0f, characterRotationY, 0f);
+
+			// Instantiate the ChargedSlash GameObject with the calculated rotation
+			Instantiate(b_ImpactParticle, shootPosition_bowImpact.position, slashRotation);
+		}
 	}
 }
