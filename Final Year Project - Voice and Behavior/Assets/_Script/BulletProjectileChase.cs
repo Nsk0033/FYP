@@ -6,7 +6,7 @@ public class BulletProjectileChase : MonoBehaviour
 {
     private Rigidbody bulletRigidbody;
     [SerializeField] private float speed = 20f;
-    [SerializeField] private Transform vfxHit;
+    [SerializeField] private GameObject vfxHit;
     [SerializeField] private string enemyTag; // Change to string for enemy tag
     [SerializeField] private float detectionRadius = 10f;
 	[SerializeField] private float rotateSpeed = 5f;
@@ -73,11 +73,13 @@ public class BulletProjectileChase : MonoBehaviour
             // Do nothing if the tag is "Projectile"
             return;
         }
-        if (other.GetComponent<IgnoreHit>() != null)
-        {
-            return;
-        }
-        Instantiate(vfxHit, transform.position, Quaternion.identity);
+		if (other.GetComponent<IgnoreHit>() != null)
+		{
+			return;
+		}
+		GameObject hitvfx = Instantiate(vfxHit, transform.position, Quaternion.identity);
+        Vector3 directionAwayEnemy = -1*(other.transform.position - transform.position).normalized;
+		hitvfx.transform.forward = directionAwayEnemy;
         Destroy(gameObject);
-    }
+	}
 }

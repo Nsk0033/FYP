@@ -58,12 +58,15 @@ public class Bow : MonoBehaviour
 		meleeLastUsedTime = -MeleeAttackCD;
 		rangeLastUsedTime = -RangeAttackCD;
 		chargedLastUsedTime = -ChargedAttackCD;
-		crosshairCanva.SetActive(true);
 		
+		crosshairCanva.SetActive(true);
 		//animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
 	}
 	
-	
+	private void OnEnable()
+	{
+		crosshairCanva.SetActive(true);
+	}
 	
 	private void Update()
 	{

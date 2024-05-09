@@ -6,7 +6,7 @@ public class BulletProjectile : MonoBehaviour
 {
     private Rigidbody bulletRigidbody;
 	[SerializeField] private float speed = 20f;
-	[SerializeField] private Transform vfxHit;
+	[SerializeField] private GameObject vfxHit;
 	
 	private void Awake()
 	{
@@ -35,7 +35,11 @@ public class BulletProjectile : MonoBehaviour
 		{
 			return;
 		}
-        Instantiate(vfxHit, transform.position, Quaternion.identity);
+		GameObject hitvfx = Instantiate(vfxHit, transform.position, Quaternion.identity);
+        Vector3 directionAwayEnemy = -1*(other.transform.position - transform.position).normalized;
+		hitvfx.transform.forward = directionAwayEnemy;
         Destroy(gameObject);
+		
+
     }
 }

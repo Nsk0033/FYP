@@ -66,30 +66,46 @@ public class ThirdPersonShooterController : MonoBehaviour
 		switch (CurrentWeaponIndex)
 		{
 			case 1:
+				if(thirdPersonController.isDodgePlaying) 
+					animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
+				else
+					animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 1f, Time.deltaTime * 10f));
+				
 				swordGameObject.SetActive(true);
 				bowGameObject.SetActive(false);
 				axeGameObject.SetActive(false);
 				animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
-				animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 1f, Time.deltaTime * 10f));
+				
 				animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 0f, Time.deltaTime * 10f));
-				animator.SetInteger("LayerSelection", 2);
+				animator.SetInteger("LayerSelection", 2); 
+				
 				break;
 			case 2:
+				if(thirdPersonController.isDodgePlaying) 
+					animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
+				else
+					animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f));
+				
 				swordGameObject.SetActive(false);
 				axeGameObject.SetActive(false);
 				bowGameObject.SetActive(true);
-				animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f));
+				
 				animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
 				animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 0f, Time.deltaTime * 10f));
 				animator.SetInteger("LayerSelection", 1);
 				break;
 			case 3:
+				if(thirdPersonController.isDodgePlaying)
+					animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 0f, Time.deltaTime * 10f));
+				else
+					animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 1f, Time.deltaTime * 10f));
+				
 				swordGameObject.SetActive(false);
 				bowGameObject.SetActive(false);
 				axeGameObject.SetActive(true);
 				animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
 				animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
-				animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 1f, Time.deltaTime * 10f));
+				
 				animator.SetInteger("LayerSelection", 3);
 				break;
 		}

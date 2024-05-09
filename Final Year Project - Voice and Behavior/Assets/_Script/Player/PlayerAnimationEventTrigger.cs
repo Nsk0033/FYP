@@ -10,6 +10,9 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private Camera mainCamera;
 	[SerializeField] private Transform mainCharacter;
 	
+	[Header("Character Value")]
+	[SerializeField] private float animatorHitStopSpeed = 0.3f;
+	
 	[Header("Character Sword Projectile")]
 	[SerializeField] private GameObject s_attack4Slash;
 	[SerializeField] private GameObject s_ChargedSlash1;
@@ -28,6 +31,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private Transform shootPosition1;
 	[SerializeField] private Transform shootPosition_upAir;
 	[SerializeField] private Transform shootPosition_bowImpact;
+	[SerializeField] private Transform shootPosition_sword4;
 	
 	private ThirdPersonShooterController thirdPersonShooterController;
 	private Animator animator;
@@ -40,6 +44,14 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 		animator = mainCharacter.GetComponent<Animator>();
 		starterAssetsInputs = mainCharacter.GetComponent<StarterAssetsInputs>();
 		//thirdPersonController = GetComponent<ThirdPersonController>();
+	}
+	
+	private void Update()
+	{
+		/*if (Input.GetKey(KeyCode.K))
+		{
+			AnimationHitStop();
+		}*/
 	}
 	
     private void Attack4SlashStart(AnimationEvent animationEvent)
@@ -61,14 +73,14 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			if (Physics.Raycast(ray, out hit))
 			{
 				// Calculate the direction vector from the shootPosition to the hit point
-				Vector3 direction = hit.point - shootPosition.position;
+				Vector3 direction = hit.point - shootPosition_sword4.position;
 				direction.y = 0f; // Ensure the slash stays parallel to the ground
 
 				// Calculate the rotation based on the direction vector
 				Quaternion slashRotation = Quaternion.LookRotation(direction);
 
 				// Instantiate the attack4Slash GameObject with the calculated rotation
-				Instantiate(s_attack4Slash, shootPosition.position, slashRotation);
+				Instantiate(s_attack4Slash, shootPosition_sword4.position, slashRotation);
 			}
 		}
         else
@@ -247,5 +259,16 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			// Instantiate the ChargedSlash GameObject with the calculated rotation
 			Instantiate(b_ImpactParticle, shootPosition_bowImpact.position, slashRotation);
 		}
+	}
+	
+	public void AnimationHitStop()
+	{
+		animator.speed = animatorHitStopSpeed;
+		Invoke("AnimationHitContinue",0.2f);
+	}
+	
+	private void AnimationHitContinue()
+	{
+		animator.speed = 1f;
 	}
 }

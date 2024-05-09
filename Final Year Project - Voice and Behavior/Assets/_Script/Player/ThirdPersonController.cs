@@ -80,10 +80,12 @@ namespace StarterAssets
 		
 		[Tooltip("For locking player movement")]
         public bool CanMove = true;
+		public bool isDodgePlaying = false;
 
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
+		private float targetSpeed;
 
         // player
         private float _speed;
@@ -162,7 +164,8 @@ namespace StarterAssets
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
-
+			isDodgePlaying = _animator.GetCurrentAnimatorStateInfo(0).IsName("Dodge");
+			
             JumpAndGravity();
             GroundedCheck();
 			DodgeCheck();
@@ -225,8 +228,13 @@ namespace StarterAssets
 
         private void Move()
         {
-            // set target speed based on move speed, sprint speed and if sprint is pressed
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			if (!isDodgePlaying)
+			{
+				targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;		
+			}
+			else
+				// set target speed based on move speed, sprint speed and if sprint is pressed
+				targetSpeed = SprintSpeed;
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -313,8 +321,6 @@ namespace StarterAssets
                 {
                     _verticalVelocity = -2f;
                 }
-				
-				bool isDodgePlaying = _animator.GetCurrentAnimatorStateInfo(0).IsName("Dodge");
 				
                 // Jump
                 if (_input.jump && _jumpTimeoutDelta <= 0.0f && !isDodgePlaying)
@@ -445,20 +451,20 @@ namespace StarterAssets
 		
 		private void AutoMove()
 		{
-			bool _animationIsPlaying = _animator.GetCurrentAnimatorStateInfo(0).IsName("Dodge");
-			if (_animationIsPlaying)
+			
+			if (isDodgePlaying)
 			{
 				_input.dodge = false;
 				_animator.ResetTrigger("Dodge");
 			}
-			if (_animationIsPlaying && _input.move == Vector2.zero)
+			if (isDodgePlaying && _input.move == Vector2.zero)
 			{
 				// Get the forward direction relative to the camera
 				Vector3 forwardDirection = transform.forward;
 				forwardDirection.y = 0f; // Ensure the direction is horizontal
 
 				// Move the player forward
-				_controller.Move(forwardDirection.normalized * (4f * Time.deltaTime));
+				_controller.Move(forwardDirection.normalized * (6.6f * Time.deltaTime));
 			}
 		}
     }
