@@ -43,8 +43,8 @@ public class Axe : MonoBehaviour
 	[Header("Character Charged Attack")]
 	[SerializeField] private float ChargedAttackCD = 2f;
 	[SerializeField] private bool canChargedAttack = true;
-	[SerializeField] private float chargedAttackTimeNeeded = 0.5f;
-	[SerializeField] private float chargedAttackDistance = 3f;
+	//[SerializeField] private float chargedAttackTimeNeeded = 0.5f;
+	//[SerializeField] private float chargedAttackDistance = 3f;
 	
 	[Header("Character Ranged Attack")]
 	//[SerializeField] public int bulletCount = 5;
@@ -70,10 +70,12 @@ public class Axe : MonoBehaviour
 	private ThirdPersonController thirdPersonController;
 	private StarterAssetsInputs starterAssetsInputs;
 	private Animator animator;
+	private new BoxCollider collider;
 	private float aimRigWeight;
     private float rangeLastUsedTime;
 	private float meleeLastUsedTime;
 	private float chargedLastUsedTime;
+	private bool isIdlePlaying;
 
 	private void Awake()
 	{
@@ -84,7 +86,7 @@ public class Axe : MonoBehaviour
         axeThrow = weapon.GetComponent<AxeThrow>();
         origLocPos = weapon.localPosition;
         origLocRot = weapon.localEulerAngles;
-
+		collider = weapon.GetComponent<BoxCollider>();
 	}
 
     // Start is called before the first frame update
@@ -232,6 +234,14 @@ public class Axe : MonoBehaviour
 			
 			
 		}
+		
+		isIdlePlaying = animator.GetCurrentAnimatorStateInfo(3).IsName("Empty");
+		if (isIdlePlaying && hasWeapon)
+		{
+			collider.enabled = false;
+		}
+		else
+			collider.enabled = true;
 		
 		bool isChargedPlaying = animator.GetCurrentAnimatorStateInfo(3).IsName("Spin");
 		if (isChargedPlaying)

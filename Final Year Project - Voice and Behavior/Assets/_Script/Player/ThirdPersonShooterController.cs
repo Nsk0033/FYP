@@ -59,6 +59,18 @@ public class ThirdPersonShooterController : MonoBehaviour
 		}
 		
 		SwitchWeapon();
+		
+		if (starterAssetsInputs.interact)
+		{
+			GameEventsManager.instance.inputEvents.SubmitPressed();
+		}
+    
+
+    
+        if (starterAssetsInputs.questLogToggle)
+        {
+            GameEventsManager.instance.inputEvents.QuestLogTogglePressed();
+        }
 	}
 	
 	private void SwitchWeapon()
@@ -110,6 +122,9 @@ public class ThirdPersonShooterController : MonoBehaviour
 				break;
 		}
 	}
+	
+	
+
 	
 
 	private void OnAttackStart(AnimationEvent animationEvent)

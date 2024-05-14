@@ -14,9 +14,10 @@ namespace StarterAssets
 		public bool sprint;
 		public bool aim;
 		public bool shoot;
-		public bool abilityF;
+		public bool interact;
 		public bool chargedAttack;
 		public bool dodge;
+		public bool questLogToggle;
 		
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -81,14 +82,19 @@ namespace StarterAssets
 			ChargedAttackInput(value.isPressed);
 		}
 		
-		public void OnAbilityF(InputValue value)
+		public void OnInteract(InputValue value)
 		{
-			AbilityFInput(value.isPressed);
+			InteractInput(value.isPressed);
 		}
 		
 		public void OnDodge(InputValue value)
 		{
 			DodgeInput(value.isPressed);
+		}
+		
+		public void OnQuestLogToggle(InputValue value)
+		{
+			questLogToggleInput(value.isPressed);
 		}
 		
 		
@@ -142,9 +148,9 @@ namespace StarterAssets
 			Debug.Log("Shoot: " + shoot);
 		}
 		
-		public void AbilityFInput(bool newAbilityFState)
+		public void InteractInput(bool newInteractState)
 		{
-			abilityF = newAbilityFState;
+			interact = newInteractState;
 		}
 		
 		public void ChargedAttackInput(bool newChargedAttackState)
@@ -159,6 +165,13 @@ namespace StarterAssets
 			dodge = newDodgeState;
 			
 			Debug.Log("Dodge: " + dodge);
+		}
+		
+		public void questLogToggleInput(bool newQuestLogToggleState)
+		{
+			questLogToggle = newQuestLogToggleState;
+			
+			Debug.Log("questLogToggle: " + newQuestLogToggleState);
 		}
 		
 		

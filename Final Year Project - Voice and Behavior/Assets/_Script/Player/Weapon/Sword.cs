@@ -41,16 +41,19 @@ public class Sword : MonoBehaviour
 	private ThirdPersonController thirdPersonController;
 	private StarterAssetsInputs starterAssetsInputs;
 	private Animator animator;
+	private new BoxCollider collider;
 	private float aimRigWeight;
 	private float meleeLastUsedTime;
 	private float rangeLastUsedTime;
 	private float chargedLastUsedTime;
+	private bool isIdlePlaying;
 	
 	private void Awake()
 	{
 		thirdPersonController = mainCharacter.GetComponent<ThirdPersonController>();
 		starterAssetsInputs = mainCharacter.GetComponent<StarterAssetsInputs>();
 		animator = mainCharacter.GetComponent<Animator>();
+		collider = GetComponent<BoxCollider>();
 	}
 	
     // Start is called before the first frame update
@@ -77,6 +80,14 @@ public class Sword : MonoBehaviour
 		canMeleeAttack = Time.time - meleeLastUsedTime > MeleeAttackCD; //melee attack cooldown check
 		canRangeAttack = Time.time - rangeLastUsedTime > RangeAttackCD; //ranged attack cooldown check
 		canChargedAttack = Time.time - chargedLastUsedTime > ChargedAttackCD; //charged attack cooldown check
+		
+		isIdlePlaying = animator.GetCurrentAnimatorStateInfo(2).IsName("Empty");
+		if (isIdlePlaying)
+		{
+			collider.enabled = false;
+		}
+		else
+			collider.enabled = true;
 		
 		if (Physics.Raycast(ray,out RaycastHit raycastHit, 999f, aimColliderLayerMask))
 		{
