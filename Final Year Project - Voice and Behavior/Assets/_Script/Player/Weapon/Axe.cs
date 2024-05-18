@@ -6,6 +6,7 @@ using DG.Tweening;
 using StarterAssets;
 using Cinemachine;
 using UnityEngine.InputSystem;
+using TrailsFX;
 
 public class Axe : MonoBehaviour
 {
@@ -61,6 +62,7 @@ public class Axe : MonoBehaviour
 
     private Rigidbody weaponRb;
     private AxeThrow axeThrow;
+    private TrailEffect trailEffect;
     private float returnTime;
 
     private Vector3 origLocPos;
@@ -87,6 +89,7 @@ public class Axe : MonoBehaviour
         origLocPos = weapon.localPosition;
         origLocRot = weapon.localEulerAngles;
 		collider = weapon.GetComponent<BoxCollider>();
+		trailEffect = weapon.GetComponent<TrailEffect>();
 	}
 
     // Start is called before the first frame update
@@ -239,9 +242,13 @@ public class Axe : MonoBehaviour
 		if (isIdlePlaying && hasWeapon)
 		{
 			collider.enabled = false;
+			trailEffect.enabled = false;
 		}
 		else
+		{
 			collider.enabled = true;
+			trailEffect.enabled = true;
+		}
 		
 		bool isChargedPlaying = animator.GetCurrentAnimatorStateInfo(3).IsName("Spin");
 		if (isChargedPlaying)
