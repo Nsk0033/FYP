@@ -803,7 +803,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Windows Store Apps: GPU_INSTANCER
+    Windows Store Apps: GPU_INSTANCER;EMERALD_AI_PRESENT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

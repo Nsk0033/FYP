@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EmeraldAI;
 
 public class SwordDamage : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SwordDamage : MonoBehaviour
 	[SerializeField] private Transform spawnParticlePosition;
 	[SerializeField] private Transform playerTransform;
 	[SerializeField] private Transform MainCharacter;
+	[SerializeField] private int damageOutput;
 	
 	private PlayerAnimationEventTrigger playerAnimationEventTrigger;
 	
@@ -23,6 +25,11 @@ public class SwordDamage : MonoBehaviour
 		
 		// Log the name of the object that was hit
         Debug.Log("Object hit: " + collider.gameObject.name);
+		
+		if (collider.GetComponent<EmeraldAI.EmeraldAISystem>() != null)
+		{
+		   collider.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(damageOutput, EmeraldAI.EmeraldAISystem.TargetType.Player, MainCharacter, 400);
+		}
 
 		IDamageable damageable = collider.GetComponent<IDamageable>();
 		{

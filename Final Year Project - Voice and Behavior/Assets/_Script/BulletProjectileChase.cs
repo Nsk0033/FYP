@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EmeraldAI;
 
 public class BulletProjectileChase : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class BulletProjectileChase : MonoBehaviour
     [SerializeField] private string enemyTag; // Change to string for enemy tag
     [SerializeField] private float detectionRadius = 10f;
 	[SerializeField] private float rotateSpeed = 5f;
+	[SerializeField] private int damageOutput = 5;
 
     private void Awake()
     {
@@ -76,6 +78,10 @@ public class BulletProjectileChase : MonoBehaviour
 		if (other.GetComponent<IgnoreHit>() != null)
 		{
 			return;
+		}
+		if (other.GetComponent<EmeraldAI.EmeraldAISystem>() != null)
+		{
+		   other.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(damageOutput, EmeraldAI.EmeraldAISystem.TargetType.Player, gameObject.transform, 400);
 		}
 		GameObject hitvfx = Instantiate(vfxHit, transform.position, Quaternion.identity);
         Vector3 directionAwayEnemy = -1*(other.transform.position - transform.position).normalized;

@@ -21,3 +21,5 @@ MonoBehaviour:
     importedVersion: 1.0.0
   - packageURL: com.gurbu.gpui.BillboardURP
     importedVersion: 1.0.0
+  - packageURL: com.gurbu.gpui.ca.URP10
+    importedVersion: 1.0.0

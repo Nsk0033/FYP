@@ -4,5 +4,3 @@ to be used with the texture atlases and in the shader the respective texture pos
 
 This way, all the instances of the fish in this scene are rendered with a single draw call. 
 The instances are also further manipulated with a compute shader (GPUIFishBoids.compute) to implement boids behavior.
-
-This scene also uses the Post Processing (v2) package which you can install from the Package Manager.

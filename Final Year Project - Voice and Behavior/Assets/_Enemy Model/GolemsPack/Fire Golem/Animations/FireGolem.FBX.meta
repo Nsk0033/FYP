@@ -1,0 +1,2298 @@
+fileFormatVersion: 2
+guid: 11f3e02bc2cee7d4faff5dfebb1baf3d
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: (Rig)FireGolem
+  - first:
+      1: 100002
+    second: CATRigChest
+  - first:
+      1: 100004
+    second: CATRigHand(L)Arm
+  - first:
+      1: 100006
+    second: CATRigHand(L)Digit11
+  - first:
+      1: 100008
+    second: CATRigHand(L)Digit12
+  - first:
+      1: 100010
+    second: CATRigHand(L)Digit13
+  - first:
+      1: 100012
+    second: CATRigHand(L)Digit21
+  - first:
+      1: 100014
+    second: CATRigHand(L)Digit22
+  - first:
+      1: 100016
+    second: CATRigHand(L)Digit23
+  - first:
+      1: 100018
+    second: CATRigHand(L)Digit31
+  - first:
+      1: 100020
+    second: CATRigHand(L)Digit32
+  - first:
+      1: 100022
+    second: CATRigHand(L)Digit33
+  - first:
+      1: 100024
+    second: CATRigHand(L)Digit41
+  - first:
+      1: 100026
+    second: CATRigHand(L)Digit42
+  - first:
+      1: 100028
+    second: CATRigHand(L)Digit43
+  - first:
+      1: 100030
+    second: CATRigHand(L)Digit51
+  - first:
+      1: 100032
+    second: CATRigHand(L)Digit52
+  - first:
+      1: 100034
+    second: CATRigHand(L)Digit53
+  - first:
+      1: 100036
+    second: CATRigHand(L)Forearm
+  - first:
+      1: 100038
+    second: CATRigHand(L)Palm
+  - first:
+      1: 100040
+    second: CATRigHand(R)Arm
+  - first:
+      1: 100042
+    second: CATRigHand(R)Digit11
+  - first:
+      1: 100044
+    second: CATRigHand(R)Digit12
+  - first:
+      1: 100046
+    second: CATRigHand(R)Digit13
+  - first:
+      1: 100048
+    second: CATRigHand(R)Digit21
+  - first:
+      1: 100050
+    second: CATRigHand(R)Digit22
+  - first:
+      1: 100052
+    second: CATRigHand(R)Digit23
+  - first:
+      1: 100054
+    second: CATRigHand(R)Digit31
+  - first:
+      1: 100056
+    second: CATRigHand(R)Digit32
+  - first:
+      1: 100058
+    second: CATRigHand(R)Digit33
+  - first:
+      1: 100060
+    second: CATRigHand(R)Digit41
+  - first:
+      1: 100062
+    second: CATRigHand(R)Digit42
+  - first:
+      1: 100064
+    second: CATRigHand(R)Digit43
+  - first:
+      1: 100066
+    second: CATRigHand(R)Digit51
+  - first:
+      1: 100068
+    second: CATRigHand(R)Digit52
+  - first:
+      1: 100070
+    second: CATRigHand(R)Digit53
+  - first:
+      1: 100072
+    second: CATRigHand(R)Forearm
+  - first:
+      1: 100074
+    second: CATRigHand(R)Palm
+  - first:
+      1: 100076
+    second: CATRigHead
+  - first:
+      1: 100078
+    second: CATRigHub
+  - first:
+      1: 100080
+    second: CATRigJaw
+  - first:
+      1: 100082
+    second: CATRigLeg(L)Foot
+  - first:
+      1: 100084
+    second: CATRigLeg(L)Hip
+  - first:
+      1: 100086
+    second: CATRigLeg(L)Platform
+  - first:
+      1: 100088
+    second: CATRigLeg(L)Shin
+  - first:
+      1: 100090
+    second: CATRigLeg(L)Toe1
+  - first:
+      1: 100092
+    second: CATRigLeg(R)Foot
+  - first:
+      1: 100094
+    second: CATRigLeg(R)Hip
+  - first:
+      1: 100096
+    second: CATRigLeg(R)Platform
+  - first:
+      1: 100098
+    second: CATRigLeg(R)Shin
+  - first:
+      1: 100100
+    second: CATRigLeg(R)Toe1
+  - first:
+      1: 100102
+    second: CATRigScapular(L)
+  - first:
+      1: 100104
+    second: CATRigScapular(R)
+  - first:
+      1: 100106
+    second: CATRigSpine
+  - first:
+      1: 100108
+    second: //RootNode
+  - first:
+      1: 100110
+    second: FireGolem(Body)
+  - first:
+      1: 100112
+    second: FireGolem(Group)
+  - first:
+      1: 100114
+    second: FireGolem(Head)
+  - first:
+      1: 100116
+    second: FireGolem(ShoulderStraps)
+  - first:
+      4: 400000
+    second: (Rig)FireGolem
+  - first:
+      4: 400002
+    second: CATRigChest
+  - first:
+      4: 400004
+    second: CATRigHand(L)Arm
+  - first:
+      4: 400006
+    second: CATRigHand(L)Digit11
+  - first:
+      4: 400008
+    second: CATRigHand(L)Digit12
+  - first:
+      4: 400010
+    second: CATRigHand(L)Digit13
+  - first:
+      4: 400012
+    second: CATRigHand(L)Digit21
+  - first:
+      4: 400014
+    second: CATRigHand(L)Digit22
+  - first:
+      4: 400016
+    second: CATRigHand(L)Digit23
+  - first:
+      4: 400018
+    second: CATRigHand(L)Digit31
+  - first:
+      4: 400020
+    second: CATRigHand(L)Digit32
+  - first:
+      4: 400022
+    second: CATRigHand(L)Digit33
+  - first:
+      4: 400024
+    second: CATRigHand(L)Digit41
+  - first:
+      4: 400026
+    second: CATRigHand(L)Digit42
+  - first:
+      4: 400028
+    second: CATRigHand(L)Digit43
+  - first:
+      4: 400030
+    second: CATRigHand(L)Digit51
+  - first:
+      4: 400032
+    second: CATRigHand(L)Digit52
+  - first:
+      4: 400034
+    second: CATRigHand(L)Digit53
+  - first:
+      4: 400036
+    second: CATRigHand(L)Forearm
+  - first:
+      4: 400038
+    second: CATRigHand(L)Palm
+  - first:
+      4: 400040
+    second: CATRigHand(R)Arm
+  - first:
+      4: 400042
+    second: CATRigHand(R)Digit11
+  - first:
+      4: 400044
+    second: CATRigHand(R)Digit12
+  - first:
+      4: 400046
+    second: CATRigHand(R)Digit13
+  - first:
+      4: 400048
+    second: CATRigHand(R)Digit21
+  - first:
+      4: 400050
+    second: CATRigHand(R)Digit22
+  - first:
+      4: 400052
+    second: CATRigHand(R)Digit23
+  - first:
+      4: 400054
+    second: CATRigHand(R)Digit31
+  - first:
+      4: 400056
+    second: CATRigHand(R)Digit32
+  - first:
+      4: 400058
+    second: CATRigHand(R)Digit33
+  - first:
+      4: 400060
+    second: CATRigHand(R)Digit41
+  - first:
+      4: 400062
+    second: CATRigHand(R)Digit42
+  - first:
+      4: 400064
+    second: CATRigHand(R)Digit43
+  - first:
+      4: 400066
+    second: CATRigHand(R)Digit51
+  - first:
+      4: 400068
+    second: CATRigHand(R)Digit52
+  - first:
+      4: 400070
+    second: CATRigHand(R)Digit53
+  - first:
+      4: 400072
+    second: CATRigHand(R)Forearm
+  - first:
+      4: 400074
+    second: CATRigHand(R)Palm
+  - first:
+      4: 400076
+    second: CATRigHead
+  - first:
+      4: 400078
+    second: CATRigHub
+  - first:
+      4: 400080
+    second: CATRigJaw
+  - first:
+      4: 400082
+    second: CATRigLeg(L)Foot
+  - first:
+      4: 400084
+    second: CATRigLeg(L)Hip
+  - first:
+      4: 400086
+    second: CATRigLeg(L)Platform
+  - first:
+      4: 400088
+    second: CATRigLeg(L)Shin
+  - first:
+      4: 400090
+    second: CATRigLeg(L)Toe1
+  - first:
+      4: 400092
+    second: CATRigLeg(R)Foot
+  - first:
+      4: 400094
+    second: CATRigLeg(R)Hip
+  - first:
+      4: 400096
+    second: CATRigLeg(R)Platform
+  - first:
+      4: 400098
+    second: CATRigLeg(R)Shin
+  - first:
+      4: 400100
+    second: CATRigLeg(R)Toe1
+  - first:
+      4: 400102
+    second: CATRigScapular(L)
+  - first:
+      4: 400104
+    second: CATRigScapular(R)
+  - first:
+      4: 400106
+    second: CATRigSpine
+  - first:
+      4: 400108
+    second: //RootNode
+  - first:
+      4: 400110
+    second: FireGolem(Body)
+  - first:
+      4: 400112
+    second: FireGolem(Group)
+  - first:
+      4: 400114
+    second: FireGolem(Head)
+  - first:
+      4: 400116
+    second: FireGolem(ShoulderStraps)
+  - first:
+      43: 4300000
+    second: FireGolem(ShoulderStraps)
+  - first:
+      43: 4300002
+    second: FireGolem(Head)
+  - first:
+      43: 4300004
+    second: FireGolem(Body)
+  - first:
+      74: 7400000
+    second: Idle1
+  - first:
+      74: 7400002
+    second: Idle2
+  - first:
+      74: 7400004
+    second: Idle3
+  - first:
+      74: 7400006
+    second: Walk
+  - first:
+      74: 7400008
+    second: Attack1
+  - first:
+      74: 7400010
+    second: Attack2
+  - first:
+      74: 7400012
+    second: Attack3
+  - first:
+      74: 7400014
+    second: Jump
+  - first:
+      74: 7400016
+    second: GetHit1
+  - first:
+      74: 7400018
+    second: GetHit2
+  - first:
+      74: 7400020
+    second: Death1
+  - first:
+      74: 7400022
+    second: Death2
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: FireGolem(Body)
+  - first:
+      137: 13700002
+    second: FireGolem(Head)
+  - first:
+      137: 13700004
+    second: FireGolem(ShoulderStraps)
+  externalObjects: {}
+  materials:
+    materialImportMode: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 81
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Idle2
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 82
+      lastFrame: 173
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Idle3
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 174
+      lastFrame: 333
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 334
+      lastFrame: 393
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Attack1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 394
+      lastFrame: 456
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Attack2
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 457
+      lastFrame: 512
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.6048887
+        functionName: EmeraldAttackEvent
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Attack3
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 513
+      lastFrame: 559
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.54081684
+        functionName: EmeraldAttackEvent
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Jump
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 560
+      lastFrame: 613
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: GetHit1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 614
+      lastFrame: 645
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: GetHit2
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 646
+      lastFrame: 665
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Death1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 666
+      lastFrame: 710
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Death2
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 712
+      lastFrame: 795
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: (Rig)FireGolem
+        weight: 1
+      - path: CATRigHub
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(L)Hip/CATRigLeg(L)Shin/CATRigLeg(L)Foot/CATRigLeg(L)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot
+        weight: 1
+      - path: CATRigHub/CATRigLeg(R)Hip/CATRigLeg(R)Shin/CATRigLeg(R)Foot/CATRigLeg(R)Toe1
+        weight: 1
+      - path: CATRigHub/CATRigSpine
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit11/CATRigHand(L)Digit12/CATRigHand(L)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit21/CATRigHand(L)Digit22/CATRigHand(L)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit31/CATRigHand(L)Digit32/CATRigHand(L)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit41/CATRigHand(L)Digit42/CATRigHand(L)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(L)Arm/CATRigHand(L)Forearm/CATRigHand(L)Palm/CATRigHand(L)Digit51/CATRigHand(L)Digit52/CATRigHand(L)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit11/CATRigHand(R)Digit12/CATRigHand(R)Digit13
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit21/CATRigHand(R)Digit22/CATRigHand(R)Digit23
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit31/CATRigHand(R)Digit32/CATRigHand(R)Digit33
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit41/CATRigHand(R)Digit42/CATRigHand(R)Digit43
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHand(R)Arm/CATRigHand(R)Forearm/CATRigHand(R)Palm/CATRigHand(R)Digit51/CATRigHand(R)Digit52/CATRigHand(R)Digit53
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigHead/CATRigJaw
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(L)
+        weight: 1
+      - path: CATRigHub/CATRigSpine/CATRigChest/CATRigScapular(R)
+        weight: 1
+      - path: CATRigLeg(L)Platform
+        weight: 1
+      - path: CATRigLeg(R)Platform
+        weight: 1
+      - path: FireGolem(Group)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Body)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(Head)
+        weight: 1
+      - path: FireGolem(Group)/FireGolem(ShoulderStraps)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

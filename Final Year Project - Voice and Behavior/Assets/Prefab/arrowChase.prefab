@@ -5042,6 +5042,7 @@ MonoBehaviour:
   enemyTag: Enemy
   detectionRadius: 100
   rotateSpeed: 600
+  damageOutput: 3
 --- !u!114 &-2646865212881039861
 MonoBehaviour:
   m_ObjectHideFlags: 0
