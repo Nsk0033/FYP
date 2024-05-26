@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4861968526108906}
   - component: {fileID: 198969772342349716}
   - component: {fileID: 199856763519279462}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4911,7 +4911,7 @@ GameObject:
   - component: {fileID: 4481321232395878}
   - component: {fileID: 198635152515146452}
   - component: {fileID: 199241444052214480}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Slash3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9820,7 +9820,7 @@ GameObject:
   - component: {fileID: 4302141733201854}
   - component: {fileID: 198301942629917976}
   - component: {fileID: 199412559717471884}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14721,7 +14721,11 @@ GameObject:
   - component: {fileID: 198412930389571108}
   - component: {fileID: 199199916559843444}
   - component: {fileID: -9087792157815756832}
-  m_Layer: 0
+  - component: {fileID: 7586632367567290779}
+  - component: {fileID: 5116409775644161326}
+  - component: {fileID: 6088221829359945387}
+  - component: {fileID: 3621085281364759196}
+  m_Layer: 2
   m_Name: Sword Slash 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19638,6 +19642,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DestroytTime: 1
+--- !u!136 &7586632367567290779
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294101409476956}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.71
+  m_Height: 7.1000013
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5116409775644161326
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294101409476956}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6088221829359945387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294101409476956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd36453e29f1054d9e12ef88cbf954f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageOutput: 10
+  startDelay: 0.1
+--- !u!114 &3621085281364759196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294101409476956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f589a18514ce49e47bdb3b61a58598b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1434594377845796
 GameObject:
   m_ObjectHideFlags: 0
@@ -19649,7 +19729,7 @@ GameObject:
   - component: {fileID: 4527685384075126}
   - component: {fileID: 198299975299356144}
   - component: {fileID: 199124247015232060}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24549,7 +24629,7 @@ GameObject:
   - component: {fileID: 4754707121539138}
   - component: {fileID: 198644324382158152}
   - component: {fileID: 199768888586237728}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Slash2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29458,7 +29538,7 @@ GameObject:
   - component: {fileID: 4548917598015312}
   - component: {fileID: 198791976157976270}
   - component: {fileID: 199035993084664616}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SparksCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34367,7 +34447,7 @@ GameObject:
   - component: {fileID: 4307288376031944}
   - component: {fileID: 198734256323243912}
   - component: {fileID: 199908255353552880}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39269,7 +39349,7 @@ GameObject:
   - component: {fileID: 4965939653273396}
   - component: {fileID: 198251700619577604}
   - component: {fileID: 199234412051452190}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

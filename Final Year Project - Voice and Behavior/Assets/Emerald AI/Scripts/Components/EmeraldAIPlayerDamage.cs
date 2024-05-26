@@ -14,39 +14,55 @@ namespace EmeraldAI
         public List<string> ActiveEffects = new List<string>();
         public bool IsDead = false;
 
-        public void SendPlayerDamage(int DamageAmount, Transform Target, EmeraldAISystem EmeraldComponent, bool CriticalHit = false)
+        private void Awake()
         {
-            //The standard damage function that sends damage to the Emerald AI demo player
-            DamagePlayerStandard(DamageAmount);
-
-            //Creates damage text on the player's position, if enabled.
-            CombatTextSystem.Instance.CreateCombatText(DamageAmount, transform.position, CriticalHit, false, true);
-
-            //Sends damage to another function that will then send the damage to the RFPS player.
-            //If you are using RFPS, you can uncomment this to allow Emerald Agents to damage your RFPS player.
-            //DamageRFPS(DamageAmount, Target);
-
-            //Sends damage to another function that will then send the damage to the RFPS player.
-            //If you are using RFPS, you can uncomment this to allow Emerald Agents to damage your RFPS player.
-            //DamageInvectorPlayer(DamageAmount, Target);
-
-            //Damage UFPS Player
-            //DamageUFPSPlayer(DamageAmount);
+            if (PlayerHealth.instance == null)
+            {
+                Debug.LogError("PlayerHealth singleton instance is not found!");
+            }
         }
 
-        void DamagePlayerStandard(int DamageAmount)
+        public void SendPlayerDamage(int DamageAmount, Transform Target, EmeraldAISystem EmeraldComponent, bool CriticalHit = false)
+        {
+            Debug.Log("Player Get Attacked");
+            // The standard damage function that sends damage to the Emerald AI demo player
+            DamagePlayerCustom(DamageAmount);
+
+            // Creates damage text on the player's position, if enabled.
+            CombatTextSystem.Instance.CreateCombatText(DamageAmount, transform.position, CriticalHit, false, true);
+        }
+
+        void DamagePlayerCustom(int DamageAmount)
+        {
+            Debug.Log("Player Damage Checking");
+            if (PlayerHealth.instance != null)
+            {
+                PlayerHealth.instance.DamagePlayer(DamageAmount);
+                Debug.Log("Player Damage Successfully");
+                if (PlayerHealth.instance.CurrentHealth <= 0)
+                {
+                    IsDead = true;
+                }
+            }
+            else
+            {
+                Debug.LogError("PlayerHealth singleton instance is null in DamagePlayerCustom.");
+            }
+        }
+		
+        /*void DamagePlayerStandard(int DamageAmount)
         {
             if (GetComponent<EmeraldAIPlayerHealth>() != null)
             {
                 EmeraldAIPlayerHealth PlayerHealth = GetComponent<EmeraldAIPlayerHealth>();
                 PlayerHealth.DamagePlayer(DamageAmount);
-
+				Debug.Log("Player Damage Successfully");
                 if (PlayerHealth.CurrentHealth <= 0)
                 {
                     IsDead = true;
                 }
             }
-        }
+        }*/
 
         /*
         void DamageRFPS(int DamageAmount, Transform Target)

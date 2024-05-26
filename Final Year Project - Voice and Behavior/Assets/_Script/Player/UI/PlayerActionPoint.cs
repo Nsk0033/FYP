@@ -17,23 +17,38 @@ public class PlayerActionPoint : MonoBehaviour
 	[SerializeField] private GameObject actionPointFill4;
 	//private UIProgressBar uIProgressBar
 	private float APPercentage = 0f;
+	[SerializeField] private float increaseAmount = 2f;
+    [SerializeField] private float increaseInterval = 1f;
+	[SerializeField] private float smoothSpeed = 8f;
 	
-	private void Awake()
+	/*private void Awake()
 	{
 		//uIProgressBar = healthBar.GetComponent<UIProgressBar>();
-	}
+	}*/
+	
+	private void OnEnable()
+    {
+        GameEventsManager.instance.playerEvents.OnDealDamage.AddListener(OnDamageDealt);
+    }
+
+    private void OnDisable()
+    {
+        GameEventsManager.instance.playerEvents.OnDealDamage.RemoveListener(OnDamageDealt);
+    }
 	
 	private void Start()
 	{
 		currentActionPointValue = 0f;
 		currentActionPointAvailable = 0;
 		actionPointProgressBar.fillAmount = APPercentage;
+		StartCoroutine(IncreaseLimitOverTime());
 	}
 	
 	void Update()
     {
 		APPercentage = (float)currentActionPointValue / maxActionPoint;
-		actionPointProgressBar.fillAmount = APPercentage;
+		actionPointProgressBar.fillAmount = Mathf.Lerp(actionPointProgressBar.fillAmount, APPercentage, smoothSpeed * Time.deltaTime);
+		//actionPointProgressBar.fillAmount = APPercentage;
 		switch(currentActionPointAvailable)
 		{
 			case 0:
@@ -105,5 +120,31 @@ public class PlayerActionPoint : MonoBehaviour
 			if(currentActionPointAvailable > 0)
 				currentActionPointAvailable--;
         }
+    }
+	
+	private IEnumerator IncreaseLimitOverTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(increaseInterval);
+            if (currentActionPointValue < maxActionPoint)
+            {
+                currentActionPointValue += increaseAmount;
+                if (currentActionPointValue > maxActionPoint)
+                {
+                    currentActionPointValue = maxActionPoint;
+                }
+            }
+        }
+    }
+	
+	public void GainAP(float APamount)
+	{
+		currentActionPointValue += APamount;
+	}
+	
+	private void OnDamageDealt(int damage)
+    {
+        GainAP(damage);
     }
 }

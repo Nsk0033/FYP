@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4469994422025046}
   - component: {fileID: 198165105425669678}
   - component: {fileID: 199239646620517860}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4911,7 +4911,7 @@ GameObject:
   - component: {fileID: 4287004284564946}
   - component: {fileID: 198489486434339058}
   - component: {fileID: 199789323922370422}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SparksCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9820,7 +9820,7 @@ GameObject:
   - component: {fileID: 4845965574186680}
   - component: {fileID: 198768815373784420}
   - component: {fileID: 199917120094122728}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FlashCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14721,7 +14721,11 @@ GameObject:
   - component: {fileID: 198415561904038508}
   - component: {fileID: 199138944585522690}
   - component: {fileID: 1473745737829119094}
-  m_Layer: 0
+  - component: {fileID: 4181877515368418974}
+  - component: {fileID: 6621313563022666132}
+  - component: {fileID: 8365121486578885002}
+  - component: {fileID: -8591611630551947249}
+  m_Layer: 2
   m_Name: Prick 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19633,6 +19637,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DestroytTime: 1
+--- !u!65 &4181877515368418974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200950891393156}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2415934, y: 1.9770222, z: 3.58526}
+  m_Center: {x: -0.02055502, y: 0.0027962923, z: 1.8737819}
+--- !u!114 &6621313563022666132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200950891393156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd36453e29f1054d9e12ef88cbf954f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageOutput: 15
+  startDelay: 0.1
+--- !u!54 &8365121486578885002
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200950891393156}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-8591611630551947249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200950891393156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f589a18514ce49e47bdb3b61a58598b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1204394302079532
 GameObject:
   m_ObjectHideFlags: 0
@@ -19644,7 +19722,7 @@ GameObject:
   - component: {fileID: 4286262823539894}
   - component: {fileID: 198102203276638366}
   - component: {fileID: 199497418704357964}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24544,7 +24622,7 @@ GameObject:
   - component: {fileID: 4475523087162332}
   - component: {fileID: 198395283677293382}
   - component: {fileID: 199230133237166978}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Distortion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29444,7 +29522,7 @@ GameObject:
   - component: {fileID: 4497310502600238}
   - component: {fileID: 198635142879510246}
   - component: {fileID: 199422811696316384}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34344,7 +34422,7 @@ GameObject:
   - component: {fileID: 4843251478108288}
   - component: {fileID: 198648049397903998}
   - component: {fileID: 199662188751265576}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Derbis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39244,7 +39322,7 @@ GameObject:
   - component: {fileID: 4214875929170588}
   - component: {fileID: 198638595904614210}
   - component: {fileID: 199716367622569562}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44144,7 +44222,7 @@ GameObject:
   - component: {fileID: 4487378025746732}
   - component: {fileID: 198678165673299700}
   - component: {fileID: 199858255717151548}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LightCone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49044,7 +49122,7 @@ GameObject:
   - component: {fileID: 4525121996174254}
   - component: {fileID: 198146384838431056}
   - component: {fileID: 199794037713651616}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StartSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53944,7 +54022,7 @@ GameObject:
   - component: {fileID: 4721239589928220}
   - component: {fileID: 198323071718403226}
   - component: {fileID: 199515511434320384}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58842,7 +58920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5844918731147414671}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: all
   m_TagString: Untagged
   m_Icon: {fileID: 0}

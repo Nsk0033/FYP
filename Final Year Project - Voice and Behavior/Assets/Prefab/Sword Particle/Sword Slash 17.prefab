@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4389742091259368}
   - component: {fileID: 198831792167256694}
   - component: {fileID: 199020583563351180}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CutBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4920,7 +4920,7 @@ GameObject:
   - component: {fileID: 4131829888554990}
   - component: {fileID: 198964734264145214}
   - component: {fileID: 199174977819639902}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9829,7 +9829,7 @@ GameObject:
   - component: {fileID: 4087077556218022}
   - component: {fileID: 198250580301851418}
   - component: {fileID: 199793313779659914}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Darkness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14729,7 +14729,7 @@ GameObject:
   - component: {fileID: 4398099066853928}
   - component: {fileID: 198685421738501784}
   - component: {fileID: 199964675988049368}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FlashCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19629,7 +19629,7 @@ GameObject:
   - component: {fileID: 4537608548044710}
   - component: {fileID: 198704595405116432}
   - component: {fileID: 199915731879416512}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24565,7 +24565,7 @@ GameObject:
   - component: {fileID: 4074490936251646}
   - component: {fileID: 198859082303705948}
   - component: {fileID: 199793268803931644}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Slashes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29490,7 +29490,7 @@ GameObject:
   - component: {fileID: 4836907570238414}
   - component: {fileID: 198307874024543272}
   - component: {fileID: 199002375867114328}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cut2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34399,7 +34399,7 @@ GameObject:
   - component: {fileID: 4931908709890556}
   - component: {fileID: 198333587595740362}
   - component: {fileID: 199226879316449094}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39358,7 +39358,10 @@ GameObject:
   - component: {fileID: 198184844789956234}
   - component: {fileID: 199365736112797114}
   - component: {fileID: 7090463826383230616}
-  m_Layer: 0
+  - component: {fileID: 4926534412602151126}
+  - component: {fileID: 7018070789669548741}
+  - component: {fileID: 4062317622582312314}
+  m_Layer: 2
   m_Name: Sword Slash 17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44280,6 +44283,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DestroytTime: 1.5
+--- !u!136 &4926534412602151126
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602379607235420}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 8.15
+  m_Height: 4.9700007
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &7018070789669548741
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602379607235420}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4062317622582312314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602379607235420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f57f52e878c074e8266d291bdb6fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageOutput: 2
+  detectionInterval: 0.05
+  detectionDuration: 0.6
+  startDelay: 0.25
 --- !u!1 &1786439614695670
 GameObject:
   m_ObjectHideFlags: 0
@@ -44291,7 +44360,7 @@ GameObject:
   - component: {fileID: 4230353684747656}
   - component: {fileID: 198232405094769828}
   - component: {fileID: 199000151716917464}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Distortion(Delete for Mobile)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49191,7 +49260,7 @@ GameObject:
   - component: {fileID: 4744737669832472}
   - component: {fileID: 198635464977050142}
   - component: {fileID: 199035165949910352}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54100,7 +54169,7 @@ GameObject:
   - component: {fileID: 4939232884833938}
   - component: {fileID: 198170915881107434}
   - component: {fileID: 199023711799372282}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59010,7 +59079,7 @@ GameObject:
   - component: {fileID: 4374993893091264}
   - component: {fileID: 198400707267942806}
   - component: {fileID: 199624750599870706}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CutBlack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63919,7 +63988,7 @@ GameObject:
   - component: {fileID: 4783279172592098}
   - component: {fileID: 198012553335733706}
   - component: {fileID: 199008594041623314}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

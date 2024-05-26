@@ -12,12 +12,22 @@ public class SwordDamage : MonoBehaviour
 	[SerializeField] private Transform MainCharacter;
 	[SerializeField] private int damageOutput;
 	
+	//private PlayerActionPoint playerActionPoint;
+	//private PlayerLimit playerLimit;
+	
 	private PlayerAnimationEventTrigger playerAnimationEventTrigger;
 	
 	private void Start()
 	{
 		playerAnimationEventTrigger = MainCharacter.GetComponent<PlayerAnimationEventTrigger>();
+		//playerActionPoint = MainCharacter.GetComponent<PlayerActionPoint>();
+		//playerLimit = MainCharacter.GetComponent<PlayerLimit>();
 	}
+	
+	public void DealDamage()
+    {
+        GameEventsManager.instance.playerEvents.OnDealDamage.Invoke(damageOutput);
+    }
 	
     private void OnTriggerEnter(Collider collider)
 	{
@@ -29,6 +39,9 @@ public class SwordDamage : MonoBehaviour
 		if (collider.GetComponent<EmeraldAI.EmeraldAISystem>() != null)
 		{
 		   collider.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(damageOutput, EmeraldAI.EmeraldAISystem.TargetType.Player, MainCharacter, 400);
+		   DealDamage();
+		   //playerActionPoint.GainAP((float)damageOutput);
+		   //playerLimit.GainLimit(damageOutput);
 		}
 
 		IDamageable damageable = collider.GetComponent<IDamageable>();

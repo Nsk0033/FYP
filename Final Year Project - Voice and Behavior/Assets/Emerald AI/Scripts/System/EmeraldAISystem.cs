@@ -2135,6 +2135,7 @@ namespace EmeraldAI
                             if (PlayerDamageComponent != null)
                             {
                                 PlayerDamageComponent.SendPlayerDamage(CurrentDamageAmount, this.transform, GetComponent<EmeraldAISystem>(), CriticalHit);
+								Debug.Log($"{gameObject.name} attacked!");
                             }
 
                             if (CriticalHit)

@@ -119,12 +119,12 @@ public class Bow : MonoBehaviour
 			
 			if(!canMeleeAttack)
 			{
-
+				thirdPersonController.SetRotateOnMove(false);
 				Vector3 worldAimTarget = mouseWorldPosition;
 				worldAimTarget.y = mainCharacter.transform.position.y;
 				Vector3 aimDirection = (worldAimTarget - mainCharacter.transform.position).normalized;
 				
-				mainCharacter.transform.forward = Vector3.Lerp(mainCharacter.transform.forward, aimDirection, Time.deltaTime * 20f);
+				mainCharacter.transform.forward = Vector3.Lerp(mainCharacter.transform.forward, aimDirection, Time.deltaTime * 60f);
 			}
 		}
 	

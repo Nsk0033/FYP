@@ -1,7 +1,10 @@
 using System;
+using UnityEngine.Events;
 
 public class PlayerEvents
 {
+	public UnityEvent<int> OnDealDamage = new UnityEvent<int>();
+	
     public event Action onDisablePlayerMovement;
     public void DisablePlayerMovement()
     {

@@ -11,18 +11,33 @@ public class PlayerLimit : MonoBehaviour
 	[SerializeField] private DuloGames.UI.UIProgressBar limitProgressBar;
 	//private UIProgressBar uIProgressBar
 	private float LimitPercentage = 0f;
+	[SerializeField] private int increaseAmount = 1;
+    [SerializeField] private float increaseInterval = 1f;
+	[SerializeField] private float smoothSpeed = 8f;
 	
 	private void Start()
 	{
 		currentLimit = 0;
-		
 		limitProgressBar.fillAmount = LimitPercentage;
+		StartCoroutine(IncreaseLimitOverTime());
+		
 	}
+	
+	private void OnEnable()
+    {
+        GameEventsManager.instance.playerEvents.OnDealDamage.AddListener(OnDamageDealt);
+    }
+
+    private void OnDisable()
+    {
+        GameEventsManager.instance.playerEvents.OnDealDamage.RemoveListener(OnDamageDealt);
+    }
 	
 	void Update()
     {
 		LimitPercentage = (float)currentLimit / maxLimit;
-		limitProgressBar.fillAmount = LimitPercentage;
+		limitProgressBar.fillAmount = Mathf.Lerp(limitProgressBar.fillAmount, LimitPercentage, smoothSpeed * Time.deltaTime);
+		//limitProgressBar.fillAmount = LimitPercentage;
         // Example: increase the fill amount by 0.01 per frame
         if (Input.GetKey(KeyCode.UpArrow))
         {
@@ -45,5 +60,35 @@ public class PlayerLimit : MonoBehaviour
 			if(currentLimit == maxLimit)
 				currentLimit = 0;
 		}
+		if(currentLimit >= maxLimit)
+		{
+			currentLimit = maxLimit;
+		}
+    }
+	
+	private IEnumerator IncreaseLimitOverTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(increaseInterval);
+            if (currentLimit < maxLimit)
+            {
+                currentLimit += increaseAmount;
+                if (currentLimit > maxLimit)
+                {
+                    currentLimit = maxLimit;
+                }
+            }
+        }
+    }
+	
+	public void GainLimit(int LimitAmount)
+	{
+		currentLimit += LimitAmount;
+	}
+	
+	private void OnDamageDealt(int damage)
+    {
+        GainLimit(damage);
     }
 }
