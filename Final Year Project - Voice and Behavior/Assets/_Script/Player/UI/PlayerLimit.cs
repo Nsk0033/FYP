@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerLimit : MonoBehaviour
 {
     [Header("Health")]
-    [SerializeField] private int maxLimit = 300;
-    [SerializeField] private int currentLimit;
+    public int maxLimit = 300;
+    public int currentLimit;
     //[SerializeField] private gameObject healthBar;
 	[SerializeField] private DuloGames.UI.UIProgressBar limitProgressBar;
 	//private UIProgressBar uIProgressBar
@@ -57,8 +57,8 @@ public class PlayerLimit : MonoBehaviour
         }
 		if(Input.GetKey(KeyCode.I))
 		{
-			if(currentLimit == maxLimit)
-				currentLimit = 0;
+			if(currentLimit != maxLimit)
+				currentLimit = maxLimit;
 		}
 		if(currentLimit >= maxLimit)
 		{

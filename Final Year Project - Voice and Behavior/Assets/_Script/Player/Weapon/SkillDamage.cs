@@ -7,6 +7,7 @@ public class SkillDamage : MonoBehaviour
 {
     [SerializeField] private int damageOutput = 10;
 	[SerializeField] private float startDelay = 0.5f; // Delay before starting detection
+	[SerializeField] private bool canGainApAndLimit = true;
 	
     private bool isDetecting = false;
     private Collider skillCollider;
@@ -32,7 +33,8 @@ public class SkillDamage : MonoBehaviour
         if (emeraldAI != null)
         {
             emeraldAI.Damage(damageOutput, EmeraldAI.EmeraldAISystem.TargetType.Player, transform, 400);
-            DealDamage();
+            if(canGainApAndLimit)
+				DealDamage();
         }
     }
 

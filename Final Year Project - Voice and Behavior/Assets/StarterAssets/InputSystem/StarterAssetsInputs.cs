@@ -18,6 +18,12 @@ namespace StarterAssets
 		public bool chargedAttack;
 		public bool dodge;
 		public bool questLogToggle;
+		public bool skillQ;
+		public bool skillE;
+		public bool skill1;
+		public bool skill2;
+		public bool skill3;
+		
 		
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -97,6 +103,30 @@ namespace StarterAssets
 			questLogToggleInput(value.isPressed);
 		}
 		
+		public void OnSkillQ(InputValue value)
+		{
+			SkillQInput(value.isPressed);
+		}
+		
+		public void OnSkillE(InputValue value)
+		{
+			SkillEInput(value.isPressed);
+		}
+		
+		public void OnSkill1(InputValue value)
+		{
+			Skill1Input(value.isPressed);
+		}
+		
+		public void OnSkill2(InputValue value)
+		{
+			Skill2Input(value.isPressed);
+		}
+		
+		public void OnSkill3(InputValue value)
+		{
+			Skill3Input(value.isPressed);
+		}
 		
 #endif
 
@@ -174,7 +204,40 @@ namespace StarterAssets
 			Debug.Log("questLogToggle: " + newQuestLogToggleState);
 		}
 		
+		public void SkillEInput(bool newSkillEState)
+		{
+			skillE = newSkillEState;
+			
+			Debug.Log("SkillE: " + skillE);
+		}
 		
+		public void SkillQInput(bool newSkillQState)
+		{
+			skillQ = newSkillQState;
+			
+			Debug.Log("SkillQ: " + skillQ);
+		}
+		
+		public void Skill1Input(bool newSkill1State)
+		{
+			skill1 = newSkill1State;
+			
+			Debug.Log("Skill1: " + skill1);
+		}
+		
+		public void Skill2Input(bool newSkill2State)
+		{
+			skill2 = newSkill2State;
+			
+			Debug.Log("Skill2: " + skill2);
+		}
+		
+		public void Skill3Input(bool newSkill3State)
+		{
+			skill3 = newSkill3State;
+			
+			Debug.Log("Skill3: " + skill3);
+		}
 		
 		private void LeftClickAttackTimer()
 		{

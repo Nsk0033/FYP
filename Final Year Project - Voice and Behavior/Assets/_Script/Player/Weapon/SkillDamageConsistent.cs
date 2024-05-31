@@ -9,7 +9,8 @@ public class SkillDamageConsistent : MonoBehaviour
 	[SerializeField] private float detectionInterval = 0.1f; // Time between detections
     [SerializeField] private float detectionDuration = 1f; // Total duration of detection
     [SerializeField] private float startDelay = 0.5f; // Delay before starting detection
-
+    [SerializeField] private bool canGainApAndLimit = true;
+	
     private Collider skillCollider;
 
     private void Start()
@@ -25,7 +26,8 @@ public class SkillDamageConsistent : MonoBehaviour
         {
             Debug.Log("Object hit with skill!");
             other.GetComponent<EmeraldAISystem>().Damage(damageOutput, EmeraldAISystem.TargetType.Player, transform, 400);
-            DealDamage();
+            if(canGainApAndLimit)
+				DealDamage();
         }
     }
 

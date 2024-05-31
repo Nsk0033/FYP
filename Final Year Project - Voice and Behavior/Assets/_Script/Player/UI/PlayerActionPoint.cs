@@ -8,7 +8,7 @@ public class PlayerActionPoint : MonoBehaviour
     [SerializeField] private float maxActionPoint = 100f;
 	[Range(0f, 100.1f)]
     [SerializeField] private float currentActionPointValue;
-    [SerializeField] private int currentActionPointAvailable;
+    public int currentActionPointAvailable;
     //[SerializeField] private gameObject healthBar;
 	[SerializeField] private DuloGames.UI.UIProgressBar actionPointProgressBar;
 	[SerializeField] private GameObject actionPointFill1;
@@ -137,6 +137,7 @@ public class PlayerActionPoint : MonoBehaviour
             }
         }
     }
+	
 	
 	public void GainAP(float APamount)
 	{

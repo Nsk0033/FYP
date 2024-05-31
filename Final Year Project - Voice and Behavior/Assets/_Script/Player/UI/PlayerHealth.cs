@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public int CurrentHealth;
     [SerializeField] private DuloGames.UI.UIProgressBar healthProgressBar;
     private float HPPercentage = 0f;
+	public bool canDamage = true;
 
     public static PlayerHealth instance { get; private set; }
 
@@ -57,7 +58,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(int damageInput)
     {
-        CurrentHealth -= damageInput;
-        Debug.Log("Ooof");
+		if(canDamage)
+		{
+			CurrentHealth -= damageInput;
+			Debug.Log("Ooof");
+		}    
     }
 }

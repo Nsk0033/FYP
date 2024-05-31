@@ -41,12 +41,15 @@ public class Sword : MonoBehaviour
 	private ThirdPersonController thirdPersonController;
 	private StarterAssetsInputs starterAssetsInputs;
 	private Animator animator;
+	private PlayerActionPoint playerActionPoint;
+	private PlayerLimit playerLimit;
 	private new BoxCollider collider;
 	private float aimRigWeight;
 	private float meleeLastUsedTime;
 	private float rangeLastUsedTime;
 	private float chargedLastUsedTime;
 	private bool isIdlePlaying;
+	private bool isUltiPlaying;
 	
 	private void Awake()
 	{
@@ -54,6 +57,8 @@ public class Sword : MonoBehaviour
 		starterAssetsInputs = mainCharacter.GetComponent<StarterAssetsInputs>();
 		animator = mainCharacter.GetComponent<Animator>();
 		collider = GetComponent<BoxCollider>();
+		playerActionPoint = mainCharacter.GetComponent<PlayerActionPoint>();
+		playerLimit = mainCharacter.GetComponent<PlayerLimit>();
 	}
 	
     // Start is called before the first frame update
@@ -63,9 +68,6 @@ public class Sword : MonoBehaviour
 		rangeLastUsedTime = -RangeAttackCD;
 		chargedLastUsedTime = -ChargedAttackCD;
 		crosshairCanva.SetActive(false);
-		//swordGameObject.SetActive(false);
-		//animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
-		//animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0.8f, Time.deltaTime * 10f));
     }
 	
 	
@@ -80,6 +82,8 @@ public class Sword : MonoBehaviour
 		canMeleeAttack = Time.time - meleeLastUsedTime > MeleeAttackCD; //melee attack cooldown check
 		canRangeAttack = Time.time - rangeLastUsedTime > RangeAttackCD; //ranged attack cooldown check
 		canChargedAttack = Time.time - chargedLastUsedTime > ChargedAttackCD; //charged attack cooldown check
+		
+		isUltiPlaying = animator.GetCurrentAnimatorStateInfo(2).IsName("Ultimate");
 		
 		isIdlePlaying = animator.GetCurrentAnimatorStateInfo(2).IsName("Empty");
 		if (isIdlePlaying)
@@ -126,9 +130,12 @@ public class Sword : MonoBehaviour
 			crosshairCanva.SetActive(false);
 			aimVirtualCamera.gameObject.SetActive(false);
 			thirdPersonController.SetSensitivity(normalSensitivity);
-			thirdPersonController.SetRotateOnMove(true);
+			if(!isUltiPlaying)
+			{	
+				thirdPersonController.SetRotateOnMove(true);
+			}
 			
-			if(!canMeleeAttack)
+			if(!canMeleeAttack || isUltiPlaying)
 			{
 				//animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
 				//hasMeleeAttacked = false;
@@ -202,6 +209,38 @@ public class Sword : MonoBehaviour
 					// Reset the chargedAttack state
 					starterAssetsInputs.chargedAttack = false;
 				}
+			}
+		}
+		
+		if(starterAssetsInputs.skillE)
+		{
+			if(playerActionPoint.currentActionPointAvailable > 0)
+			{
+				animator.SetTrigger("SkillE");
+				starterAssetsInputs.skillE = false;
+			}
+			else
+			{
+				animator.ResetTrigger("SkillE");
+				starterAssetsInputs.skillE = false;
+				return;
+			}
+		}
+		
+		
+		
+		if(starterAssetsInputs.skillQ)
+		{
+			if(playerLimit.currentLimit == playerLimit.maxLimit)
+			{
+				animator.SetTrigger("SkillQ");
+				starterAssetsInputs.skillQ = false;
+			}
+			else
+			{
+				animator.ResetTrigger("SkillQ");
+				starterAssetsInputs.skillQ = false;
+				return;
 			}
 		}
 	}

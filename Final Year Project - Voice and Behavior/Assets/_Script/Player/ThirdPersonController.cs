@@ -450,12 +450,20 @@ namespace StarterAssets
 		}
 		
 		private void AutoMove()
-		{
-			
+		{		
 			if (isDodgePlaying)
 			{
 				_input.dodge = false;
 				_animator.ResetTrigger("Dodge");
+				if (PlayerHealth.instance != null)
+				{
+					PlayerHealth.instance.canDamage = false;
+					Debug.Log("Player cant be damage");
+				}
+				else
+				{
+					Debug.LogError("PlayerHealth singleton instance is null in DamagePlayerCustom.");
+				}
 			}
 			if (isDodgePlaying && _input.move == Vector2.zero)
 			{
@@ -465,6 +473,18 @@ namespace StarterAssets
 
 				// Move the player forward
 				_controller.Move(forwardDirection.normalized * (6.6f * Time.deltaTime));
+			}
+			if(!isDodgePlaying)
+			{
+				if (PlayerHealth.instance != null)
+				{
+					PlayerHealth.instance.canDamage = true;
+					Debug.Log("Player can be damage");
+				}
+				else
+				{
+					Debug.LogError("PlayerHealth singleton instance is null in DamagePlayerCustom.");
+				}
 			}
 		}
     }

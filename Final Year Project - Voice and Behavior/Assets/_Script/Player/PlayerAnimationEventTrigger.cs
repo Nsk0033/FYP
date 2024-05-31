@@ -9,6 +9,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[Header("Character Components")]
 	[SerializeField] private Camera mainCamera;
 	[SerializeField] private Transform mainCharacter;
+	[SerializeField] private GameObject ultiCinemachine;
 	
 	[Header("Character Value")]
 	[SerializeField] private float animatorHitStopSpeed = 0.3f;
@@ -18,6 +19,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private GameObject s_ChargedSlash1;
 	[SerializeField] private GameObject s_ChargedSlash2;
 	[SerializeField] private GameObject s_RangedSlash1;
+	[SerializeField] private GameObject s_LimitSlash;
 	
 	[Header("Character Bow Projectile")]
 	[SerializeField] private float arrowSpread = 3f;
@@ -25,6 +27,9 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private GameObject b_attackProjectile;
 	[SerializeField] private GameObject b_ChargedProjectile;
 	[SerializeField] private GameObject b_ImpactParticle;
+	
+	[Header("Character Axe Projectile")]
+	[SerializeField] private GameObject a_LimitSpin;
 	
 	[Header("Character Position")]
 	[SerializeField] private Transform shootPosition;
@@ -36,23 +41,31 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	private ThirdPersonShooterController thirdPersonShooterController;
 	private Animator animator;
 	private StarterAssetsInputs starterAssetsInputs;
-	//private ThirdPersonController thirdPersonController;
+	private PlayerActionPoint playerActionPoint;
+	private PlayerLimit playerLimit;
+	private ThirdPersonController thirdPersonController;
 	
 	private void Start()
 	{
 		thirdPersonShooterController = GetComponent<ThirdPersonShooterController>();
 		animator = mainCharacter.GetComponent<Animator>();
 		starterAssetsInputs = mainCharacter.GetComponent<StarterAssetsInputs>();
-		//thirdPersonController = GetComponent<ThirdPersonController>();
+		playerActionPoint = mainCharacter.GetComponent<PlayerActionPoint>();
+		playerLimit = mainCharacter.GetComponent<PlayerLimit>();
+		thirdPersonController = GetComponent<ThirdPersonController>();
+		if (PlayerHealth.instance == null)
+		{
+			Debug.LogError("PlayerHealth singleton instance is not found!");
+		}
 	}
 	
-	private void Update()
+	/*private void Update()
 	{
 		/*if (Input.GetKey(KeyCode.K))
 		{
 			AnimationHitStop();
-		}*/
-	}
+		}
+	}*/
 	
     private void Attack4SlashStart(AnimationEvent animationEvent)
 	{
@@ -270,5 +283,110 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	private void AnimationHitContinue()
 	{
 		animator.speed = 1f;
+	}
+	
+	private void UseAP(AnimationEvent animationEvent)
+	{
+		int pointsToDeduct = animationEvent.intParameter; // Get the integer parameter from the animation event
+		playerActionPoint.currentActionPointAvailable -= pointsToDeduct;
+		//Debug.Log(pointsToDeduct + " Action Points used. Remaining: " + playerActionPoint.currentActionPointAvailable);
+	}
+	
+	private void UseLimit(AnimationEvent animationEvent)
+	{
+		playerLimit.currentLimit = 0;
+	}
+	
+	private void UltiCamOn(AnimationEvent animationEvent)
+	{
+		ultiCinemachine.SetActive(true);
+		animator.speed = 0.7f;
+	}
+	
+	private void UltiCamOff(AnimationEvent animationEvent)
+	{
+		ultiCinemachine.SetActive(false);
+		animator.speed = 1f;
+	}
+	
+	private void CanDamageFalse(AnimationEvent animationEvent)
+	{
+		if (PlayerHealth.instance != null)
+		{
+			PlayerHealth.instance.canDamage = false;
+			Debug.Log("Player cant be damage");
+		}
+		else
+		{
+			Debug.LogError("PlayerHealth singleton instance is null in DamagePlayerCustom.");
+		}
+	}
+	
+	private void CanDamageTrue(AnimationEvent animationEvent)
+	{
+		if (PlayerHealth.instance != null)
+		{
+			PlayerHealth.instance.canDamage = true;
+			Debug.Log("Player can be damage");
+		}
+		else
+		{
+			Debug.LogError("PlayerHealth singleton instance is null in DamagePlayerCustom.");
+		}
+	}
+	
+	private void LimitAttackSlashStart(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 1)
+		{
+			// Ensure the main camera is assigned
+			if (mainCamera == null)
+			{
+				Debug.LogWarning("Main camera is not assigned.");
+				return;
+			}
+
+			// Perform a raycast from the camera to the mouse position
+			Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+
+			// Check if the ray hits something in the scene
+			if (Physics.Raycast(ray, out hit))
+			{
+				// Calculate the direction vector from the shootPosition to the hit point
+				Vector3 direction = hit.point - shootPosition_sword4.position;
+				direction.y = 0f; // Ensure the slash stays parallel to the ground
+
+				// Calculate the rotation based on the direction vector
+				Quaternion slashRotation = Quaternion.LookRotation(direction);
+
+				// Instantiate the attack4Slash GameObject with the calculated rotation
+				Instantiate(s_LimitSlash, shootPosition_sword4.position, slashRotation);
+			}
+		}
+        else
+			return;
+    }
+	
+	private void StopMovement(AnimationEvent animationEvent)
+	{
+		thirdPersonController.MoveTrigger(false);
+	}
+	
+	private void StartMovement(AnimationEvent animationEvent)
+	{
+		thirdPersonController.MoveTrigger(true);
+	}
+	
+	private void LimitAttackAxeStart(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 3)
+		{
+			GameObject ultiSpin = Instantiate(a_LimitSpin);
+			ultiSpin.transform.SetParent(mainCharacter);
+			ultiSpin.transform.localPosition = Vector3.zero;
+			ultiSpin.transform.localRotation = Quaternion.identity;
+			//ultiSpin.transform.localScale = Vector3.one;
+		}
 	}
 }

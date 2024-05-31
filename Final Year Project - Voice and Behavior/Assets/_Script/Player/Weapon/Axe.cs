@@ -72,6 +72,8 @@ public class Axe : MonoBehaviour
 	private ThirdPersonController thirdPersonController;
 	private StarterAssetsInputs starterAssetsInputs;
 	private Animator animator;
+	private PlayerActionPoint playerActionPoint;
+	private PlayerLimit playerLimit;
 	private new BoxCollider collider;
 	private float aimRigWeight;
     private float rangeLastUsedTime;
@@ -90,6 +92,8 @@ public class Axe : MonoBehaviour
         origLocRot = weapon.localEulerAngles;
 		collider = weapon.GetComponent<BoxCollider>();
 		trailEffect = weapon.GetComponent<TrailEffect>();
+		playerActionPoint = mainCharacter.GetComponent<PlayerActionPoint>();
+		playerLimit = mainCharacter.GetComponent<PlayerLimit>();
 	}
 
     // Start is called before the first frame update
@@ -279,6 +283,48 @@ public class Axe : MonoBehaviour
                 WeaponCatch();
             }
         }
+		
+		if(starterAssetsInputs.skillE)
+		{
+			if(playerActionPoint.currentActionPointAvailable > 0 && hasWeapon)
+			{
+				animator.SetTrigger("SkillE");
+				starterAssetsInputs.skillE = false;
+			}
+			else if(playerActionPoint.currentActionPointAvailable > 0 && !hasWeapon)
+			{
+				WeaponStartPull();
+				animator.SetTrigger("SkillE");
+				starterAssetsInputs.skillE = false;
+			}
+			else
+			{
+				animator.ResetTrigger("SkillE");
+				starterAssetsInputs.skillE = false;
+				return;
+			}
+		}
+		
+		if(starterAssetsInputs.skillQ)
+		{
+			if(playerLimit.currentLimit == playerLimit.maxLimit && hasWeapon)
+			{
+				animator.SetTrigger("SkillQ");
+				starterAssetsInputs.skillQ = false;
+			}
+			else if(playerLimit.currentLimit == playerLimit.maxLimit && !hasWeapon)
+			{
+				WeaponStartPull();
+				animator.SetTrigger("SkillQ");
+				starterAssetsInputs.skillQ = false;
+			}
+			else
+			{
+				animator.ResetTrigger("SkillQ");
+				starterAssetsInputs.skillQ = false;
+				return;
+			}
+		}
     }
 
     void Aim(bool state)
