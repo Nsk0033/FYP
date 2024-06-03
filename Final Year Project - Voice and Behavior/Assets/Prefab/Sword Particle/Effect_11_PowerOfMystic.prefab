@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f57f52e878c074e8266d291bdb6fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageOutput: 9
+  damageOutput: 7
   detectionInterval: 0.2
   detectionDuration: 2.5
   startDelay: 0.1

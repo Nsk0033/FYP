@@ -20,6 +20,8 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private GameObject s_ChargedSlash2;
 	[SerializeField] private GameObject s_RangedSlash1;
 	[SerializeField] private GameObject s_LimitSlash;
+	[SerializeField] private GameObject s_LimitSlash1;
+	[SerializeField] private GameObject s_LimitAura;
 	
 	[Header("Character Bow Projectile")]
 	[SerializeField] private float arrowSpread = 3f;
@@ -362,6 +364,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 
 				// Instantiate the attack4Slash GameObject with the calculated rotation
 				Instantiate(s_LimitSlash, shootPosition_sword4.position, slashRotation);
+				Instantiate(s_LimitSlash1, shootPosition_sword4.position, slashRotation);
 			}
 		}
         else
@@ -387,6 +390,18 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			ultiSpin.transform.localPosition = Vector3.zero;
 			ultiSpin.transform.localRotation = Quaternion.identity;
 			//ultiSpin.transform.localScale = Vector3.one;
+		}
+	}
+	
+	private void LimitAttackAuraStart(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 1)
+		{
+			GameObject ultiAura = Instantiate(s_LimitAura);
+			ultiAura.transform.SetParent(mainCharacter);
+			ultiAura.transform.localPosition = Vector3.zero;
+			ultiAura.transform.localRotation = Quaternion.identity;
+			//ultiAura.transform.localScale = Vector3.one;
 		}
 	}
 }
