@@ -791,7 +791,7 @@ namespace EmeraldAI.Utility
             EmeraldComponent.potentialTargets.Clear();
 
             //Once a target has been found, reduce the Detection Radius back to the defaul value.
-            EmeraldComponent.DetectionRadius = EmeraldComponent.StartingDetectionRadius;
+            //EmeraldComponent.DetectionRadius = EmeraldComponent.StartingDetectionRadius;
             EmeraldComponent.MaxChaseDistance = EmeraldComponent.StartingChaseDistance;
             EmeraldComponent.fieldOfViewAngle = EmeraldComponent.fieldOfViewAngleRef;
 

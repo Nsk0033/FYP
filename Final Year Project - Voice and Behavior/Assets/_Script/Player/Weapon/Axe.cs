@@ -80,6 +80,7 @@ public class Axe : MonoBehaviour
 	private float meleeLastUsedTime;
 	private float chargedLastUsedTime;
 	private bool isIdlePlaying;
+	private bool isSkillEPlaying;
 
 	private void Awake()
 	{
@@ -114,6 +115,7 @@ public class Axe : MonoBehaviour
 		canMeleeAttack = Time.time - meleeLastUsedTime > MeleeAttackCD; //melee attack cooldown check
 		canRangeAttack = Time.time - rangeLastUsedTime > RangeAttackCD; //ranged attack cooldown check
 		canChargedAttack = Time.time - chargedLastUsedTime > ChargedAttackCD; //charged attack cooldown check
+		isSkillEPlaying = animator.GetCurrentAnimatorStateInfo(3).IsName("SmackDown");
 		
 		if (Physics.Raycast(ray,out RaycastHit raycastHit, 999f, aimColliderLayerMask))
 		{
@@ -175,9 +177,8 @@ public class Axe : MonoBehaviour
 			thirdPersonController.SetSensitivity(normalSensitivity);
 			thirdPersonController.SetRotateOnMove(true);
 			
-			if(!canMeleeAttack)
+			if(!canMeleeAttack || isSkillEPlaying)
 			{
-				
 				Vector3 worldAimTarget = mouseWorldPosition;
 				worldAimTarget.y = mainCharacter.transform.position.y;
 				Vector3 aimDirection = (worldAimTarget - mainCharacter.transform.position).normalized;

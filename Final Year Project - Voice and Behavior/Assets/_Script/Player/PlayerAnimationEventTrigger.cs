@@ -22,6 +22,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private GameObject s_LimitSlash;
 	[SerializeField] private GameObject s_LimitSlash1;
 	[SerializeField] private GameObject s_LimitAura;
+	[SerializeField] private GameObject s_LimitAura1;
 	
 	[Header("Character Bow Projectile")]
 	[SerializeField] private float arrowSpread = 3f;
@@ -32,6 +33,8 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	
 	[Header("Character Axe Projectile")]
 	[SerializeField] private GameObject a_LimitSpin;
+	[SerializeField] private GameObject a_LimitSpin1;
+	[SerializeField] private GameObject a_skille;
 	
 	[Header("Character Position")]
 	[SerializeField] private Transform shootPosition;
@@ -88,7 +91,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			if (Physics.Raycast(ray, out hit))
 			{
 				// Calculate the direction vector from the shootPosition to the hit point
-				Vector3 direction = hit.point - shootPosition_sword4.position;
+				Vector3 direction = hit.point - mainCharacter.position;
 				direction.y = 0f; // Ensure the slash stays parallel to the ground
 
 				// Calculate the rotation based on the direction vector
@@ -169,7 +172,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			{
 				mouseWorldPosition = ray.GetPoint(10);
 			}
-			Vector3 aimDir = (mouseWorldPosition - shootPosition.position).normalized;
+			Vector3 aimDir = (mouseWorldPosition - mainCharacter.position).normalized;
 			
 
 			// Calculate aim directions for the +3 and -3 degree offsets from the central aim direction
@@ -204,7 +207,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			{
 				mouseWorldPosition = ray.GetPoint(10);
 			}
-			Vector3 aimDir = (mouseWorldPosition - shootPosition.position).normalized;
+			Vector3 aimDir = (mouseWorldPosition - mainCharacter.position).normalized;
 			
 
 			// Calculate aim directions for the +3 and -3 degree offsets from the central aim direction
@@ -356,7 +359,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			if (Physics.Raycast(ray, out hit))
 			{
 				// Calculate the direction vector from the shootPosition to the hit point
-				Vector3 direction = hit.point - shootPosition_sword4.position;
+				Vector3 direction = hit.point - mainCharacter.position;
 				direction.y = 0f; // Ensure the slash stays parallel to the ground
 
 				// Calculate the rotation based on the direction vector
@@ -393,6 +396,35 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 		}
 	}
 	
+	private void LimitAttackAxeEnd(AnimationEvent animationEvent)
+	{
+		if (thirdPersonShooterController.CurrentWeaponIndex == 3)
+		{
+			// Instantiate the a_LimitSpin1 GameObject at the player's position
+			GameObject limitSpin1 = Instantiate(a_LimitSpin1, mainCharacter.position, Quaternion.identity);
+
+			// Start a coroutine to follow the player for 2 seconds and then freeze
+			StartCoroutine(FollowPlayerThenFreeze(limitSpin1, 2.5f));
+		}
+	}
+	
+	private IEnumerator FollowPlayerThenFreeze(GameObject objectToFollow, float followDuration)
+	{
+		float elapsedTime = 0.0f;
+
+		while (elapsedTime < followDuration)
+		{
+			// Update the object's position to follow the player smoothly
+			objectToFollow.transform.position = Vector3.Lerp(objectToFollow.transform.position, mainCharacter.transform.position, Time.deltaTime * 5.0f);
+
+			elapsedTime += Time.deltaTime;
+			yield return null;
+		}
+
+		// After 2 seconds, freeze the object's position
+		objectToFollow.transform.parent = null; // Detach from player
+	}
+	
 	private void LimitAttackAuraStart(AnimationEvent animationEvent)
 	{
 		if(thirdPersonShooterController.CurrentWeaponIndex == 1)
@@ -401,7 +433,45 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			ultiAura.transform.SetParent(mainCharacter);
 			ultiAura.transform.localPosition = Vector3.zero;
 			ultiAura.transform.localRotation = Quaternion.identity;
+			
+			GameObject ultiAura1 = Instantiate(s_LimitAura1);
+			ultiAura1.transform.SetParent(mainCharacter);
+			ultiAura1.transform.localPosition = Vector3.zero;
+			ultiAura1.transform.localRotation = Quaternion.identity;
 			//ultiAura.transform.localScale = Vector3.one;
 		}
+	}
+	
+	private void SkillEAxe(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 3)
+		{
+			// Ensure the main camera is assigned
+			if (mainCamera == null)
+			{
+				Debug.LogWarning("Main camera is not assigned.");
+				return;
+			}
+
+			// Perform a raycast from the camera to the mouse position
+			Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+
+			// Check if the ray hits something in the scene
+			if (Physics.Raycast(ray, out hit))
+			{
+				// Calculate the direction vector from the shootPosition to the hit point
+				Vector3 direction = hit.point - mainCharacter.position;
+				direction.y = 0f; // Ensure the slash stays parallel to the ground
+
+				// Calculate the rotation based on the direction vector
+				Quaternion slashRotation = Quaternion.LookRotation(direction);
+
+				// Instantiate the attack4Slash GameObject with the calculated rotation
+				Instantiate(a_skille, mainCharacter.position, slashRotation);
+			}
+		}
+        else
+			return;
 	}
 }

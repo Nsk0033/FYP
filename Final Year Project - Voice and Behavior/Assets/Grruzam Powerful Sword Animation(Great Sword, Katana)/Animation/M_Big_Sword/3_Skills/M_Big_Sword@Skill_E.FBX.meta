@@ -1068,6 +1068,20 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.049429674
+        functionName: LimitAttackAxeStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.28751582
+        functionName: LimitAttackAxeEnd
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.6710194
         functionName: UltiCamOff
         data: 
@@ -1077,13 +1091,6 @@ ModelImporter:
         messageOptions: 0
       - time: 0.9334246
         functionName: CanDamageTrue
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.049429674
-        functionName: LimitAttackAxeStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
