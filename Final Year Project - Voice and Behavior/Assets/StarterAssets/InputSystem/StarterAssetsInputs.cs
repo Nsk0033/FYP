@@ -246,6 +246,18 @@ namespace StarterAssets
 				flt_LeftClickAttackTimer -= Time.fixedDeltaTime;
 			}
 		}
+		
+		public void ToggleMenuOnOff(bool isMenuOpen)
+		{
+			cursorLocked = !isMenuOpen;
+			SetCursorState(cursorLocked);
+		}
+		
+		public void ToggleMenu()
+		{
+			cursorLocked = !cursorLocked;
+			SetCursorState(cursorLocked);
+		}
 	}
 	
 }

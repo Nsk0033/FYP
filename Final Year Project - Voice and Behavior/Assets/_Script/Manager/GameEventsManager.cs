@@ -26,4 +26,6 @@ public class GameEventsManager : MonoBehaviour
         miscEvents = new MiscEvents();
         questEvents = new QuestEvents();
     }
+	
+	
 }

@@ -41,6 +41,14 @@ public class AxeDamage : MonoBehaviour
 		   DealDamage();
 		}
 		
+		if (collider.CompareTag("Breakable"))
+        {
+            if(collider.GetComponent<ObjectBreakingScript>() != null)
+            {
+                collider.GetComponent<ObjectBreakingScript>().Break();
+            }
+        }
+		
 		IDamageable damageable = collider.GetComponent<IDamageable>();
 		{
 			if (damageable != null)

@@ -70,6 +70,8 @@ public class ThirdPersonShooterController : MonoBehaviour
         if (starterAssetsInputs.questLogToggle)
         {
             GameEventsManager.instance.inputEvents.QuestLogTogglePressed();
+			starterAssetsInputs.questLogToggle = false;
+			starterAssetsInputs.ToggleMenu();
         }
 	}
 	

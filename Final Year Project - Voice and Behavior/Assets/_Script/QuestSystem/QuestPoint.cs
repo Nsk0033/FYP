@@ -35,7 +35,13 @@ public class QuestPoint : MonoBehaviour
         GameEventsManager.instance.inputEvents.onSubmitPressed -= SubmitPressed;
     }
 
-    private void SubmitPressed()
+    public bool PlayerIsNear
+    {
+        get => playerIsNear;
+        set => playerIsNear = value;
+    }
+
+    public void SubmitPressed()
     {
         if (!playerIsNear)
         {
@@ -59,7 +65,7 @@ public class QuestPoint : MonoBehaviour
         if (quest.info.id.Equals(questId))
         {
             currentQuestState = quest.state;
-            //questIcon.SetState(currentQuestState, startPoint, finishPoint);
+            questIcon.SetState(currentQuestState, startPoint, finishPoint);
         }
     }
 
