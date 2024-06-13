@@ -4909,6 +4909,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4843212862663062497}
+  - component: {fileID: -4371422917525068093}
   m_Layer: 0
   m_Name: Effect_22_Impactbow
   m_TagString: Untagged
@@ -4932,3 +4933,16 @@ Transform:
   - {fileID: 5104429616086568432}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4371422917525068093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857648624183353826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fe273677430814fb90e92f252f7adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DestroytTime: 1

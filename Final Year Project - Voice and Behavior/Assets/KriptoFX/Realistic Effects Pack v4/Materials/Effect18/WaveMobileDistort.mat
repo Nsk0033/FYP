@@ -98,7 +98,7 @@ Material:
     - _AlphaDistort: 0
     - _AlphaToMask: 0
     - _Blend: 0
-    - _BlendModePreserveSpecular: 1
+    - _BlendModePreserveSpecular: 0
     - _BumpAmt: 3000
     - _BumpScale: 1
     - _ClearCoatMask: 0

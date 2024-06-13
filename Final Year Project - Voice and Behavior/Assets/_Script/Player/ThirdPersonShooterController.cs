@@ -22,6 +22,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     private float rangeLastUsedTime;
 	private float meleeLastUsedTime;
 	private float chargedLastUsedTime;
+	private bool isUltiPlaying;
+	
 	
 	
 	private void Awake()
@@ -40,7 +42,15 @@ public class ThirdPersonShooterController : MonoBehaviour
 	
 	private void Update()
 	{
-		if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+		if(animator.GetCurrentAnimatorStateInfo(1).IsName("Ultimate") || animator.GetCurrentAnimatorStateInfo(2).IsName("Ultimate") || animator.GetCurrentAnimatorStateInfo(3).IsName("Ultimate"))
+		{
+			isUltiPlaying = true;
+		}
+		else
+			isUltiPlaying = false;
+		
+		
+		if (Input.GetAxis("Mouse ScrollWheel") < 0f && !isUltiPlaying)
 		{
 			CurrentWeaponIndex--;
 			if(CurrentWeaponIndex == 0)
@@ -49,7 +59,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 			}
 		}
 
-		if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+		if (Input.GetAxis("Mouse ScrollWheel") > 0f && !isUltiPlaying)
 		{
 			CurrentWeaponIndex++;
 			if(CurrentWeaponIndex == 4)

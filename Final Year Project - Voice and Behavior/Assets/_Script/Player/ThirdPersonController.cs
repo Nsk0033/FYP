@@ -433,6 +433,7 @@ namespace StarterAssets
 		public void MoveTrigger(bool value)
 		{
 			CanMove = value;
+			_animator.SetFloat(_animIDSpeed, 0f);
 		}
 		
 		public void DodgeCheck()

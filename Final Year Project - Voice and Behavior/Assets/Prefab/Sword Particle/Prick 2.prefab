@@ -19672,6 +19672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageOutput: 15
   startDelay: 0.1
+  canGainApAndLimit: 1
 --- !u!54 &8365121486578885002
 Rigidbody:
   m_ObjectHideFlags: 0

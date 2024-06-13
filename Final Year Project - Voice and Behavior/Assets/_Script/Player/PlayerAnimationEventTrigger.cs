@@ -23,6 +23,9 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private GameObject s_LimitSlash1;
 	[SerializeField] private GameObject s_LimitAura;
 	[SerializeField] private GameObject s_LimitAura1;
+	[SerializeField] private GameObject s_SkillEAura;
+	[SerializeField] private GameObject s_Skill1Object;
+	[SerializeField] private GameObject s_Skill1FlameSlash;
 	
 	[Header("Character Bow Projectile")]
 	[SerializeField] private float arrowSpread = 3f;
@@ -30,11 +33,16 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private GameObject b_attackProjectile;
 	[SerializeField] private GameObject b_ChargedProjectile;
 	[SerializeField] private GameObject b_ImpactParticle;
+	[SerializeField] private GameObject b_LimitCast; 
+	[SerializeField] private GameObject b_LimitRain;
+	[SerializeField] private GameObject b_LimitAulora;
+	[SerializeField] private GameObject b_skill1;
 	
 	[Header("Character Axe Projectile")]
 	[SerializeField] private GameObject a_LimitSpin;
 	[SerializeField] private GameObject a_LimitSpin1;
 	[SerializeField] private GameObject a_skille;
+	[SerializeField] private GameObject a_skill1;
 	
 	[Header("Character Position")]
 	[SerializeField] private Transform shootPosition;
@@ -49,6 +57,8 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	private PlayerActionPoint playerActionPoint;
 	private PlayerLimit playerLimit;
 	private ThirdPersonController thirdPersonController;
+	
+	private float lastBowCastRotationY;
 	
 	private void Start()
 	{
@@ -143,14 +153,21 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	{
 		if(thirdPersonShooterController.CurrentWeaponIndex == 1)
 		{
-			// Get the y-axis rotation of the main character
-			float characterRotationY = mainCharacter.rotation.eulerAngles.y;
+			Vector3 mouseWorldPosition = Vector3.zero;
+			Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
+			Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
 
-			// Create a new rotation based on the main character's y-axis rotation
-			Quaternion slashRotation = Quaternion.Euler(0f, characterRotationY, 0f);
-
-			// Instantiate the ChargedSlash GameObject with the calculated rotation
-			Instantiate(s_RangedSlash1, shootPosition1.position, slashRotation);
+			if (Physics.Raycast(ray,out RaycastHit raycastHit, 999f))
+			{
+				mouseWorldPosition = raycastHit.point;
+			}
+			else
+			{
+				mouseWorldPosition = ray.GetPoint(10);
+			}
+			Vector3 aimDir = (mouseWorldPosition - mainCharacter.position).normalized;
+			
+			Instantiate(s_RangedSlash1, shootPosition_sword4.position, Quaternion.LookRotation(aimDir, Vector3.up));
 		}
 		else
 			return;
@@ -290,6 +307,12 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 		animator.speed = 1f;
 	}
 	
+	private void ReduceAP(AnimationEvent animationEvent)
+	{
+		int pointsToDeduct = animationEvent.intParameter; // Get the integer parameter from the animation event
+		playerActionPoint.ReduceAP(pointsToDeduct);
+	}
+	
 	private void UseAP(AnimationEvent animationEvent)
 	{
 		int pointsToDeduct = animationEvent.intParameter; // Get the integer parameter from the animation event
@@ -374,6 +397,23 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			return;
     }
 	
+	private void LimitAttackAuraStart(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 1)
+		{
+			GameObject ultiAura = Instantiate(s_LimitAura);
+			ultiAura.transform.SetParent(mainCharacter);
+			ultiAura.transform.localPosition = Vector3.zero;
+			ultiAura.transform.localRotation = Quaternion.identity;
+			
+			GameObject ultiAura1 = Instantiate(s_LimitAura1);
+			ultiAura1.transform.SetParent(mainCharacter);
+			ultiAura1.transform.localPosition = Vector3.zero;
+			ultiAura1.transform.localRotation = Quaternion.identity;
+			//ultiAura.transform.localScale = Vector3.one;
+		}
+	}
+	
 	private void StopMovement(AnimationEvent animationEvent)
 	{
 		thirdPersonController.MoveTrigger(false);
@@ -425,23 +465,6 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 		objectToFollow.transform.parent = null; // Detach from player
 	}
 	
-	private void LimitAttackAuraStart(AnimationEvent animationEvent)
-	{
-		if(thirdPersonShooterController.CurrentWeaponIndex == 1)
-		{
-			GameObject ultiAura = Instantiate(s_LimitAura);
-			ultiAura.transform.SetParent(mainCharacter);
-			ultiAura.transform.localPosition = Vector3.zero;
-			ultiAura.transform.localRotation = Quaternion.identity;
-			
-			GameObject ultiAura1 = Instantiate(s_LimitAura1);
-			ultiAura1.transform.SetParent(mainCharacter);
-			ultiAura1.transform.localPosition = Vector3.zero;
-			ultiAura1.transform.localRotation = Quaternion.identity;
-			//ultiAura.transform.localScale = Vector3.one;
-		}
-	}
-	
 	private void SkillEAxe(AnimationEvent animationEvent)
 	{
 		if(thirdPersonShooterController.CurrentWeaponIndex == 3)
@@ -472,6 +495,214 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			}
 		}
         else
+			return;
+	}
+	
+	private void LimitAttackBowStart(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 2)
+		{
+			// Ensure the main camera is assigned
+			if (mainCamera == null)
+			{
+				Debug.LogWarning("Main camera is not assigned.");
+				return;
+			}
+
+			// Perform a raycast from the camera to the mouse position
+			Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+
+			// Check if the ray hits something in the scene
+			if (Physics.Raycast(ray, out hit))
+			{
+				Vector3 direction = hit.point - mainCharacter.position;
+                direction.y = 0f; // Ensure the slash stays parallel to the ground
+
+                // Calculate the rotation based on the direction vector
+                Quaternion slashRotation = Quaternion.LookRotation(direction);
+
+                // Instantiate the b_LimitCast GameObject with the calculated rotation
+                GameObject castAimDirection = Instantiate(b_LimitCast, mainCharacter.position, slashRotation);
+
+                // Store the Y-axis rotation for later use
+                lastBowCastRotationY = castAimDirection.transform.rotation.eulerAngles.y;
+
+                // Invoke SpawnLimitRainAfterDelay with the rotation value after 2 seconds
+                Invoke(nameof(StartSpawnLimitRainCoroutine), 2.5f);
+			}
+		}
+        else
+			return;
+    }
+	
+	private void StartSpawnLimitRainCoroutine()
+	{
+		StartCoroutine(SpawnLimitRainWithInterval());
+	}
+	
+	private IEnumerator SpawnLimitRainWithInterval()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            // Create a new rotation with the stored Y-axis value
+            Quaternion rotationWithStoredY = Quaternion.Euler(0, lastBowCastRotationY, 0);
+
+            // Spawn b_LimitRain at the main character's position with the stored rotation
+            Instantiate(b_LimitRain, mainCharacter.position, rotationWithStoredY);
+
+            // Wait for 1 second before the next spawn
+            yield return new WaitForSeconds(1f);
+        }
+    }
+	
+	private void LimitAttackAuloraStart(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 2)
+		{
+			// Ensure the main camera is assigned
+			if (mainCamera == null)
+			{
+				Debug.LogWarning("Main camera is not assigned.");
+				return;
+			}
+
+			// Perform a raycast from the camera to the mouse position
+			Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+
+			// Check if the ray hits something in the scene
+			if (Physics.Raycast(ray, out hit))
+			{
+				// Calculate the direction vector from the shootPosition to the hit point
+				Vector3 direction = hit.point - mainCharacter.position;
+				direction.y = 0f; // Ensure the slash stays parallel to the ground
+
+				// Calculate the rotation based on the direction vector
+				Quaternion slashRotation = Quaternion.LookRotation(direction);
+
+				// Instantiate the attack4Slash GameObject with the calculated rotation
+				Instantiate(b_LimitAulora, mainCharacter.position, slashRotation);
+			}
+		}
+        else
+			return;
+    }
+	
+	private void SkillESwordStart(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 1)
+		{
+			GameObject ultiSpin = Instantiate(s_SkillEAura);
+			ultiSpin.transform.SetParent(mainCharacter);
+			ultiSpin.transform.localPosition = Vector3.zero;
+			ultiSpin.transform.localRotation = Quaternion.identity;
+			if (PlayerHealth.instance != null)
+			{
+				// Call HealPlayer function with a specified healing amount
+				PlayerHealth.instance.HealPlayer(80);
+			}
+			else
+			{
+				Debug.LogWarning("PlayerHealth instance not found!");
+			}
+		}
+	}
+	
+	private void Skill1SwordStart(AnimationEvent animationEvent)
+	{
+		if (thirdPersonShooterController.CurrentWeaponIndex == 1)
+		{
+			s_Skill1Object.SetActive(true);
+			CancelInvoke("Skill1SwordEnd");
+			Invoke("Skill1SwordEnd", 15f);
+		}
+	}
+
+	private void Skill1SwordEnd()
+	{    
+		s_Skill1Object.SetActive(false);
+	}
+	
+	private void FlameSlashStart(AnimationEvent animationEvent)
+	{
+		if (thirdPersonShooterController.CurrentWeaponIndex == 1 && s_Skill1Object.activeSelf)
+		{
+			// Ensure the main camera is assigned
+			if (mainCamera == null)
+			{
+				Debug.LogWarning("Main camera is not assigned.");
+				return;
+			}
+
+			float slashZRotation = animationEvent.floatParameter;
+
+			// Perform a raycast from the camera to the mouse position
+			Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+
+			// Check if the ray hits something in the scene
+			if (Physics.Raycast(ray, out hit))
+			{
+				// Calculate the direction vector from the shootPosition to the hit point
+				Vector3 direction = hit.point - mainCharacter.position;
+				direction.y = 0f; // Ensure the slash stays parallel to the ground
+
+				// Calculate the rotation based on the direction vector
+				Quaternion slashRotation = Quaternion.LookRotation(direction);
+
+				// Incorporate the Z-axis rotation
+				slashRotation *= Quaternion.Euler(0, 0, slashZRotation);
+
+				// Instantiate the attack4Slash GameObject with the calculated rotation
+				Instantiate(s_Skill1FlameSlash, shootPosition_sword4.position, slashRotation);
+			}
+		}
+		else
+			return;
+	}
+	
+	private void FlameRingStart(AnimationEvent animationEvent)
+	{
+		if (thirdPersonShooterController.CurrentWeaponIndex == 3)
+		{
+			StartCoroutine(SpawnSkill1Repeatedly());
+		}
+	}
+
+	private IEnumerator SpawnSkill1Repeatedly()
+	{
+		int spawnCount = 0;
+		while (spawnCount < 5)
+		{
+			Instantiate(a_skill1, mainCharacter.position, Quaternion.identity);
+			spawnCount++;
+			yield return new WaitForSeconds(2f);
+		}
+	}
+	
+	private void Skill1BowStart(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 2)
+		{
+			Vector3 mouseWorldPosition = Vector3.zero;
+			Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
+			Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
+
+			if (Physics.Raycast(ray,out RaycastHit raycastHit, 999f))
+			{
+				mouseWorldPosition = raycastHit.point;
+			}
+			else
+			{
+				mouseWorldPosition = ray.GetPoint(10);
+			}
+			Vector3 aimDir = (mouseWorldPosition - mainCharacter.position).normalized;
+
+			// Instantiate projectiles at shootPosition with the calculated aim directions
+			Instantiate(b_skill1, shootPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+		}
+		else
 			return;
 	}
 }

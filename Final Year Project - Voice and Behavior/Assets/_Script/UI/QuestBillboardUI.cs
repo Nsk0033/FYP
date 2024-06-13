@@ -10,13 +10,13 @@ public class QuestBillboardUI : MonoBehaviour
     private void OnEnable()
     {
         GameEventsManager.instance.questEvents.onQuestStepStateChange += HandleQuestStepStateChange;
-        GameEventsManager.instance.questEvents.onAdvanceQuest += HandleQuestAdvance;
+        GameEventsManager.instance.questEvents.onFinishQuest += HandleQuestAdvance;
     }
 
     private void OnDisable()
     {
         GameEventsManager.instance.questEvents.onQuestStepStateChange -= HandleQuestStepStateChange;
-        GameEventsManager.instance.questEvents.onAdvanceQuest -= HandleQuestAdvance;
+        GameEventsManager.instance.questEvents.onFinishQuest -= HandleQuestAdvance;
     }
 
     private void HandleQuestStepStateChange(string questId, int stepIndex, QuestStepState newState)

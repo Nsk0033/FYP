@@ -43,9 +43,14 @@ public class BulletProjectile : MonoBehaviour
             emeraldAI.Damage(damageOutput, EmeraldAI.EmeraldAISystem.TargetType.Player, transform, 400);
             DealDamage();
         }
-		GameObject hitvfx = Instantiate(vfxHit, transform.position, Quaternion.identity);
-        Vector3 directionAwayEnemy = -1*(other.transform.position - transform.position).normalized;
-		hitvfx.transform.forward = directionAwayEnemy;
+		
+		if(vfxHit != null)
+		{
+			GameObject hitvfx = Instantiate(vfxHit, transform.position, Quaternion.identity);
+			Vector3 directionAwayEnemy = -1*(other.transform.position - transform.position).normalized;
+			hitvfx.transform.forward = directionAwayEnemy;
+		}
+        
         Destroy(gameObject);
 		
     }

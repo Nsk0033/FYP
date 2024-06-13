@@ -7,7 +7,7 @@ public class PlayerActionPoint : MonoBehaviour
     [Header("Action Point")]
     [SerializeField] private float maxActionPoint = 100f;
 	[Range(0f, 100.1f)]
-    [SerializeField] private float currentActionPointValue;
+    public float currentActionPointValue;
     public int currentActionPointAvailable;
     //[SerializeField] private gameObject healthBar;
 	[SerializeField] private DuloGames.UI.UIProgressBar actionPointProgressBar;
@@ -148,4 +148,13 @@ public class PlayerActionPoint : MonoBehaviour
     {
         GainAP(damage);
     }
+	
+	public void ReduceAP(float APamount)
+	{
+		currentActionPointValue -= APamount;
+		if(currentActionPointValue <= 0)
+		{
+			currentActionPointValue = 0;
+		}
+	}
 }

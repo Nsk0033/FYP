@@ -11,7 +11,7 @@ public class DestroyRockQuestStep : QuestStep
 		FineRock = GameObject.Find("FineRock-Quest");
         if (FineRock != null)
         {
-            string status = "Destroy The Rock With Axe";
+            string status = "Destroy The Rock With Axe.";
             ChangeState("", status);
         }
         else
@@ -25,7 +25,7 @@ public class DestroyRockQuestStep : QuestStep
     {
         if(!FineRock.activeSelf)
 		{
-			string status = "The Giant Rock Has Been Destroyed";
+			string status = "Talk to the man who get stucked by giant rock.";
             ChangeState("", status);
             FinishQuestStep();
 		}

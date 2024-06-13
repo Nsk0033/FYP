@@ -306,6 +306,21 @@ public class Axe : MonoBehaviour
 			}
 		}
 		
+		if(starterAssetsInputs.skill1)
+		{
+			if(playerActionPoint.currentActionPointAvailable > 0)
+			{
+				animator.SetTrigger("Skill1");
+				starterAssetsInputs.skill1 = false;
+			}
+			else
+			{
+				animator.ResetTrigger("Skill1");
+				starterAssetsInputs.skill1 = false;
+				return;
+			}
+		}
+		
 		if(starterAssetsInputs.skillQ)
 		{
 			if(playerLimit.currentLimit == playerLimit.maxLimit && hasWeapon)

@@ -197,19 +197,24 @@ public class Sword : MonoBehaviour
 			}
 			else
 			{
-				if (canChargedAttack)
+				if(playerActionPoint.currentActionPointValue > 15f) 
 				{
-					chargedLastUsedTime = Time.time;
-					// Trigger the charged attack animation
-					animator.SetTrigger("ChargedAttack");
+					if (canChargedAttack)
+					{
+						chargedLastUsedTime = Time.time;
+						// Trigger the charged attack animation
+						animator.SetTrigger("ChargedAttack");
+						
+						// Move the character forward gradually
+						//StartCoroutine(LerpCharacterForward());
 
-					// Move the character forward gradually
-					//StartCoroutine(LerpCharacterForward());
-
-					// Reset the chargedAttack state
-					starterAssetsInputs.chargedAttack = false;
+						// Reset the chargedAttack state
+						starterAssetsInputs.chargedAttack = false;
+					}
 				}
-			}
+				else
+					starterAssetsInputs.chargedAttack = false;
+			} 
 		}
 		
 		if(starterAssetsInputs.skillE)
@@ -227,7 +232,20 @@ public class Sword : MonoBehaviour
 			}
 		}
 		
-		
+		if(starterAssetsInputs.skill1)
+		{
+			if(playerActionPoint.currentActionPointAvailable > 0)
+			{
+				animator.SetTrigger("Skill1");
+				starterAssetsInputs.skill1 = false;
+			}
+			else
+			{
+				animator.ResetTrigger("Skill1");
+				starterAssetsInputs.skill1 = false;
+				return;
+			}
+		}
 		
 		if(starterAssetsInputs.skillQ)
 		{
@@ -245,43 +263,52 @@ public class Sword : MonoBehaviour
 		}
 	}
 	
-	IEnumerator LerpCharacterForward()
-	{
-		Vector3 startPosition = mainCharacter.transform.position;
-		Vector3 targetPosition = mainCharacter.transform.position + mainCharacter.transform.forward * chargedAttackDistance;
-		float duration = chargedAttackTimeNeeded; // Desired duration for the lerp (in seconds)
-		float startTime = Time.time;
-		//Invoke("SmallJumping",0.1f);
-		
-		while (Time.time - startTime < duration)
-		{
-			// Calculate the progress of the lerping based on the elapsed time and duration
-			float progress = (Time.time - startTime) / duration;
+	IEnumerator LerpCharacterForward(Vector3 targetPoint)
+    {
+        Vector3 startPosition = mainCharacter.transform.position;
+        Vector3 direction = (targetPoint - startPosition).normalized;
+        Vector3 targetPosition = startPosition + direction * chargedAttackDistance;
+        float duration = chargedAttackTimeNeeded;
+        float startTime = Time.time;
 
-			// Calculate the new position based on lerping
-			Vector3 newPosition = Vector3.Lerp(startPosition, targetPosition, progress);
+        CharacterController characterController = mainCharacter.GetComponent<CharacterController>();
 
-			// Perform collision check using Raycast
-			RaycastHit hit;
-			if (Physics.Raycast(newPosition, targetPosition - newPosition, out hit, Vector3.Distance(newPosition, targetPosition)))
-			{
-				// Collision detected, adjust target position to hit point
-				targetPosition = hit.point;
-			}
+        while (Time.time - startTime < duration)
+        {
+            float progress = (Time.time - startTime) / duration;
+            Vector3 newPosition = Vector3.Lerp(startPosition, targetPosition, progress);
+            newPosition = AdjustPositionToGround(newPosition, characterController);
 
-			// Update the character's position
-			mainCharacter.transform.position = newPosition;
+            if (Physics.Raycast(newPosition, targetPosition - newPosition, out RaycastHit forwardHit, Vector3.Distance(newPosition, targetPosition)))
+            {
+                targetPosition = forwardHit.point;
+            }
 
-			yield return null;
-		}
+            characterController.Move(newPosition - mainCharacter.transform.position);
 
-		// Ensure that the character ends up at the correct position
-		mainCharacter.transform.position = targetPosition;
-		Invoke("MCCanMove",0.2f);
-		// Trigger the jump action
-		//starterAssetsInputs.jump = true;
-		
-	}
+            yield return null;
+        }
+
+        Vector3 finalPosition = AdjustPositionToGround(targetPosition, characterController);
+        characterController.Move(finalPosition - mainCharacter.transform.position);
+
+        Invoke("MCCanMove", 0.2f);
+    }
+
+    private Vector3 AdjustPositionToGround(Vector3 position, CharacterController characterController)
+    {
+        RaycastHit hit;
+        float raycastHeightOffset = 0.5f;
+        float raycastDistance = 1.0f;
+        Vector3 rayOrigin = position + Vector3.up * raycastHeightOffset;
+
+        if (Physics.Raycast(rayOrigin, Vector3.down, out hit, raycastDistance))
+        {
+            position.y = hit.point.y + characterController.skinWidth;
+        }
+
+        return position;
+    }
 	
 	private void SmallJumping()
 	{
@@ -300,7 +327,7 @@ public class Sword : MonoBehaviour
 		{
 			thirdPersonController.MoveTrigger(false);
 			thirdPersonController.SmallJump();
-			StartCoroutine(LerpCharacterForward());
+			StartCoroutine(LerpCharacterForward(debugTransform.position));
 		}
 	}
 

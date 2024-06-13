@@ -41,16 +41,22 @@ public class Bow : MonoBehaviour
 	private ThirdPersonController thirdPersonController;
 	private StarterAssetsInputs starterAssetsInputs;
 	private Animator animator;
+	private PlayerActionPoint playerActionPoint;
+	private PlayerLimit playerLimit;
 	private float aimRigWeight;
     private float rangeLastUsedTime;
 	private float meleeLastUsedTime;
 	private float chargedLastUsedTime;
+	private bool isUltiPlaying;
+	private bool isSkill1Playing;
 	
     private void Awake()
 	{
 		thirdPersonController = mainCharacter.GetComponent<ThirdPersonController>();
 		starterAssetsInputs = mainCharacter.GetComponent<StarterAssetsInputs>();
 		animator = mainCharacter.GetComponent<Animator>();
+		playerActionPoint = mainCharacter.GetComponent<PlayerActionPoint>();
+		playerLimit = mainCharacter.GetComponent<PlayerLimit>();
 	}
 	
 	private void Start()
@@ -77,6 +83,9 @@ public class Bow : MonoBehaviour
 		canMeleeAttack = Time.time - meleeLastUsedTime > MeleeAttackCD; //melee attack cooldown check
 		canRangeAttack = Time.time - rangeLastUsedTime > RangeAttackCD; //ranged attack cooldown check
 		canChargedAttack = Time.time - chargedLastUsedTime > ChargedAttackCD; //charged attack cooldown check
+		
+		isUltiPlaying = animator.GetCurrentAnimatorStateInfo(1).IsName("Ultimate");
+		isSkill1Playing = animator.GetCurrentAnimatorStateInfo(1).IsName("BowSkill1");
 		
 		if (Physics.Raycast(ray,out RaycastHit raycastHit, 999f, aimColliderLayerMask))
 		{
@@ -117,7 +126,7 @@ public class Bow : MonoBehaviour
 			thirdPersonController.SetSensitivity(normalSensitivity);
 			thirdPersonController.SetRotateOnMove(true);
 			
-			if(!canMeleeAttack)
+			if(!canMeleeAttack || isUltiPlaying || isSkill1Playing)
 			{
 				thirdPersonController.SetRotateOnMove(false);
 				Vector3 worldAimTarget = mouseWorldPosition;
@@ -179,7 +188,7 @@ public class Bow : MonoBehaviour
 			}
 			else
 			{
-				if (canChargedAttack)
+				if (canChargedAttack && playerActionPoint.currentActionPointValue > 15f)
 				{
 					chargedLastUsedTime = Time.time;
 					// Trigger the charged attack animation
@@ -191,6 +200,54 @@ public class Bow : MonoBehaviour
 					// Reset the chargedAttack state
 					starterAssetsInputs.chargedAttack = false;
 				}
+				else
+					starterAssetsInputs.chargedAttack = false;
+			}
+		}
+		
+		
+		if(starterAssetsInputs.skillE)
+		{
+			if(playerActionPoint.currentActionPointAvailable > 0)
+			{
+				animator.SetTrigger("SkillE");
+				starterAssetsInputs.skillE = false;
+			}
+			else
+			{
+				animator.ResetTrigger("SkillE");
+				starterAssetsInputs.skillE = false;
+				return;
+			}
+		}
+		
+		if(starterAssetsInputs.skill1)
+		{
+			if(playerActionPoint.currentActionPointAvailable > 0)
+			{
+				animator.SetTrigger("Skill1");
+				starterAssetsInputs.skill1 = false;
+			}
+			else
+			{
+				animator.ResetTrigger("Skill1");
+				starterAssetsInputs.skill1 = false;
+				return;
+			}
+		}
+		
+		if(starterAssetsInputs.skillQ)
+		{
+			if(playerLimit.currentLimit == playerLimit.maxLimit)
+			{
+				animator.SetTrigger("SkillQ");
+				starterAssetsInputs.skillQ = false;
+			}
+			else
+			{
+				animator.ResetTrigger("SkillQ");
+				starterAssetsInputs.skillQ = false;
+				return;
 			}
 		}
 	}

@@ -558,11 +558,32 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.4774775
+        functionName: ReduceAP
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 15
+        messageOptions: 0
       - time: 0.6
         functionName: ChargedAttack2SlashStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.63106793
+        functionName: FlameSlashStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 45
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.57281554
+        functionName: FlameSlashStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 135
         intParameter: 0
         messageOptions: 0
       transformMask:

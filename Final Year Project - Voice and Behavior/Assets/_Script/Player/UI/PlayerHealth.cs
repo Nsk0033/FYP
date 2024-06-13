@@ -38,7 +38,17 @@ public class PlayerHealth : MonoBehaviour
     {
         HPPercentage = (float)CurrentHealth / maxHealth;
         healthProgressBar.fillAmount = HPPercentage;
-
+		
+		if (CurrentHealth >= maxHealth)
+		{
+			CurrentHealth = maxHealth;
+		}
+		
+		if (CurrentHealth <= 0)
+		{
+			CurrentHealth = 0;
+		}
+		
         if (Input.GetKey(KeyCode.UpArrow))
         {
             if (CurrentHealth < maxHealth)
@@ -63,5 +73,10 @@ public class PlayerHealth : MonoBehaviour
 			CurrentHealth -= damageInput;
 			Debug.Log("Ooof");
 		}    
+    }
+	
+	public void HealPlayer(int healInput)
+    {	
+		CurrentHealth += healInput;
     }
 }
