@@ -11062,6 +11062,12 @@ Transform:
   - {fileID: 739599321}
   m_Father: {fileID: 917204687}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &549099396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5829294681465719978, guid: ecaad75678c0c39499997402150ebda0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1491247693655369183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &550659340
 GameObject:
   m_ObjectHideFlags: 0
@@ -38487,7 +38493,7 @@ MonoBehaviour:
   - You are such a kind person...
   textSpeed: 0.05
   interactText: Talk
-  requirementsNotMetToFinishIcon: {fileID: 1697534930}
+  canFinishIcon: {fileID: 549099396}
   questPoint: {fileID: 1098777640}
 --- !u!114 &1098777638
 MonoBehaviour:
@@ -51620,12 +51626,6 @@ Transform:
   - {fileID: 1011550507}
   m_Father: {fileID: 1227017683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1697534930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7204822743882831083, guid: ecaad75678c0c39499997402150ebda0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1491247693655369183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1698060511
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     [SerializeField] private string[] finishlines; // all needed conversation
     [SerializeField] private float textSpeed = 0.05f;
     [SerializeField] private string interactText;
-	[SerializeField] private GameObject requirementsNotMetToFinishIcon; // Icon to show quest requirements not met
+	[SerializeField] private GameObject canFinishIcon; // Icon to show quest requirements not met
 
     [Header("Quest Point Reference")]
     [SerializeField] private QuestPoint questPoint; // Reference to the QuestPoint script
@@ -23,7 +23,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     private bool isTyping = false;
     private bool isDisplaying = false;
     private bool questRequirementsMet = false; // To track if the quest requirements were ever met
-    private bool wasIconActive = false; // To track the previous state of the icon
+    //private bool wasIconActive = false; // To track the previous state of the icon
 
     private void Awake()
     {
@@ -38,15 +38,11 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     private void CheckQuestRequirements()
     {
-        if (requirementsNotMetToFinishIcon.activeSelf)
-        {
-            wasIconActive = true;
-        }
-        else if (wasIconActive && !requirementsNotMetToFinishIcon.activeSelf)
+        if (canFinishIcon.activeSelf)
         {
             questRequirementsMet = true; // Set quest requirements as met if the icon has been active and is now inactive
             lines = finishlines; // Update to the finish dialog lines
-            wasIconActive = false; // Reset the icon active state
+            //wasIconActive = false; // Reset the icon active state
         }
     }
 

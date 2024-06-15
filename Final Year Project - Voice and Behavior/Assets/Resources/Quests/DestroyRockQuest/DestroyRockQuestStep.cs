@@ -16,7 +16,9 @@ public class DestroyRockQuestStep : QuestStep
         }
         else
         {
-            Debug.LogError("FineRock-Quest not found!");
+            string status = "Talk to the man who get stucked by giant rock.";
+            ChangeState("", status);
+            FinishQuestStep();
         }
     }
 
