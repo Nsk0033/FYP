@@ -142,7 +142,7 @@ public class Bow : MonoBehaviour
 		{
 			if(starterAssetsInputs.aim)
 			{
-				if(canRangeAttack)
+				if(canRangeAttack && !isUltiPlaying)
 				{
 					bool isPlaying = animator.GetCurrentAnimatorStateInfo(1).IsName("Bow_Idle");
 					if (isPlaying)
@@ -170,7 +170,7 @@ public class Bow : MonoBehaviour
 			}
 			else
 			{
-				if (canMeleeAttack)
+				if (canMeleeAttack && !isUltiPlaying)
 				{				
 					meleeLastUsedTime = Time.time;
 					animator.SetTrigger("MeleeAttack");	
@@ -188,7 +188,7 @@ public class Bow : MonoBehaviour
 			}
 			else
 			{
-				if (canChargedAttack && playerActionPoint.currentActionPointValue > 15f)
+				if (canChargedAttack && playerActionPoint.currentActionPointValue > 15f && !isUltiPlaying)
 				{
 					chargedLastUsedTime = Time.time;
 					// Trigger the charged attack animation
@@ -208,7 +208,7 @@ public class Bow : MonoBehaviour
 		
 		if(starterAssetsInputs.skillE)
 		{
-			if(playerActionPoint.currentActionPointAvailable > 0)
+			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
 			{
 				animator.SetTrigger("SkillE");
 				starterAssetsInputs.skillE = false;
@@ -223,7 +223,7 @@ public class Bow : MonoBehaviour
 		
 		if(starterAssetsInputs.skill1)
 		{
-			if(playerActionPoint.currentActionPointAvailable > 0)
+			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
 			{
 				animator.SetTrigger("Skill1");
 				starterAssetsInputs.skill1 = false;
@@ -238,7 +238,7 @@ public class Bow : MonoBehaviour
 		
 		if(starterAssetsInputs.skillQ)
 		{
-			if(playerLimit.currentLimit == playerLimit.maxLimit)
+			if(playerLimit.currentLimit == playerLimit.maxLimit && !isUltiPlaying)
 			{
 				animator.SetTrigger("SkillQ");
 				starterAssetsInputs.skillQ = false;

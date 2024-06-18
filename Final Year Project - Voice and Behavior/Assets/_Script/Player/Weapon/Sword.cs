@@ -146,13 +146,13 @@ public class Sword : MonoBehaviour
 				mainCharacter.transform.forward = Vector3.Lerp(mainCharacter.transform.forward, aimDirection, Time.deltaTime * 20f);
 			}
 		}
-	
+		
 		
 		if (starterAssetsInputs.shoot)
 		{
 			if(starterAssetsInputs.aim)
 			{
-				if(canRangeAttack)
+				if(canRangeAttack && !isUltiPlaying)
 				{
 					//if can range attack but not attacking then do this
 					animator.SetTrigger("Recoil"); //<------------------------------HERE
@@ -179,7 +179,7 @@ public class Sword : MonoBehaviour
 			}
 			else
 			{
-				if (canMeleeAttack)
+				if (canMeleeAttack && !isUltiPlaying)
 				{				
 					meleeLastUsedTime = Time.time;
 					animator.SetTrigger("MeleeAttack");	
@@ -199,7 +199,7 @@ public class Sword : MonoBehaviour
 			{
 				if(playerActionPoint.currentActionPointValue > 15f) 
 				{
-					if (canChargedAttack)
+					if (canChargedAttack && !isUltiPlaying)
 					{
 						chargedLastUsedTime = Time.time;
 						// Trigger the charged attack animation
@@ -219,7 +219,7 @@ public class Sword : MonoBehaviour
 		
 		if(starterAssetsInputs.skillE)
 		{
-			if(playerActionPoint.currentActionPointAvailable > 0)
+			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
 			{
 				animator.SetTrigger("SkillE");
 				starterAssetsInputs.skillE = false;
@@ -234,7 +234,7 @@ public class Sword : MonoBehaviour
 		
 		if(starterAssetsInputs.skill1)
 		{
-			if(playerActionPoint.currentActionPointAvailable > 0)
+			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
 			{
 				animator.SetTrigger("Skill1");
 				starterAssetsInputs.skill1 = false;
@@ -249,7 +249,7 @@ public class Sword : MonoBehaviour
 		
 		if(starterAssetsInputs.skillQ)
 		{
-			if(playerLimit.currentLimit == playerLimit.maxLimit)
+			if(playerLimit.currentLimit == playerLimit.maxLimit && !isUltiPlaying)
 			{
 				animator.SetTrigger("SkillQ");
 				starterAssetsInputs.skillQ = false;

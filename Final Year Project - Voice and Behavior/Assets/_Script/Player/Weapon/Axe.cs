@@ -79,6 +79,7 @@ public class Axe : MonoBehaviour
     private float rangeLastUsedTime;
 	private float meleeLastUsedTime;
 	private float chargedLastUsedTime;
+	private bool isUltiPlaying;
 	private bool isIdlePlaying;
 	private bool isSkillEPlaying;
 
@@ -115,6 +116,8 @@ public class Axe : MonoBehaviour
 		canMeleeAttack = Time.time - meleeLastUsedTime > MeleeAttackCD; //melee attack cooldown check
 		canRangeAttack = Time.time - rangeLastUsedTime > RangeAttackCD; //ranged attack cooldown check
 		canChargedAttack = Time.time - chargedLastUsedTime > ChargedAttackCD; //charged attack cooldown check
+		
+		isUltiPlaying = animator.GetCurrentAnimatorStateInfo(3).IsName("Ultimate");
 		isSkillEPlaying = animator.GetCurrentAnimatorStateInfo(3).IsName("SmackDown");
 		
 		if (Physics.Raycast(ray,out RaycastHit raycastHit, 999f, aimColliderLayerMask))
@@ -148,7 +151,7 @@ public class Axe : MonoBehaviour
 			}
 			
 			bool isAimPlaying = animator.GetCurrentAnimatorStateInfo(3).IsName("Aim");
-			if(starterAssetsInputs.shoot && isAimPlaying)
+			if(starterAssetsInputs.shoot && isAimPlaying && !isUltiPlaying)
 			{
 				if (canRangeAttack && hasWeapon)
 				{
@@ -196,7 +199,7 @@ public class Axe : MonoBehaviour
 		{
 			if (!starterAssetsInputs.aim)
 			{
-				if (canMeleeAttack && hasWeapon)
+				if (canMeleeAttack && hasWeapon && !isUltiPlaying)
 				{
 					meleeLastUsedTime = Time.time;
 					animator.SetTrigger("MeleeAttack");
@@ -221,7 +224,7 @@ public class Axe : MonoBehaviour
 			}
 			else
 			{
-				if (canChargedAttack && hasWeapon)
+				if (canChargedAttack && hasWeapon && !isUltiPlaying)
 				{
 					chargedLastUsedTime = Time.time;
 					// Trigger the charged attack animation
@@ -287,12 +290,12 @@ public class Axe : MonoBehaviour
 		
 		if(starterAssetsInputs.skillE)
 		{
-			if(playerActionPoint.currentActionPointAvailable > 0 && hasWeapon)
+			if(playerActionPoint.currentActionPointAvailable > 0 && hasWeapon && !isUltiPlaying)
 			{
 				animator.SetTrigger("SkillE");
 				starterAssetsInputs.skillE = false;
 			}
-			else if(playerActionPoint.currentActionPointAvailable > 0 && !hasWeapon)
+			else if(playerActionPoint.currentActionPointAvailable > 0 && !hasWeapon && !isUltiPlaying)
 			{
 				WeaponStartPull();
 				animator.SetTrigger("SkillE");
@@ -308,7 +311,7 @@ public class Axe : MonoBehaviour
 		
 		if(starterAssetsInputs.skill1)
 		{
-			if(playerActionPoint.currentActionPointAvailable > 0)
+			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
 			{
 				animator.SetTrigger("Skill1");
 				starterAssetsInputs.skill1 = false;
@@ -323,7 +326,7 @@ public class Axe : MonoBehaviour
 		
 		if(starterAssetsInputs.skillQ)
 		{
-			if(playerLimit.currentLimit == playerLimit.maxLimit && hasWeapon)
+			if(playerLimit.currentLimit == playerLimit.maxLimit && hasWeapon && !isUltiPlaying)
 			{
 				animator.SetTrigger("SkillQ");
 				starterAssetsInputs.skillQ = false;
