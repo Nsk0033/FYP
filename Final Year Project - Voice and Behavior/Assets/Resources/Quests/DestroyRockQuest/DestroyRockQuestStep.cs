@@ -16,7 +16,7 @@ public class DestroyRockQuestStep : QuestStep
         }
         else
         {
-            string status = "Talk to the man who get stucked by giant rock.";
+            string status = "Talk to the Aiden who get stucked by giant rock.";
             ChangeState("", status);
             FinishQuestStep();
         }
@@ -27,7 +27,7 @@ public class DestroyRockQuestStep : QuestStep
     {
         if(!FineRock.activeSelf)
 		{
-			string status = "Talk to the man who get stucked by giant rock.";
+			string status = "Talk to the Aiden who get stucked by giant rock.";
             ChangeState("", status);
             FinishQuestStep();
 		}

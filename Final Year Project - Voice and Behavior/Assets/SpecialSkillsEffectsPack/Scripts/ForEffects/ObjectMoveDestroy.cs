@@ -74,6 +74,8 @@ public class ObjectMoveDestroy : MonoBehaviour
             if (hit.transform.tag != mtag)
                 return;
         ishit = true;
+		// Check if the other collider has the "Projectile" tag
+		
         if(m_gameObjectTail)
             m_gameObjectTail.transform.parent = null;
         MakeHitObject(hit);

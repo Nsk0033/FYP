@@ -23,7 +23,7 @@ namespace StarterAssets
 		public bool skill1;
 		public bool skill2;
 		public bool skill3;
-		
+		public bool pause;
 		
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -126,6 +126,11 @@ namespace StarterAssets
 		public void OnSkill3(InputValue value)
 		{
 			Skill3Input(value.isPressed);
+		}
+		
+		public void OnPause(InputValue value)
+		{
+			PauseInput(value.isPressed);
 		}
 		
 #endif
@@ -239,6 +244,12 @@ namespace StarterAssets
 			Debug.Log("Skill3: " + skill3);
 		}
 		
+		public void PauseInput(bool newPauseState)
+		{
+			pause = newPauseState;
+			
+		}
+		
 		private void LeftClickAttackTimer()
 		{
 			if (flt_LeftClickAttackTimer >= 0)
@@ -258,6 +269,7 @@ namespace StarterAssets
 			cursorLocked = !cursorLocked;
 			SetCursorState(cursorLocked);
 		}
+		
 	}
 	
 }

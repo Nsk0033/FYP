@@ -118,6 +118,7 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
+		
 
         private bool IsCurrentDeviceMouse
         {
@@ -131,10 +132,19 @@ namespace StarterAssets
             }
         }
 
+		public static ThirdPersonController instance;
 
         private void Awake()
         {
-            // get a reference to our main camera
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
             if (_mainCamera == null)
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");

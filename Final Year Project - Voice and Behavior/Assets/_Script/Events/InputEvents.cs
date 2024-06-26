@@ -29,4 +29,13 @@ public class InputEvents
             onQuestLogTogglePressed();
         }
     }
+	
+	public event Action onPausePressed;
+    public void PausePressed()
+    {
+        if (onPausePressed != null) 
+        {
+            onPausePressed();
+        }
+    }
 }

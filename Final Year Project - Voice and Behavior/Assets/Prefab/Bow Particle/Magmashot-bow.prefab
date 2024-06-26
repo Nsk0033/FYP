@@ -45,12 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_makeObjs:
-  - {fileID: 1833216504575805730, guid: d9a076befffa39240b7e7005200145ab, type: 3}
+  - {fileID: 2586771079803331592, guid: 76586f642e927ff40af646b2e3207e66, type: 3}
   m_startDelay: 0
   m_makeCount: 3
   m_makeDelay: 0
   m_randomPos: {x: 0, y: 0, z: 0}
-  m_randomRot: {x: 2, y: 2, z: 1}
+  m_randomRot: {x: 1, y: 1, z: 1}
   m_randomScale: {x: 0, y: 0, z: 0}
   isObjectAttachToParent: 1
 --- !u!1 &1696090326604497296
@@ -98,12 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_makeObjs:
-  - {fileID: 1833216504575805730, guid: d9a076befffa39240b7e7005200145ab, type: 3}
+  - {fileID: 2586771079803331592, guid: 76586f642e927ff40af646b2e3207e66, type: 3}
   m_startDelay: 0
-  m_makeCount: 3
+  m_makeCount: 4
   m_makeDelay: 0
   m_randomPos: {x: 0, y: 0, z: 0}
-  m_randomRot: {x: 7, y: 7, z: 1}
+  m_randomRot: {x: 5, y: 5, z: 1}
   m_randomScale: {x: 0, y: 0, z: 0}
   isObjectAttachToParent: 1
 --- !u!1 &4353449219850072588
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fe273677430814fb90e92f252f7adb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DestroytTime: 3
+  m_DestroytTime: 5
 --- !u!1 &6644211366732979589
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,11 +253,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_makeObjs:
-  - {fileID: 1833216504575805730, guid: d9a076befffa39240b7e7005200145ab, type: 3}
+  - {fileID: 2586771079803331592, guid: 76586f642e927ff40af646b2e3207e66, type: 3}
   m_startDelay: 0
   m_makeCount: 3
   m_makeDelay: 0
   m_randomPos: {x: 0, y: 0, z: 0}
-  m_randomRot: {x: 4, y: 4, z: 0.5}
+  m_randomRot: {x: 3, y: 3, z: 0.5}
   m_randomScale: {x: 0, y: 0, z: 0}
   isObjectAttachToParent: 1

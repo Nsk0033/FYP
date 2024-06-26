@@ -47,19 +47,22 @@ public class QuestLogUI : MonoBehaviour
     {
         contentParent.SetActive(true);
         GameEventsManager.instance.playerEvents.DisablePlayerMovement();
+		
         // note - this needs to happen after the content parent is set active,
         // or else the onSelectAction won't work as expected
         if (firstSelectedButton != null)
         {
             firstSelectedButton.Select();
         }
+		Time.timeScale = 0f;
     }
 
-    private void HideUI()
+    public void HideUI()
     {
         contentParent.SetActive(false);
         GameEventsManager.instance.playerEvents.EnablePlayerMovement();
         EventSystem.current.SetSelectedGameObject(null);
+		Time.timeScale = 1f;
     }
 
     private void QuestStateChange(Quest quest)

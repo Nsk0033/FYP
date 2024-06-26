@@ -4599,7 +4599,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 718bae68ee86e314595e179022e3fae2, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4663,6 +4662,7 @@ GameObject:
   - component: {fileID: 484386}
   - component: {fileID: 10810318}
   - component: {fileID: 11477972}
+  - component: {fileID: 182821982958142735}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -4813,6 +4813,29 @@ MonoBehaviour:
   GraphTimeMultiplier: 2
   GraphIntensityMultiplier: 0.5
   IsLoop: 1
+--- !u!114 &182821982958142735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &161970
 GameObject:
   m_ObjectHideFlags: 0
@@ -9406,7 +9429,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d101c7d8a8bdf3449b3eab56daf6aff6, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

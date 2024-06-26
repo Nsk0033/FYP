@@ -70,19 +70,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 		
 		SwitchWeapon();
 		
-		if (starterAssetsInputs.interact)
-		{
-			GameEventsManager.instance.inputEvents.SubmitPressed();
-		}
-    
-
-    
-        if (starterAssetsInputs.questLogToggle)
-        {
-            GameEventsManager.instance.inputEvents.QuestLogTogglePressed();
-			starterAssetsInputs.questLogToggle = false;
-			starterAssetsInputs.ToggleMenu();
-        }
+		
 	}
 	
 	private void SwitchWeapon()

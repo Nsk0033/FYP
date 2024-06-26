@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 7385779886477073255}
   - component: {fileID: 7013565306429397796}
   - component: {fileID: 45780575504907680}
+  - component: {fileID: 4201889623077298553}
   m_Layer: 6
   m_Name: FireGolem-Enemy
   m_TagString: Enemy
@@ -53,7 +54,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3322979656262767648}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -62,7 +63,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 2.41
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -418,12 +419,12 @@ MonoBehaviour:
   SwitchWeaponTypesDistance: 8
   CameraTag: MainCamera
   m_HealthBarComponent: {fileID: 0}
-  AttackHeight: 20
+  AttackHeight: 3.7
   m_EmeraldAIAbility: {fileID: 0}
   RotateTowardsTarget: 0
   m_AttackAnimationClipMissing: 0
-  ProjectileCollisionPointY: 3.26
-  m_ProjectileCollisionPoint: {x: 343.34, y: 13.08, z: 152.95195}
+  ProjectileCollisionPointY: 3.34
+  m_ProjectileCollisionPoint: {x: 343.34, y: 13.16, z: 152.95195}
   ObstructionTimer: 0
   ObstructionSeconds: 4
   IdleVolume: 1
@@ -474,7 +475,7 @@ MonoBehaviour:
   GeneratedBlockOdds: 0
   m_AnimationsChanged: 0
   m_LastAnimatorType: 1
-  BackupOdds: 50
+  BackupOdds: 15
   GeneratedBackupOdds: 0
   BackupDistance: 12
   BackupDestination: {x: 0, y: 0, z: 0}
@@ -493,8 +494,8 @@ MonoBehaviour:
   IsDead: 0
   BackingUpTimer: 0
   BackingUpSeconds: 0
-  BackingUpSecondsMin: 3
-  BackingUpSecondsMax: 4
+  BackingUpSecondsMin: 1
+  BackingUpSecondsMax: 3
   RunAttackTimer: 0
   RunAttackSpeed: 0
   MinMeleeAttackSpeed: 0
@@ -541,12 +542,12 @@ MonoBehaviour:
   ReverseRangedWalkAnimation: 1
   AngleToTurn: 0
   NonCombatAngleToTurn: 20
-  CombatAngleToTurn: 20
+  CombatAngleToTurn: 70
   StationaryTurningSpeedNonCombat: 50
   MovingTurningSpeedNonCombat: 2000
-  StationaryTurningSpeedCombat: 50
+  StationaryTurningSpeedCombat: 165
   MovingTurningSpeedCombat: 2000
-  BackupTurningSpeed: 100
+  BackupTurningSpeed: 170
   MaxSlopeLimit: 30
   Acceleration: 1
   Deceleration: 0.5
@@ -634,6 +635,8 @@ MonoBehaviour:
   - FactionIndex: 2
     RelationTypeRef: 0
   - FactionIndex: 1
+    RelationTypeRef: 0
+  - FactionIndex: 5
     RelationTypeRef: 0
   PlayerFaction:
   - PlayerTag: Player
@@ -809,7 +812,7 @@ MonoBehaviour:
   AnimationListsChanged: 0
   FilePath: Assets/_Enemy Model/EnemyAnimationOverrideController/Golem.overrideController
   MissingRuntimeController: 0
-  EmeraldTag: Respawn
+  EmeraldTag: Enemy
   UITag: Player
   RagdollTag: Untagged
   AnimationsUpdated: 0
@@ -817,17 +820,17 @@ MonoBehaviour:
   ObstructionDetectionUpdateSeconds: 0.1
   ObstructionDetectionUpdateTimer: 0
   CurrentHealth: 0
-  StartingHealth: 40
+  StartingHealth: 170
   DetectionRadius: 18
   CurrentDamageAmount: 5
   DamageAmountRun: 5
   WanderRadius: 25
-  TabNumber: 6
-  TemperamentTabNumber: 2
-  DetectionTagsTabNumber: 0
+  TabNumber: 1
+  TemperamentTabNumber: 0
+  DetectionTagsTabNumber: 1
   AnimationTabNumber: 1
-  SoundTabNumber: 0
-  MovementTabNumber: 1
+  SoundTabNumber: 1
+  MovementTabNumber: 0
   WeaponTypeTabNumber: 0
   WeaponTypeCombatTabNumber: 0
   WeaponTypeControlTabNumber: 0
@@ -836,7 +839,7 @@ MonoBehaviour:
   IdleAnimationNumber: 1
   CombatTabNumber: 0
   FactionsAndTagTabNumber: 0
-  EventTabNumber: 0
+  EventTabNumber: 1
   MinimumWaitTime: 3
   MaximumWaitTime: 6
   MinimumFollowWaitTime: 1
@@ -863,7 +866,7 @@ MonoBehaviour:
   MeleeTooCloseDistance: 2
   RangedTooCloseDistance: 5
   AttackDistance: 2.5
-  MeleeAttackDistance: 5.8
+  MeleeAttackDistance: 4.2
   RangedAttackDistance: 25
   RunAttackDistance: 3
   CautiousSeconds: 8
@@ -875,7 +878,7 @@ MonoBehaviour:
   AILevel: 2
   AIName: AI Name
   AITitle: AI Title
-  StoppingDistance: 2
+  StoppingDistance: 1.1
   FollowingStoppingDistance: 5
   DistanceOffset: 1
   DistanceFromTarget: 0
@@ -1000,7 +1003,7 @@ MonoBehaviour:
   StartingMovementState: 1
   CurrentMovementState: 0
   CurrentBlockingState: 1
-  BackupTypeRef: 1
+  BackupTypeRef: 2
   AnimatorCullingMode: 0
   CurrentMeleeAttackType: 0
   TotalLODsRef: 1
@@ -1012,7 +1015,7 @@ MonoBehaviour:
   AlignAIOnStartRef: 0
   UseAIAvoidance: 1
   UseEquipAnimation: 0
-  UseHitAnimations: 1
+  UseHitAnimations: 0
   UseDroppableWeapon: 0
   EnableDebugging: 0
   DrawRaycastsEnabled: 1
@@ -1026,9 +1029,9 @@ MonoBehaviour:
   UseAILevelUIOutlineEffect: 1
   UseCustomFontAIName: 0
   UseCustomFontAILevel: 0
-  AlignAIWithGroundRef: 0
+  AlignAIWithGroundRef: 1
   CreateHealthBarsRef: 0
-  UseNonAITagRef: 0
+  UseNonAITagRef: 1
   UseMagicEffectsPackRef: 0
   RandomizeDamageRef: 1
   CustomizeHealthBarRef: 0
@@ -1151,7 +1154,7 @@ MonoBehaviour:
     m_Bits: 384
   ObstructionDetectionLayerMask:
     serializedVersion: 2
-    m_Bits: 4
+    m_Bits: 0
   UILayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -1160,13 +1163,25 @@ MonoBehaviour:
     m_Bits: 1
   AIAvoidanceLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 68
   DynamicWanderLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
   BackupLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4201889623077298553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322979656262767648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c48d76224b2dac448e107783267ef65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &598482120353204733
 PrefabInstance:
   m_ObjectHideFlags: 0

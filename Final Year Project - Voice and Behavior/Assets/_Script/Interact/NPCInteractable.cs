@@ -29,11 +29,12 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     {
         animator = GetComponent<Animator>();
         npcHeadLookAt = GetComponent<NPCHeadLookAt>();
+
     }
 
     private void Update()
     {
-        CheckQuestRequirements();
+        CheckQuestRequirements();	
     }
 
     private void CheckQuestRequirements()
@@ -67,8 +68,9 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     private void StartConversation(Transform interactorTransform)
     {
+		PlayerStateManager.instance.SetCanMove(false);
         animator.SetBool("Talking", true);
-        Invoke("StopTalking", 3f);
+        //Invoke("StopTalking", 3f);
         float playerHeight = 1.8f;
         npcHeadLookAt.LookAtPosition(interactorTransform.position + Vector3.up * playerHeight);
         wholePanel.SetActive(true);
@@ -119,14 +121,17 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     private void EndConversation()
     {
+		PlayerStateManager.instance.SetCanMove(true);
         wholePanel.SetActive(false);
+		Invoke("ResetRotation",2f);
         index = 0;
+		 animator.SetBool("Talking", false);
     }
 
-    private void StopTalking()
+    /*private void StopTalking()
     {
-        animator.SetBool("Talking", false);
-    }
+       
+    }*/
 
     private void TriggerQuestPoint()
     {
@@ -135,6 +140,11 @@ public class NPCInteractable : MonoBehaviour, IInteractable
             questPoint.PlayerIsNear = true; // Ensure PlayerIsNear is set
             questPoint.SubmitPressed();
         }
+    }
+	
+	private void ResetRotation()
+    {
+        npcHeadLookAt.ReturnToInitialRotation();
     }
 
     public string GetInteractText()
