@@ -27,7 +27,7 @@ public class SkillHeal : MonoBehaviour
 
         Debug.Log("Object hit with skill!");
 
-        if (other.CompareTag("player"))
+        if (other.CompareTag("Player"))
 		{
 			if (PlayerHealth.instance != null)
 			{

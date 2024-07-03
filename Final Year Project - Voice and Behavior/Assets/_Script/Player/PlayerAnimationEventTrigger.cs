@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using StarterAssets;
+using FirstGearGames.SmoothCameraShaker;
 
 public class PlayerAnimationEventTrigger : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private Camera mainCamera;
 	[SerializeField] private Transform mainCharacter;
 	[SerializeField] private GameObject ultiCinemachine;
+	[SerializeField] private ShakeData shakeData;  // Assign the ShakeData in the inspector
 	
 	[Header("Character Value")]
 	[SerializeField] private float animatorHitStopSpeed = 0.3f;
@@ -81,6 +83,22 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			AnimationHitStop();
 		}
 	}*/
+	public void CameraStartShaking()
+    {
+        CameraShakerHandler.ShakeAll(shakeData);
+    }
+
+    public void CameraStopShaking()
+    {
+        CameraShakerHandler.StopAll();
+    }
+	
+	public void CameraStartShakingDelay(AnimationEvent animationEvent)
+    {
+		float delayTime = animationEvent.floatParameter; // Get the integer parameter from the animation event
+        CameraShakerHandler.ShakeAll(shakeData);
+		Invoke("CameraStopShaking",delayTime);
+    }
 	
     private void Attack4SlashStart(AnimationEvent animationEvent)
 	{

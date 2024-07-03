@@ -586,6 +586,20 @@ ModelImporter:
         floatParameter: 135
         intParameter: 0
         messageOptions: 0
+      - time: 0.43564358
+        functionName: CameraStartShaking
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 135
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7458746
+        functionName: CameraStopShaking
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 135
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

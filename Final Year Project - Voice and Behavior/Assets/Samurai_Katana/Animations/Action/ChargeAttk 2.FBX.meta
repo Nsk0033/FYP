@@ -565,15 +565,29 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.007518797
-        functionName: UltiCamOn
+      - time: 0.024081126
+        functionName: StopMovement
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.013681746
+      - time: 0.034762118
         functionName: UseLimit
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.045454547
+        functionName: LimitAttackAuraStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.05758467
+        functionName: UltiCamOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -581,6 +595,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.6
         functionName: LimitAttackSlashStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.809886
+        functionName: StartMovement
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -600,22 +621,15 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.024081126
-        functionName: StopMovement
+      - time: 0.1320132
+        functionName: CameraStartShaking
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.809886
-        functionName: StartMovement
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.045454547
-        functionName: LimitAttackAuraStart
+      - time: 0.650165
+        functionName: CameraStopShaking
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

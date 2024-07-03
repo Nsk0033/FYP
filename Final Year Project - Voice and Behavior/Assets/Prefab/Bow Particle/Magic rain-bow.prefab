@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df122f9a5355c5e49b8f76e10dd9b47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 30
+  healAmount: 10
   startDelay: 0.5
 --- !u!1001 &6802006832239623151
 PrefabInstance:

@@ -16,6 +16,9 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     [Header("Quest Point Reference")]
     [SerializeField] private QuestPoint questPoint; // Reference to the QuestPoint script
+	
+	[Header("Cinemachine Related Panel")]
+    [SerializeField] private GameObject cinemachine;
 
     private Animator animator;
     private NPCHeadLookAt npcHeadLookAt;
@@ -70,6 +73,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     {
 		PlayerStateManager.instance.SetCanMove(false);
         animator.SetBool("Talking", true);
+		cinemachine.SetActive(true);
         //Invoke("StopTalking", 3f);
         float playerHeight = 1.8f;
         npcHeadLookAt.LookAtPosition(interactorTransform.position + Vector3.up * playerHeight);
@@ -125,7 +129,8 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         wholePanel.SetActive(false);
 		Invoke("ResetRotation",2f);
         index = 0;
-		 animator.SetBool("Talking", false);
+		animator.SetBool("Talking", false);
+		cinemachine.SetActive(false);
     }
 
     /*private void StopTalking()
