@@ -15,7 +15,8 @@ MonoBehaviour:
   <id>k__BackingField: VisitFireGodStatueQuest
   displayName: Visit The Fire God Statue
   levelRequirement: 0
-  questPrerequisites: []
+  questPrerequisites:
+  - {fileID: 11400000, guid: a84235ac31755f84fb2e12a71625152f, type: 2}
   questStepPrefabs:
   - {fileID: 80251055353661722, guid: 71a1ccb934147664d8a747678ece06bd, type: 3}
   - {fileID: 4508113030405327411, guid: 7492a9d765d182f49b34e117cac1dfa9, type: 3}

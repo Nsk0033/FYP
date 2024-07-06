@@ -565,6 +565,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 15
         messageOptions: 0
+      - time: 0.57281554
+        functionName: FlameSlashStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 135
+        intParameter: 0
+        messageOptions: 0
       - time: 0.6
         functionName: ChargedAttack2SlashStart
         data: 
@@ -579,21 +586,14 @@ ModelImporter:
         floatParameter: 45
         intParameter: 0
         messageOptions: 0
-      - time: 0.57281554
-        functionName: FlameSlashStart
+      - time: 0.6592352
+        functionName: CameraStartShakingDelay
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 135
+        floatParameter: 0.3
         intParameter: 0
         messageOptions: 0
-      - time: 0.43564358
-        functionName: CameraStartShaking
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 135
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.7458746
+      - time: 0.7934098
         functionName: CameraStopShaking
         data: 
         objectReferenceParameter: {instanceID: 0}

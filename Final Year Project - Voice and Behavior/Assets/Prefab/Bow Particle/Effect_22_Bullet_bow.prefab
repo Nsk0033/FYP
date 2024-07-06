@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 25
   vfxHit: {fileID: 3494012766727982813, guid: 4d41c0adac48e9144b7e8729043ab678, type: 3}
-  damageOutput: 8
+  damageOutput: 9
 --- !u!54 &6650702606083737450
 Rigidbody:
   m_ObjectHideFlags: 0

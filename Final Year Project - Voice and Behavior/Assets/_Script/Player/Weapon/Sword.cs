@@ -50,6 +50,7 @@ public class Sword : MonoBehaviour
 	private float chargedLastUsedTime;
 	private bool isIdlePlaying;
 	private bool isUltiPlaying;
+	private bool isSkill2Playing;
 	
 	private void Awake()
 	{
@@ -86,6 +87,9 @@ public class Sword : MonoBehaviour
 		isUltiPlaying = animator.GetCurrentAnimatorStateInfo(2).IsName("Ultimate");
 		
 		isIdlePlaying = animator.GetCurrentAnimatorStateInfo(2).IsName("Empty");
+		
+		isSkill2Playing = animator.GetCurrentAnimatorStateInfo(2).IsName("Skill2");
+		
 		if (isIdlePlaying)
 		{
 			collider.enabled = false;
@@ -135,7 +139,7 @@ public class Sword : MonoBehaviour
 				thirdPersonController.SetRotateOnMove(true);
 			}
 			
-			if(!canMeleeAttack || isUltiPlaying)
+			if(!canMeleeAttack || isUltiPlaying || isSkill2Playing)
 			{
 				//animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
 				//hasMeleeAttacked = false;
@@ -258,6 +262,21 @@ public class Sword : MonoBehaviour
 			{
 				animator.ResetTrigger("SkillQ");
 				starterAssetsInputs.skillQ = false;
+				return;
+			}
+		}
+		
+		if(starterAssetsInputs.skill2)
+		{
+			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
+			{
+				animator.SetTrigger("Skill2");
+				starterAssetsInputs.skill2 = false;
+			}
+			else
+			{
+				animator.ResetTrigger("Skill2");
+				starterAssetsInputs.skill2 = false;
 				return;
 			}
 		}

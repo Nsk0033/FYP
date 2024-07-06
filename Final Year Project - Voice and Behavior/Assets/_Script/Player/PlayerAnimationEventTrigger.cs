@@ -28,6 +28,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private GameObject s_SkillEAura;
 	[SerializeField] private GameObject s_Skill1Object;
 	[SerializeField] private GameObject s_Skill1FlameSlash;
+	[SerializeField] private GameObject s_Skill2;
 	
 	[Header("Character Bow Projectile")]
 	[SerializeField] private float arrowSpread = 3f;
@@ -39,12 +40,17 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private GameObject b_LimitRain;
 	[SerializeField] private GameObject b_LimitAulora;
 	[SerializeField] private GameObject b_skill1;
+	[SerializeField] private GameObject b_skille;
+	[SerializeField] private GameObject b_skill2_cast;
+	[SerializeField] private GameObject b_skill2_rain;
 	
 	[Header("Character Axe Projectile")]
 	[SerializeField] private GameObject a_LimitSpin;
 	[SerializeField] private GameObject a_LimitSpin1;
 	[SerializeField] private GameObject a_skille;
 	[SerializeField] private GameObject a_skill1;
+	[SerializeField] private GameObject a_skill2Object;
+	[SerializeField] private GameObject a_skill2IceSlash;
 	
 	[Header("Character Position")]
 	[SerializeField] private Transform shootPosition;
@@ -61,6 +67,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	private ThirdPersonController thirdPersonController;
 	
 	private float lastBowCastRotationY;
+	private GameObject skill2CastInstance;
 	
 	private void Start()
 	{
@@ -680,6 +687,44 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			return;
 	}
 	
+	private void IceSlashStart(AnimationEvent animationEvent)
+	{
+		if (thirdPersonShooterController.CurrentWeaponIndex == 3 && a_skill2Object.activeSelf)
+		{
+			// Ensure the main camera is assigned
+			if (mainCamera == null)
+			{
+				Debug.LogWarning("Main camera is not assigned.");
+				return;
+			}
+
+			float slashZRotation = animationEvent.floatParameter;
+
+			// Perform a raycast from the camera to the mouse position
+			Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+
+			// Check if the ray hits something in the scene
+			if (Physics.Raycast(ray, out hit))
+			{
+				// Calculate the direction vector from the shootPosition to the hit point
+				Vector3 direction = hit.point - mainCharacter.position;
+				direction.y = 0f; // Ensure the slash stays parallel to the ground
+
+				// Calculate the rotation based on the direction vector
+				Quaternion slashRotation = Quaternion.LookRotation(direction);
+
+				// Incorporate the Z-axis rotation
+				slashRotation *= Quaternion.Euler(0, 0, slashZRotation);
+
+				// Instantiate the attack4Slash GameObject with the calculated rotation
+				Instantiate(a_skill2IceSlash, shootPosition_sword4.position, slashRotation);
+			}
+		}
+		else
+			return;
+	}
+	
 	private void FlameRingStart(AnimationEvent animationEvent)
 	{
 		if (thirdPersonShooterController.CurrentWeaponIndex == 3)
@@ -722,5 +767,104 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 		}
 		else
 			return;
+	}
+	
+	private void SkillEBowStart(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 2)
+		{
+			Vector3 mouseWorldPosition = Vector3.zero;
+			Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
+			Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
+
+			if (Physics.Raycast(ray,out RaycastHit raycastHit, 999f))
+			{
+				mouseWorldPosition = raycastHit.point;
+			}
+			else
+			{
+				mouseWorldPosition = ray.GetPoint(10);
+			}
+			Vector3 aimDir = (mouseWorldPosition - mainCharacter.position).normalized;
+
+			// Instantiate projectiles at shootPosition with the calculated aim directions
+			Instantiate(b_skille, shootPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+		}
+		else
+			return;
+	}
+	
+	private void Skill2SwordStart(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 1)
+		{
+			// Ensure the main camera is assigned
+			if (mainCamera == null)
+			{
+				Debug.LogWarning("Main camera is not assigned.");
+				return;
+			}
+
+			// Perform a raycast from the camera to the mouse position
+			Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+
+			// Check if the ray hits something in the scene
+			if (Physics.Raycast(ray, out hit))
+			{
+				// Calculate the direction vector from the shootPosition to the hit point
+				Vector3 direction = hit.point - mainCharacter.position;
+				direction.y = 0f; // Ensure the slash stays parallel to the ground
+
+				// Calculate the rotation based on the direction vector
+				Quaternion slashRotation = Quaternion.LookRotation(direction);
+
+				// Instantiate the attack4Slash GameObject with the calculated rotation
+				Instantiate(s_Skill2, mainCharacter.position, slashRotation);
+			}
+		}
+        else
+			return;
+    }
+	
+	private void Skill2BowStart(AnimationEvent animationEvent)
+    {
+        if (thirdPersonShooterController.CurrentWeaponIndex == 2)
+        {
+            // Instantiate b_skill2_cast and store the instance
+            skill2CastInstance = Instantiate(b_skill2_cast, mainCharacter.position, Quaternion.identity);
+            
+            // Invoke Skill2RainStart after 1 second
+            Invoke("Skill2RainStart", 1f);
+        }
+    }
+
+    private void Skill2RainStart()
+    {
+        // Check if skill2CastInstance is not null
+        if (skill2CastInstance != null)
+        {
+            // Instantiate b_skill2_rain at the position of skill2CastInstance
+            Instantiate(b_skill2_rain, skill2CastInstance.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("skill2CastInstance is null. Ensure it is instantiated correctly.");
+        }
+    }
+	
+	private void Skill2AxeStart(AnimationEvent animationEvent)
+	{
+		if (thirdPersonShooterController.CurrentWeaponIndex == 3)
+		{
+			a_skill2Object.SetActive(true);
+			CancelInvoke("Skill2AxeEnd");
+			Invoke("Skill2AxeEnd", 20f);
+		}
+	}
+
+	private void Skill2AxeEnd()
+	{    
+		a_skill2Object.SetActive(false);
 	}
 }

@@ -558,25 +558,25 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.27027026
-        functionName: FlameSlashStart
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 82
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.22553192
+      - time: 0.12844454
         functionName: CameraStartShakingDelay
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0.2
         intParameter: 0
         messageOptions: 0
-      - time: 0.28936172
+      - time: 0.1890381
         functionName: CameraStopShaking
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0.2
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.27027026
+        functionName: FlameSlashStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 82
         intParameter: 0
         messageOptions: 0
       transformMask:

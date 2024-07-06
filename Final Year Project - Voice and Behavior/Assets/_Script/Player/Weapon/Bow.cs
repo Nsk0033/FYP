@@ -49,6 +49,7 @@ public class Bow : MonoBehaviour
 	private float chargedLastUsedTime;
 	private bool isUltiPlaying;
 	private bool isSkill1Playing;
+	private bool isSkillEPlaying;
 	
     private void Awake()
 	{
@@ -86,6 +87,7 @@ public class Bow : MonoBehaviour
 		
 		isUltiPlaying = animator.GetCurrentAnimatorStateInfo(1).IsName("Ultimate");
 		isSkill1Playing = animator.GetCurrentAnimatorStateInfo(1).IsName("BowSkill1");
+		isSkillEPlaying = animator.GetCurrentAnimatorStateInfo(1).IsName("BowSkillE");
 		
 		if (Physics.Raycast(ray,out RaycastHit raycastHit, 999f, aimColliderLayerMask))
 		{
@@ -126,7 +128,7 @@ public class Bow : MonoBehaviour
 			thirdPersonController.SetSensitivity(normalSensitivity);
 			thirdPersonController.SetRotateOnMove(true);
 			
-			if(!canMeleeAttack || isUltiPlaying || isSkill1Playing)
+			if(!canMeleeAttack || isUltiPlaying || isSkill1Playing || isSkillEPlaying)
 			{
 				thirdPersonController.SetRotateOnMove(false);
 				Vector3 worldAimTarget = mouseWorldPosition;
@@ -232,6 +234,21 @@ public class Bow : MonoBehaviour
 			{
 				animator.ResetTrigger("Skill1");
 				starterAssetsInputs.skill1 = false;
+				return;
+			}
+		}
+		
+		if(starterAssetsInputs.skill2)
+		{
+			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
+			{
+				animator.SetTrigger("Skill2");
+				starterAssetsInputs.skill2 = false;
+			}
+			else
+			{
+				animator.ResetTrigger("Skill2");
+				starterAssetsInputs.skill2 = false;
 				return;
 			}
 		}

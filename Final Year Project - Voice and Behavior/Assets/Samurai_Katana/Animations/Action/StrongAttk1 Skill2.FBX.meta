@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e82a6e8117f66248b1bef3fe5d7e8ae
+guid: 652b8617788cbd44bbb2348908cef3a2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable:
@@ -224,13 +224,13 @@ ModelImporter:
     second: Spine
   - first:
       1: 100146
-    second: Sword_Hold
+    second: //RootNode
   - first:
       1: 100148
-    second: Sword_Hold_Bone
+    second: Sword_Hold
   - first:
       1: 100150
-    second: //RootNode
+    second: Sword_Hold_Bone
   - first:
       4: 400000
     second: Bip001 Footsteps
@@ -452,13 +452,13 @@ ModelImporter:
     second: Spine
   - first:
       4: 400146
-    second: Sword_Hold
+    second: //RootNode
   - first:
       4: 400148
-    second: Sword_Hold_Bone
+    second: Sword_Hold
   - first:
       4: 400150
-    second: //RootNode
+    second: Sword_Hold_Bone
   - first:
       43: 4300000
     second: Body
@@ -479,7 +479,7 @@ ModelImporter:
     second: BladeR
   - first:
       74: 7400000
-    second: Sword_Magic
+    second: Skill2
   - first:
       95: 9500000
     second: //RootNode
@@ -517,7 +517,10 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Spine' has translation animation that will
+      be discarded.\n\t'Chest' has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -531,11 +534,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Sword_Magic
+      name: Skill2
       takeName: Take 001
       internalID: 0
       firstFrame: 0
-      lastFrame: 156
+      lastFrame: 65
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -555,33 +558,33 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.081081085
-        functionName: UseAP
+      - time: 0.08528366
+        functionName: Skill2SwordStart
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 1
-        messageOptions: 0
-      - time: 0.3693694
-        functionName: Skill1SwordStart
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
+        floatParameter: 82
         intParameter: 0
         messageOptions: 0
-      - time: 0.20792079
+      - time: 0.12844454
         functionName: CameraStartShakingDelay
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0.4
+        floatParameter: 0.2
         intParameter: 0
         messageOptions: 0
-      - time: 0.45214522
+      - time: 0.1890381
         functionName: CameraStopShaking
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
+        floatParameter: 0.2
         intParameter: 0
+        messageOptions: 0
+      - time: 0.0648855
+        functionName: UseAP
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0.2
+        intParameter: 1
         messageOptions: 0
       transformMask:
       - path: 

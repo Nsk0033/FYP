@@ -496,6 +496,13 @@ ModelImporter:
         floatParameter: 0.2
         intParameter: 0
         messageOptions: 0
+      - time: 0.07455539
+        functionName: IceSlashStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 70
+        intParameter: 0
+        messageOptions: 0
       - time: 0.12541254
         functionName: CameraStopShaking
         data: 

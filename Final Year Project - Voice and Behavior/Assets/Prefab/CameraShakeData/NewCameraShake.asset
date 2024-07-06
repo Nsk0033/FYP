@@ -19,8 +19,8 @@ MonoBehaviour:
   _iterationPercent: 1
   _unlimitedDuration: 1
   _totalDuration: 4
-  _fadeInDuration: 0.5
-  _fadeOutDuration: 0.5
+  _fadeInDuration: 0.2
+  _fadeOutDuration: 0.2
   _magnitude: 0.4
   _magnitudeNoise: 0.033
   _magnitudeCurve:
