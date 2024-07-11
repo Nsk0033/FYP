@@ -13,6 +13,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     [SerializeField] private float textSpeed = 0.05f;
     [SerializeField] private string interactText;
 	[SerializeField] private GameObject canFinishIcon; // Icon to show quest requirements not met
+	[SerializeField] private GameObject requirementsNotMetToStartIcon; // Icon to show quest requirements not met
 
     [Header("Quest Point Reference")]
     [SerializeField] private QuestPoint questPoint; // Reference to the QuestPoint script
@@ -52,21 +53,26 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     public void Interact(Transform interactorTransform)
     {
-        if (!wholePanel.activeSelf)
-        {
-            StartConversation(interactorTransform);
-        }
-        else if (isTyping)
-        {
-            StopAllCoroutines();
-            textContent.text = lines[index];
-            isTyping = false;
-            isDisplaying = true;
-        }
-        else if (!isTyping && isDisplaying)
-        {
-            AdvanceDialogue();
-        }
+		if(!requirementsNotMetToStartIcon.activeSelf)
+		{
+			if (!wholePanel.activeSelf)
+			{
+				StartConversation(interactorTransform);
+			}
+			else if (isTyping)
+			{
+				StopAllCoroutines();
+				textContent.text = lines[index];
+				isTyping = false;
+				isDisplaying = true;
+			}
+			else if (!isTyping && isDisplaying)
+			{
+				AdvanceDialogue();
+			}
+		}
+		else
+			return;
     }
 
     private void StartConversation(Transform interactorTransform)
@@ -127,7 +133,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     {
 		PlayerStateManager.instance.SetCanMove(true);
         wholePanel.SetActive(false);
-		Invoke("ResetRotation",2f);
+		ResetRotation();
         index = 0;
 		animator.SetBool("Talking", false);
 		cinemachine.SetActive(false);

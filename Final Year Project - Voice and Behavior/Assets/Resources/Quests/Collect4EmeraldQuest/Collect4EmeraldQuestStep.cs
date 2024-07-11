@@ -16,7 +16,7 @@ public class Collect4EmeraldQuestStep : QuestStep
         // Spawn the objects at the specified locations
         foreach (Transform location in SpawnLocations)
         {
-            GameObject spawnedObject = Instantiate(SpawnObjectPrefab, location.position, location.rotation);
+            GameObject spawnedObject = Instantiate(SpawnObjectPrefab, location.position, location.rotation, transform);
             spawnedObjects.Add(spawnedObject);
         }
 		UpdateState();

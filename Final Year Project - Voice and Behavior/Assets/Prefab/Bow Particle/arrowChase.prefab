@@ -5040,9 +5040,10 @@ MonoBehaviour:
   speed: 15
   vfxHit: {fileID: 2092505190179113448, guid: 95d41009fbf31494096c2d0fe14635e7, type: 3}
   enemyTag: Enemy
-  detectionRadius: 100
-  rotateSpeed: 600
+  detectionRadius: 25
+  rotateSpeed: 500
   damageOutput: 3
+  chaseDelay: 0.7
 --- !u!114 &-2646865212881039861
 MonoBehaviour:
   m_ObjectHideFlags: 0

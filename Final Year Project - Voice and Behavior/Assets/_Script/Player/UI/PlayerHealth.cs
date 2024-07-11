@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     private float HPPercentage = 0f;
 	public bool canDamage = true;
 
-    public static PlayerHealth instance { get; private set; }
+    public static PlayerHealth instance { get; set; }
 
     private void Awake()
     {

@@ -12,6 +12,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private Transform mainCharacter;
 	[SerializeField] private GameObject ultiCinemachine;
 	[SerializeField] private ShakeData shakeData;  // Assign the ShakeData in the inspector
+	[SerializeField] private Transform mainCharacterBow;
 	
 	[Header("Character Value")]
 	[SerializeField] private float animatorHitStopSpeed = 0.3f;
@@ -29,12 +30,14 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private GameObject s_Skill1Object;
 	[SerializeField] private GameObject s_Skill1FlameSlash;
 	[SerializeField] private GameObject s_Skill2;
+	[SerializeField] private GameObject s_Skill3Shield;
 	
 	[Header("Character Bow Projectile")]
 	[SerializeField] private float arrowSpread = 3f;
 	[SerializeField] private int chargedAttackArrowCount = 3;
 	[SerializeField] private GameObject b_attackProjectile;
 	[SerializeField] private GameObject b_ChargedProjectile;
+	[SerializeField] private GameObject b_Skill3Projectile;
 	[SerializeField] private GameObject b_ImpactParticle;
 	[SerializeField] private GameObject b_LimitCast; 
 	[SerializeField] private GameObject b_LimitRain;
@@ -43,6 +46,8 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private GameObject b_skille;
 	[SerializeField] private GameObject b_skill2_cast;
 	[SerializeField] private GameObject b_skill2_rain;
+	[SerializeField] private GameObject b_skill3Object;
+	[SerializeField] private GameObject b_skill3Cast;
 	
 	[Header("Character Axe Projectile")]
 	[SerializeField] private GameObject a_LimitSpin;
@@ -51,6 +56,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private GameObject a_skill1;
 	[SerializeField] private GameObject a_skill2Object;
 	[SerializeField] private GameObject a_skill2IceSlash;
+	[SerializeField] private GameObject a_skill3Shockwave;
 	
 	[Header("Character Position")]
 	[SerializeField] private Transform shootPosition;
@@ -58,6 +64,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	[SerializeField] private Transform shootPosition_upAir;
 	[SerializeField] private Transform shootPosition_bowImpact;
 	[SerializeField] private Transform shootPosition_sword4;
+	[SerializeField] private Transform shootPosition_bow;
 	
 	private ThirdPersonShooterController thirdPersonShooterController;
 	private Animator animator;
@@ -200,13 +207,13 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	
 	private void MeleeAttack1BowStart(AnimationEvent animationEvent)
 	{
-		if(thirdPersonShooterController.CurrentWeaponIndex == 2)
+		if (thirdPersonShooterController.CurrentWeaponIndex == 2)
 		{
 			Vector3 mouseWorldPosition = Vector3.zero;
 			Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
 			Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
 
-			if (Physics.Raycast(ray,out RaycastHit raycastHit, 999f))
+			if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f))
 			{
 				mouseWorldPosition = raycastHit.point;
 			}
@@ -214,23 +221,48 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			{
 				mouseWorldPosition = ray.GetPoint(10);
 			}
+
 			Vector3 aimDir = (mouseWorldPosition - mainCharacter.position).normalized;
-			
+
+			// Convert aim direction to local space
+			Vector3 localAimDir = mainCharacter.InverseTransformDirection(aimDir);
 
 			// Calculate aim directions for the +3 and -3 degree offsets from the central aim direction
-			Quaternion rotationPositive3 = Quaternion.Euler(0f, 0f, arrowSpread);
-			Quaternion rotationNegative3 = Quaternion.Euler(0f, 0f, -1f * arrowSpread);
+			Quaternion rotationPositive3 = Quaternion.Euler(arrowSpread, 0f, 0f);
+			Quaternion rotationNegative3 = Quaternion.Euler(-arrowSpread, 0f, 0f);
+			Quaternion rotationPositive6 = Quaternion.Euler(arrowSpread*2f, 0f, 0f);
+			Quaternion rotationNegative6 = Quaternion.Euler(-arrowSpread*2f, 0f, 0f);
 
-			Vector3 aimDirPositive3 = rotationPositive3 * aimDir;
-			Vector3 aimDirNegative3 = rotationNegative3 * aimDir;
+			Vector3 localAimDirPositive3 = rotationPositive3 * localAimDir;
+			Vector3 localAimDirNegative3 = rotationNegative3 * localAimDir;
+			Vector3 localAimDirPositive6 = rotationPositive6 * localAimDir;
+			Vector3 localAimDirNegative6 = rotationNegative6 * localAimDir;
 
-			// Instantiate projectiles at shootPosition with the calculated aim directions
-			Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-			Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(aimDirPositive3, Vector3.up));
-			Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(aimDirNegative3, Vector3.up));
+			// Convert local directions back to world space
+			Vector3 worldAimDirPositive3 = mainCharacter.TransformDirection(localAimDirPositive3);
+			Vector3 worldAimDirNegative3 = mainCharacter.TransformDirection(localAimDirNegative3);
+			Vector3 worldAimDirPositive6 = mainCharacter.TransformDirection(localAimDirPositive6);
+			Vector3 worldAimDirNegative6 = mainCharacter.TransformDirection(localAimDirNegative6);
+			
+			if(b_skill3Object.activeSelf)
+			{	// Instantiate projectiles at shootPosition with the calculated aim directions
+				Instantiate(b_Skill3Projectile, shootPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+				Instantiate(b_Skill3Projectile, shootPosition.position, Quaternion.LookRotation(worldAimDirPositive3, Vector3.up));
+				Instantiate(b_Skill3Projectile, shootPosition.position, Quaternion.LookRotation(worldAimDirNegative3, Vector3.up));
+				Instantiate(b_Skill3Projectile, shootPosition.position, Quaternion.LookRotation(worldAimDirPositive6, Vector3.up));
+				Instantiate(b_Skill3Projectile, shootPosition.position, Quaternion.LookRotation(worldAimDirNegative6, Vector3.up));
+			}
+			else
+			{
+				Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+				Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(worldAimDirPositive3, Vector3.up));
+				Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(worldAimDirNegative3, Vector3.up));
+			}	
 		}
 		else
+		{
 			return;
+		}
 	}
 	
 	private void MeleeAttack2BowStart(AnimationEvent animationEvent)
@@ -254,15 +286,79 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 
 			// Calculate aim directions for the +3 and -3 degree offsets from the central aim direction
 			Quaternion rotationPositive3 = Quaternion.Euler(0f, arrowSpread, 0f);
-			Quaternion rotationNegative3 = Quaternion.Euler(0f, -1f * arrowSpread, 0f);
+			Quaternion rotationNegative3 = Quaternion.Euler(0f, -arrowSpread, 0f);
+			Quaternion rotationPositive6 = Quaternion.Euler(0f, arrowSpread*2f, 0f);
+			Quaternion rotationNegative6 = Quaternion.Euler(0f, -arrowSpread*2f, 0f);
 
 			Vector3 aimDirPositive3 = rotationPositive3 * aimDir;
 			Vector3 aimDirNegative3 = rotationNegative3 * aimDir;
+			Vector3 aimDirPositive6 = rotationPositive6 * aimDir;
+			Vector3 aimDirNegative6 = rotationNegative6 * aimDir;
+			
+			if(b_skill3Object.activeSelf)
+			{
+				// Instantiate projectiles at shootPosition with the calculated aim directions
+				Instantiate(b_Skill3Projectile, shootPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+				Instantiate(b_Skill3Projectile, shootPosition.position, Quaternion.LookRotation(aimDirPositive3, Vector3.up));
+				Instantiate(b_Skill3Projectile, shootPosition.position, Quaternion.LookRotation(aimDirNegative3, Vector3.up));
+				Instantiate(b_Skill3Projectile, shootPosition.position, Quaternion.LookRotation(aimDirPositive6, Vector3.up));
+				Instantiate(b_Skill3Projectile, shootPosition.position, Quaternion.LookRotation(aimDirNegative6, Vector3.up));
+			}
+			else
+			{
+				Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+				Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(aimDirPositive3, Vector3.up));
+				Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(aimDirNegative3, Vector3.up));
+			}
+		}
+		else
+			return;
+	}
+	
+	private void RangedAttackBowStart(AnimationEvent animationEvent)
+	{
+		if(thirdPersonShooterController.CurrentWeaponIndex == 2)
+		{
+			Vector3 mouseWorldPosition = Vector3.zero;
+			Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
+			Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
 
-			// Instantiate projectiles at shootPosition with the calculated aim directions
-			Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-			Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(aimDirPositive3, Vector3.up));
-			Instantiate(b_attackProjectile, shootPosition.position, Quaternion.LookRotation(aimDirNegative3, Vector3.up));
+			if (Physics.Raycast(ray,out RaycastHit raycastHit, 999f))
+			{
+				mouseWorldPosition = raycastHit.point;
+			}
+			else
+			{
+				mouseWorldPosition = ray.GetPoint(10);
+			}
+			Vector3 aimDir = (mouseWorldPosition - shootPosition_bow.position).normalized;
+			if(b_skill3Object.activeSelf)
+			{
+				Instantiate(b_Skill3Projectile, shootPosition_bow.position, Quaternion.LookRotation(aimDir, Vector3.up));
+				for (int i = 0; i < 5; i++)
+				{
+					float Yangle = Random.Range(-1f, 1);
+					float Xangle = Random.Range((-1f*0.7f), (1f*0.7f));
+					Quaternion rotation = Quaternion.Euler(Xangle, Yangle, 0f);
+
+					Vector3 aimSpreadDir = rotation * aimDir;
+					Instantiate(b_Skill3Projectile, shootPosition_bow.position, Quaternion.LookRotation(aimSpreadDir, Vector3.up));
+				}
+			}
+			else
+			{
+				Instantiate(b_attackProjectile, shootPosition_bow.position, Quaternion.LookRotation(aimDir, Vector3.up));
+				for (int i = 0; i < 3; i++)
+				{
+					float Yangle = Random.Range(-1f, 1f);
+					float Xangle = Random.Range((-1f*0.7f), (1f*0.7f));
+					Quaternion rotation = Quaternion.Euler(Xangle, Yangle, 0f);
+
+					Vector3 aimSpreadDir = rotation * aimDir;
+					Instantiate(b_attackProjectile, shootPosition_bow.position, Quaternion.LookRotation(aimSpreadDir, Vector3.up));
+				}
+			}	
+			
 		}
 		else
 			return;
@@ -289,9 +385,10 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 
 				// Combine the additional rotation with the current rotation
 				Quaternion finalRotation = currentRotation * additionalRotation;
-
 				// Instantiate the b_ChargedProjectile with the final rotation
-				Instantiate(b_ChargedProjectile, shootPosition_upAir.position, finalRotation);
+				if(b_skill3Object.activeSelf) Instantiate(b_Skill3Projectile, shootPosition_upAir.position, finalRotation);
+				else Instantiate(b_ChargedProjectile, shootPosition_upAir.position, finalRotation);
+				
 			}
 		}
 	}
@@ -362,7 +459,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 		animator.speed = 1f;
 	}
 	
-	private void CanDamageFalse(AnimationEvent animationEvent)
+	private void CanDamageFalse()
 	{
 		if (PlayerHealth.instance != null)
 		{
@@ -375,7 +472,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 		}
 	}
 	
-	private void CanDamageTrue(AnimationEvent animationEvent)
+	private void CanDamageTrue()
 	{
 		if (PlayerHealth.instance != null)
 		{
@@ -867,4 +964,59 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 	{    
 		a_skill2Object.SetActive(false);
 	}
+	
+	private void Skill3BowStart(AnimationEvent animationEvent)
+	{
+		if (thirdPersonShooterController.CurrentWeaponIndex == 2)
+		{
+			b_skill3Object.SetActive(true);
+			CancelInvoke("Skill3BowEnd");
+			Invoke("Skill3BowEnd", 15f);
+		}
+	}
+
+	private void Skill3BowEnd()
+	{    
+		b_skill3Object.SetActive(false);
+	}
+	
+	private void BowThunderCastStart(AnimationEvent animationEvent)
+	{
+		if (thirdPersonShooterController.CurrentWeaponIndex == 2)
+		{
+			GameObject thunderCast = Instantiate(b_skill3Cast);
+			thunderCast.transform.SetParent(mainCharacterBow);
+			thunderCast.transform.localPosition = Vector3.zero;
+			thunderCast.transform.rotation = Quaternion.identity;
+		}
+	}
+
+	private void Skill3AxeStart()
+    {
+        // Check if skill2CastInstance is not null
+        if (thirdPersonShooterController.CurrentWeaponIndex == 3)
+        {
+            // Instantiate b_skill2_rain at the position of skill2CastInstance
+            Instantiate(a_skill3Shockwave, mainCharacter.position, Quaternion.identity);
+        }
+    }
+	
+	private void Skill3SwordStart()
+	{
+		if (thirdPersonShooterController.CurrentWeaponIndex == 1)
+        {
+			s_Skill3Shield.SetActive(false);
+			s_Skill3Shield.SetActive(true);
+			CanDamageFalse();
+			CancelInvoke("Skill3SwordEnd");
+			Invoke("Skill3SwordEnd", 5.5f);
+		}
+	}
+
+	private void Skill3SwordEnd()
+	{    
+		s_Skill3Shield.SetActive(false);
+		CanDamageTrue();
+	}
+	
 }

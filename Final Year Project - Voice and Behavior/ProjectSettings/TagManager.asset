@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - ground
   - Breakable
+  - ChaseTarget
+  - Freezable
   layers:
   - Default
   - TransparentFX

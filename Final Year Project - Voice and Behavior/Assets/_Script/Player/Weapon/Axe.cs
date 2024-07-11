@@ -298,7 +298,7 @@ public class Axe : MonoBehaviour
 			else if(playerActionPoint.currentActionPointAvailable > 0 && !hasWeapon && !isUltiPlaying)
 			{
 				WeaponStartPull();
-				animator.SetTrigger("SkillE");
+				//animator.SetTrigger("SkillE");
 				starterAssetsInputs.skillE = false;
 			}
 			else
@@ -311,9 +311,14 @@ public class Axe : MonoBehaviour
 		
 		if(starterAssetsInputs.skill1)
 		{
-			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
+			if(playerActionPoint.currentActionPointAvailable > 0 && hasWeapon && !isUltiPlaying)
 			{
 				animator.SetTrigger("Skill1");
+				starterAssetsInputs.skill1 = false;
+			}
+			else if(playerActionPoint.currentActionPointAvailable > 0 && !hasWeapon && !isUltiPlaying)
+			{
+				WeaponStartPull();
 				starterAssetsInputs.skill1 = false;
 			}
 			else
@@ -324,17 +329,43 @@ public class Axe : MonoBehaviour
 			}
 		}
 		
+		
 		if(starterAssetsInputs.skill2)
 		{
-			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
+			if(playerActionPoint.currentActionPointAvailable > 0 && hasWeapon && !isUltiPlaying)
 			{
 				animator.SetTrigger("Skill2");
+				starterAssetsInputs.skill2 = false;
+			}
+			else if(playerActionPoint.currentActionPointAvailable > 0 && !hasWeapon && !isUltiPlaying)
+			{
+				WeaponStartPull();
 				starterAssetsInputs.skill2 = false;
 			}
 			else
 			{
 				animator.ResetTrigger("Skill2");
 				starterAssetsInputs.skill2 = false;
+				return;
+			}
+		}
+		
+		if(starterAssetsInputs.skill3)
+		{
+			if(playerActionPoint.currentActionPointAvailable > 0 && hasWeapon && !isUltiPlaying)
+			{
+				animator.SetTrigger("Skill3");
+				starterAssetsInputs.skill3 = false;
+			}
+			else if(playerActionPoint.currentActionPointAvailable > 0 && !hasWeapon && !isUltiPlaying)
+			{
+				WeaponStartPull();
+				starterAssetsInputs.skill3 = false;
+			}
+			else
+			{
+				animator.ResetTrigger("Skill3");
+				starterAssetsInputs.skill3 = false;
 				return;
 			}
 		}
@@ -349,7 +380,7 @@ public class Axe : MonoBehaviour
 			else if(playerLimit.currentLimit == playerLimit.maxLimit && !hasWeapon)
 			{
 				WeaponStartPull();
-				animator.SetTrigger("SkillQ");
+				//animator.SetTrigger("SkillQ");
 				starterAssetsInputs.skillQ = false;
 			}
 			else

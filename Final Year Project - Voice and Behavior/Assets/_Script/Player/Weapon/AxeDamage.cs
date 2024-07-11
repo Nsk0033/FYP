@@ -9,6 +9,7 @@ public class AxeDamage : MonoBehaviour
 	[SerializeField] private Transform spawnParticlePosition;
 	[SerializeField] private Transform playerTransform;
 	[SerializeField] private Transform MainCharacter;
+	[SerializeField] private GameObject Skill2Object;
 	[SerializeField] private int damageOutput;
 	
 	//private PlayerActionPoint playerActionPoint;
@@ -47,6 +48,17 @@ public class AxeDamage : MonoBehaviour
             {
                 collider.GetComponent<ObjectBreakingScript>().Break();
             }
+        }
+		
+		if (collider.CompareTag("Freezable"))
+        {
+			if(Skill2Object.activeSelf)
+			{
+				if(collider.GetComponent<ObjectFreezingScript>() != null)
+				{
+					collider.GetComponent<ObjectFreezingScript>().Freeze();
+				}
+			}
         }
 		
 		IDamageable damageable = collider.GetComponent<IDamageable>();

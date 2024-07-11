@@ -19538,7 +19538,7 @@ GameObject:
   - component: {fileID: 6919872723762190832}
   m_Layer: 2
   m_Name: Ice Faling-bow
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

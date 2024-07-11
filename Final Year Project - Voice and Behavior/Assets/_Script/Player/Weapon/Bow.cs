@@ -24,19 +24,19 @@ public class Bow : MonoBehaviour
 	
 	[Header("Character Ranged Attack")]
 	[SerializeField] public int bulletCount = 3;
-    [SerializeField] public float spreadAngle = 15f;
+    //[SerializeField] public float spreadAngle = 15f;
 	[SerializeField] private float RangeAttackCD = 0.3f;
 	[SerializeField] private bool canRangeAttack = true;
 	[SerializeField] private float normalSensitivity = 1f;
 	[SerializeField] private float aimSensitivity = 0.7f;
 	[SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
 	[SerializeField] private Transform debugTransform;
-	[SerializeField] private Transform pfBulletProjectile;
-	[SerializeField] private Transform spawnBulletPosition;
+	//[SerializeField] private Transform pfBulletProjectile;
+	//[SerializeField] private Transform spawnBulletPosition;
 	[SerializeField] private GameObject crosshairCanva;
 	
-	[Header("Character Weapon")]
-	[SerializeField] private GameObject bowGameObject;
+	//[Header("Character Weapon")]
+	//[SerializeField] private GameObject bowGameObject;
 	
 	private ThirdPersonController thirdPersonController;
 	private StarterAssetsInputs starterAssetsInputs;
@@ -151,7 +151,7 @@ public class Bow : MonoBehaviour
 					{
 						//if can range attack but not attacking then do this
 						animator.SetTrigger("Recoil");
-						Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+						/*Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
 						Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
 						for (int i = 0; i < bulletCount; i++)
 						{
@@ -161,7 +161,7 @@ public class Bow : MonoBehaviour
 
 							Vector3 aimSpreadDir = rotation * aimDir;
 							Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimSpreadDir, Vector3.up));
-						}
+						}*/
 						starterAssetsInputs.shoot = false;
 						rangeLastUsedTime = Time.time;
 						// if attacking then do ntg
@@ -249,6 +249,21 @@ public class Bow : MonoBehaviour
 			{
 				animator.ResetTrigger("Skill2");
 				starterAssetsInputs.skill2 = false;
+				return;
+			}
+		}
+		
+		if(starterAssetsInputs.skill3)
+		{
+			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
+			{
+				animator.SetTrigger("Skill3");
+				starterAssetsInputs.skill3 = false;
+			}
+			else
+			{
+				animator.ResetTrigger("Skill3");
+				starterAssetsInputs.skill3 = false;
 				return;
 			}
 		}

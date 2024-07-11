@@ -280,6 +280,21 @@ public class Sword : MonoBehaviour
 				return;
 			}
 		}
+		
+		if(starterAssetsInputs.skill3)
+		{
+			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
+			{
+				animator.SetTrigger("Skill3");
+				starterAssetsInputs.skill3 = false;
+			}
+			else
+			{
+				animator.ResetTrigger("Skill3");
+				starterAssetsInputs.skill3 = false;
+				return;
+			}
+		}
 	}
 	
 	IEnumerator LerpCharacterForward(Vector3 targetPoint)
