@@ -102,7 +102,7 @@ public class NPCInteractableDialogOnly : MonoBehaviour, IInteractable
     {
 		PlayerStateManager.instance.SetCanMove(true);
         wholePanel.SetActive(false);
-		Invoke("ResetRotation",2f);
+		ResetRotation();
         index = 0;
 		animator.SetBool("Talking", false);
     }

@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Kill the Cerberus
   levelRequirement: 0
   questPrerequisites: []
-  questStepPrefabs: []
+  questStepPrefabs:
+  - {fileID: 6616396752375580702, guid: eabc1983811a9c54da1982f16bbdab88, type: 3}
   goldReward: 0
   experienceReward: 0

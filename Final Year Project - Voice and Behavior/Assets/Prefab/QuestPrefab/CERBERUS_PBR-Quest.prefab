@@ -1514,7 +1514,19 @@ MonoBehaviour:
   WeaponTrail: {fileID: 0}
   DeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6929785325361359896}
+        m_TargetAssemblyTypeName: EnemyTest, Assembly-CSharp
+        m_MethodName: StartDisableObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   DamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1775,7 +1787,7 @@ MonoBehaviour:
   DamageAmountRun: 5
   WanderRadius: 16
   TabNumber: 1
-  TemperamentTabNumber: 0
+  TemperamentTabNumber: 5
   DetectionTagsTabNumber: 1
   AnimationTabNumber: 2
   SoundTabNumber: 0
@@ -1788,7 +1800,7 @@ MonoBehaviour:
   IdleAnimationNumber: 1
   CombatTabNumber: 0
   FactionsAndTagTabNumber: 0
-  EventTabNumber: 0
+  EventTabNumber: 1
   MinimumWaitTime: 2
   MaximumWaitTime: 5
   MinimumFollowWaitTime: 1
