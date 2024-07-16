@@ -38,4 +38,13 @@ public class InputEvents
             onPausePressed();
         }
     }
+	
+	public event Action onMapPressed;
+    public void MapPressed()
+    {
+        if (onMapPressed != null) 
+        {
+            onMapPressed();
+        }
+    }
 }

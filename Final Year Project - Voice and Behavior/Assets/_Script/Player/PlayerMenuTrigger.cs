@@ -34,5 +34,11 @@ public class PlayerMenuTrigger : MonoBehaviour
 			GameEventsManager.instance.inputEvents.PausePressed();
 			starterAssetsInputs.pause = false;
 		}
+		
+		if(starterAssetsInputs.map)
+		{
+			GameEventsManager.instance.inputEvents.MapPressed();
+			starterAssetsInputs.map = false;
+		}
     }
 }

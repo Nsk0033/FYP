@@ -20,10 +20,18 @@ public class InteractWithFireGodStatueQuestStep : QuestStep, IInteractable
     private bool isTyping = false;
     private bool isDisplaying = false;
 	
+	private SkillUnlockManager skillUnlockManager;
+	
     private void Start()
     {
         string status = "Interact with Fire God Statue.";
         ChangeState("", status);
+		
+		skillUnlockManager = FindObjectOfType<SkillUnlockManager>();
+        if (skillUnlockManager == null)
+        {
+            Debug.LogError("SkillUnlockManager not found in the scene.");
+        }
     }
 	
 	public void Interact(Transform interactorTransform)
@@ -103,6 +111,10 @@ public class InteractWithFireGodStatueQuestStep : QuestStep, IInteractable
 		string status = "Talk to the Fire God Acolyte";
         ChangeState("", status);
 		cinemachine.SetActive(false);
+		if (skillUnlockManager != null)
+        {
+            skillUnlockManager.UnlockSkill(1);
+        }
 		Invoke("FinishQuestStep",0.2f);
         //FinishQuestStep();
     }

@@ -9,6 +9,7 @@ public class CursorLockManager : MonoBehaviour
     [SerializeField] private GameObject QuestLogMenu;
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] private GameObject EndingMenu;
+    [SerializeField] private GameObject MapMenu;
     [SerializeField] private GameObject MainCharacter; // Reference to the GameObject that contains the StarterAssetsInputs component
 
     private StarterAssetsInputs starterAssetsInputs;
@@ -36,7 +37,7 @@ public class CursorLockManager : MonoBehaviour
     {
         if (starterAssetsInputs != null && playerInput != null)
         {
-            bool isMenuActive = QuestLogMenu.activeSelf || PauseMenu.activeSelf || EndingMenu.activeSelf;
+            bool isMenuActive = QuestLogMenu.activeSelf || PauseMenu.activeSelf || EndingMenu.activeSelf || MapMenu.activeSelf;
 
             starterAssetsInputs.ToggleMenuOnOff(isMenuActive);
 

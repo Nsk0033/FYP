@@ -24,6 +24,7 @@ namespace StarterAssets
 		public bool skill2;
 		public bool skill3;
 		public bool pause;
+		public bool map;
 		
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -33,8 +34,19 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 		
 		private float flt_LeftClickAttackTimer;
+		private SkillUnlockManager skillUnlockManager;
+
+        private void Awake()
+        {
+            skillUnlockManager = FindObjectOfType<SkillUnlockManager>();
+
+            if (skillUnlockManager == null)
+            {
+                Debug.LogError("SkillUnlockManager not found in the scene.");
+            }
+        }
 		
-		private void FixedUpdate()
+		/*private void FixedUpdate()
 		{
 			//LeftClickAttackTimer();
 		}
@@ -47,7 +59,7 @@ namespace StarterAssets
 		private void OnDisable()
 		{
 			//_playerControls.Gameplay.Disable();
-		}
+		}*/
 
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
@@ -114,23 +126,49 @@ namespace StarterAssets
 		}
 		
 		public void OnSkill1(InputValue value)
-		{
-			Skill1Input(value.isPressed);
-		}
-		
-		public void OnSkill2(InputValue value)
-		{
-			Skill2Input(value.isPressed);
-		}
-		
-		public void OnSkill3(InputValue value)
-		{
-			Skill3Input(value.isPressed);
-		}
+        {
+            if (skillUnlockManager.isSkill1Unlocked)
+            {
+                Skill1Input(value.isPressed);
+            }
+            else
+            {
+                Debug.Log("Skill 1 is not unlocked yet.");
+            }
+        }
+
+        public void OnSkill2(InputValue value)
+        {
+            if (skillUnlockManager.isSkill2Unlocked)
+            {
+                Skill2Input(value.isPressed);
+            }
+            else
+            {
+                Debug.Log("Skill 2 is not unlocked yet.");
+            }
+        }
+
+        public void OnSkill3(InputValue value)
+        {
+            if (skillUnlockManager.isSkill3Unlocked)
+            {
+                Skill3Input(value.isPressed);
+            }
+            else
+            {
+                Debug.Log("Skill 3 is not unlocked yet.");
+            }
+        }
 		
 		public void OnPause(InputValue value)
 		{
 			PauseInput(value.isPressed);
+		}
+		
+		public void OnMap(InputValue value)
+		{
+			MapInput(value.isPressed);
 		}
 		
 #endif
@@ -247,7 +285,11 @@ namespace StarterAssets
 		public void PauseInput(bool newPauseState)
 		{
 			pause = newPauseState;
-			
+		}
+		
+		public void MapInput(bool newMapState)
+		{
+			map = newMapState;
 		}
 		
 		private void LeftClickAttackTimer()
