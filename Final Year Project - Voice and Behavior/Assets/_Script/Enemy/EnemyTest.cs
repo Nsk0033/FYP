@@ -20,4 +20,14 @@ public class EnemyTest : MonoBehaviour, IDamageable
 	{
 		Invoke("DisableObject",disableTime);
 	}
+	
+	private void DestroyObject()
+	{
+		gameObject.SetActive(false);
+	}
+	
+	public void StartDestroyObject()
+	{
+		Invoke("DestroyObject",disableTime);
+	}
 }

@@ -222,7 +222,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 				mouseWorldPosition = ray.GetPoint(10);
 			}
 
-			Vector3 aimDir = (mouseWorldPosition - mainCharacter.position).normalized;
+			Vector3 aimDir = (mouseWorldPosition - shootPosition.position).normalized;
 
 			// Convert aim direction to local space
 			Vector3 localAimDir = mainCharacter.InverseTransformDirection(aimDir);
@@ -281,7 +281,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			{
 				mouseWorldPosition = ray.GetPoint(10);
 			}
-			Vector3 aimDir = (mouseWorldPosition - mainCharacter.position).normalized;
+			Vector3 aimDir = (mouseWorldPosition - shootPosition.position).normalized;
 			
 
 			// Calculate aim directions for the +3 and -3 degree offsets from the central aim direction

@@ -5,35 +5,54 @@ using UnityEngine;
 public class SummonThunder : MonoBehaviour
 {
     [SerializeField] private GameObject thunderPrefab;
-    private List<Vector3> enemyLocations = new List<Vector3>();
+    private List<Transform> enemiesInRange = new List<Transform>();
 
-	private void Start()
-	{
-		Invoke("StartThunderSpawning",0.2f);
-	}
-	
+    private void Start()
+    {
+        Invoke("StartThunderSpawning", 0.2f);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            // Store enemy location
-            enemyLocations.Add(other.transform.position);
+            // Add enemy to the list
+            enemiesInRange.Add(other.transform);
         }
     }
-	
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            // Remove enemy from the list
+            enemiesInRange.Remove(other.transform);
+        }
+    }
+
     public void SpawnThunder()
     {
-        if (enemyLocations.Count == 0)
+        if (enemiesInRange.Count == 0)
         {
-            //Debug.LogWarning("No enemies in range to spawn thunder.");
+            // No enemies in range
             return;
         }
 
+        HashSet<int> selectedIndices = new HashSet<int>();
+
         for (int i = 0; i < 3; i++)
         {
-            // Get a random enemy location
-            int randomIndex = Random.Range(0, enemyLocations.Count);
-            Vector3 randomLocation = enemyLocations[randomIndex];
+            int randomIndex;
+
+            // Ensure unique random index
+            do
+            {
+                randomIndex = Random.Range(0, enemiesInRange.Count);
+            } while (selectedIndices.Contains(randomIndex));
+
+            selectedIndices.Add(randomIndex);
+
+            Vector3 randomLocation = enemiesInRange[randomIndex].position;
 
             // Spawn thunder at the random location
             Instantiate(thunderPrefab, randomLocation, Quaternion.identity);
@@ -48,9 +67,9 @@ public class SummonThunder : MonoBehaviour
 
     private IEnumerator ThunderSpawningRoutine()
     {
-        for (int i = 0; i < 3; i++)
+        while (true)
         {
-			yield return new WaitForSeconds(1f); // Delay between thunder spawns
+            yield return new WaitForSeconds(1f); // Delay between thunder spawns
             SpawnThunder();
         }
     }
