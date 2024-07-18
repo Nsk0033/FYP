@@ -15,7 +15,8 @@ MonoBehaviour:
   <id>k__BackingField: Kill1DragonArmorBossQuest
   displayName: Kill the Dragon Armor Boss!
   levelRequirement: 0
-  questPrerequisites: []
+  questPrerequisites:
+  - {fileID: 11400000, guid: e9b9546a1bcacf44f96e3e7eb1422cfb, type: 2}
   questStepPrefabs:
   - {fileID: 7006581601384887654, guid: 2c57f4f6504dac24c8abaceada29c3a6, type: 3}
   goldReward: 0

@@ -857,7 +857,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			{
 				mouseWorldPosition = ray.GetPoint(10);
 			}
-			Vector3 aimDir = (mouseWorldPosition - mainCharacter.position).normalized;
+			Vector3 aimDir = (mouseWorldPosition - shootPosition.position).normalized;
 
 			// Instantiate projectiles at shootPosition with the calculated aim directions
 			Instantiate(b_skill1, shootPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
@@ -882,7 +882,7 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 			{
 				mouseWorldPosition = ray.GetPoint(10);
 			}
-			Vector3 aimDir = (mouseWorldPosition - mainCharacter.position).normalized;
+			Vector3 aimDir = (mouseWorldPosition - shootPosition.position).normalized;
 
 			// Instantiate projectiles at shootPosition with the calculated aim directions
 			Instantiate(b_skille, shootPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));

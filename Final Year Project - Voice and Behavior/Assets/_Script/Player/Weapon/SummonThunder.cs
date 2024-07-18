@@ -16,8 +16,11 @@ public class SummonThunder : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            // Add enemy to the list
-            enemiesInRange.Add(other.transform);
+            // Add enemy to the list if not already added
+            if (!enemiesInRange.Contains(other.transform))
+            {
+                enemiesInRange.Add(other.transform);
+            }
         }
     }
 
@@ -30,7 +33,7 @@ public class SummonThunder : MonoBehaviour
         }
     }
 
-    public void SpawnThunder()
+    private void SpawnThunder()
     {
         if (enemiesInRange.Count == 0)
         {
@@ -38,25 +41,11 @@ public class SummonThunder : MonoBehaviour
             return;
         }
 
-        HashSet<int> selectedIndices = new HashSet<int>();
+        int randomIndex = Random.Range(0, enemiesInRange.Count);
+        Vector3 randomLocation = enemiesInRange[randomIndex].position;
 
-        for (int i = 0; i < 3; i++)
-        {
-            int randomIndex;
-
-            // Ensure unique random index
-            do
-            {
-                randomIndex = Random.Range(0, enemiesInRange.Count);
-            } while (selectedIndices.Contains(randomIndex));
-
-            selectedIndices.Add(randomIndex);
-
-            Vector3 randomLocation = enemiesInRange[randomIndex].position;
-
-            // Spawn thunder at the random location
-            Instantiate(thunderPrefab, randomLocation, Quaternion.identity);
-        }
+        // Spawn thunder at the random location
+        Instantiate(thunderPrefab, randomLocation, Quaternion.identity);
     }
 
     // Call this method to start the thunder spawning process
@@ -67,7 +56,7 @@ public class SummonThunder : MonoBehaviour
 
     private IEnumerator ThunderSpawningRoutine()
     {
-        while (true)
+        for (int i = 0; i < 3; i++)
         {
             yield return new WaitForSeconds(1f); // Delay between thunder spawns
             SpawnThunder();

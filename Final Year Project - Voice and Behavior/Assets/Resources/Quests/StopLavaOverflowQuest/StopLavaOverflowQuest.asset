@@ -15,7 +15,8 @@ MonoBehaviour:
   <id>k__BackingField: StopLavaOverflowQuest
   displayName: Stop The Largest Volcano!
   levelRequirement: 0
-  questPrerequisites: []
+  questPrerequisites:
+  - {fileID: 11400000, guid: 5a3f1e2d1a4f8a74e824933ee7e0d70b, type: 2}
   questStepPrefabs:
   - {fileID: 7201563099635070083, guid: d89716fae6562994ba10039db815774d, type: 3}
   goldReward: 0

@@ -15,7 +15,8 @@ MonoBehaviour:
   <id>k__BackingField: Kill1GolemQuestStep
   displayName: Kill the Golem
   levelRequirement: 0
-  questPrerequisites: []
+  questPrerequisites:
+  - {fileID: 11400000, guid: 5a3f1e2d1a4f8a74e824933ee7e0d70b, type: 2}
   questStepPrefabs:
   - {fileID: 3373290396250863342, guid: 232854fe866dc8c468e77f7b0cb445d1, type: 3}
   goldReward: 0

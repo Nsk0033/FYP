@@ -23,7 +23,7 @@ public class EnemyTest : MonoBehaviour, IDamageable
 	
 	private void DestroyObject()
 	{
-		gameObject.SetActive(false);
+		Destroy(gameObject);
 	}
 	
 	public void StartDestroyObject()

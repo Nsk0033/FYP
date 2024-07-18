@@ -15,7 +15,8 @@ MonoBehaviour:
   <id>k__BackingField: Kill1CerberusQuest
   displayName: Kill the Cerberus
   levelRequirement: 0
-  questPrerequisites: []
+  questPrerequisites:
+  - {fileID: 11400000, guid: fcf60ff2f394b3340859abb3e52454b7, type: 2}
   questStepPrefabs:
   - {fileID: 6616396752375580702, guid: eabc1983811a9c54da1982f16bbdab88, type: 3}
   goldReward: 0

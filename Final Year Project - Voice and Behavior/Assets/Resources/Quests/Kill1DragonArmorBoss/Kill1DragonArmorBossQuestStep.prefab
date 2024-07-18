@@ -76,6 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096196006d005dd45832fc990fda4f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnObjectPrefab: {fileID: 8020489631433090824, guid: ecb5d1e7000b89d4e978ebcea0a1b7b0,
+  SpawnObjectPrefab: {fileID: 6864356027125375521, guid: 430e876014c17d04894289854f7be7ae,
     type: 3}
   SpawnLocation: {fileID: 1476254360366226088}
