@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kill3OrthrosQuest
   m_EditorClassIdentifier: 
   <id>k__BackingField: Kill3OrthrosQuest
-  displayName: Kill 3 Orthros that wandering outside village
+  displayName: Kill 3 Orthros
   levelRequirement: 0
   questPrerequisites: []
   questStepPrefabs:

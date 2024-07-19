@@ -48,6 +48,10 @@ public class StopLavaOverflowQuestStep : QuestStep
             ChangeState("", status);
             FinishQuestStep();
 		}
+		if (Input.GetKeyDown(KeyCode.K))
+		{
+			FinishQuestStep();
+		}
     }
 	
 	protected override void SetQuestStepState(string state)

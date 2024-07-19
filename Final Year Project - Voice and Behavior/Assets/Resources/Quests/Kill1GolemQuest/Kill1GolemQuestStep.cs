@@ -25,6 +25,10 @@ public class Kill1GolemQuestStep : QuestStep
             ChangeState("", status);
             FinishQuestStep();
         }
+		if (Input.GetKeyDown(KeyCode.K))
+		{
+			FinishQuestStep();
+		}
     }
 
     protected override void SetQuestStepState(string state)

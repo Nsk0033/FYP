@@ -5,14 +5,16 @@ using UnityEngine;
 public class Kill3OrthrosQuestStep : QuestStep
 {
     [SerializeField] private GameObject SpawnObjectPrefab;
-	[SerializeField] private Transform SpawnLocation;
-	[SerializeField] private Transform SpawnLocation1;
-	[SerializeField] private Transform SpawnLocation2;
+    [SerializeField] private Transform SpawnLocation;
+    [SerializeField] private Transform SpawnLocation1;
+    [SerializeField] private Transform SpawnLocation2;
     private GameObject spawnedObject;
     private GameObject spawnedObject1;
     private GameObject spawnedObject2;
-	private int killStreak = 0;
-	
+    private int killStreak = 0;
+    private bool isSpawnedObjectDead = false;
+    private bool isSpawnedObject1Dead = false;
+    private bool isSpawnedObject2Dead = false;
 
     private void Start()
     {
@@ -21,39 +23,49 @@ public class Kill3OrthrosQuestStep : QuestStep
         spawnedObject1 = Instantiate(SpawnObjectPrefab, SpawnLocation1.position, transform.rotation);
         spawnedObject2 = Instantiate(SpawnObjectPrefab, SpawnLocation2.position, transform.rotation);
 
-        string status = "Kill " + killStreak + " / 3 of the Orthros";
-        ChangeState("", status);
+        UpdateStatusText();
     }
 
     void Update()
     {
-        if (!spawnedObject.activeSelf)
+        if (!isSpawnedObjectDead && !spawnedObject.activeSelf)
         {
-			killStreak++;
-            string status =  "Kill " + killStreak + " / 3 of the Orthros";
-            ChangeState("", status);
-            
+            isSpawnedObjectDead = true;
+            killStreak++;
+            UpdateStatusText();
         }
-		if (!spawnedObject1.activeSelf)
+        
+        if (!isSpawnedObject1Dead && !spawnedObject1.activeSelf)
         {
-			killStreak++;
-            string status =  "Kill " + killStreak + " / 3 of the Orthros";
-            ChangeState("", status);
-            
+            isSpawnedObject1Dead = true;
+            killStreak++;
+            UpdateStatusText();
         }
-		if (!spawnedObject2.activeSelf)
+        
+        if (!isSpawnedObject2Dead && !spawnedObject2.activeSelf)
         {
-			killStreak++;
-            string status =  "Kill " + killStreak + " / 3 of the Orthros";
-            ChangeState("", status);
-            
+            isSpawnedObject2Dead = true;
+            killStreak++;
+            UpdateStatusText();
         }
-		if(killStreak == 3)
-		{
-			FinishQuestStep();
-			string status =  "Report back to little girl";
-			ChangeState("", status);
-		}
+
+        if (killStreak == 3)
+        {
+            FinishQuestStep();
+            string status = "Report back to the little girl.";
+            ChangeState("", status);
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            FinishQuestStep();
+        }
+    }
+
+    private void UpdateStatusText()
+    {
+        string status = "Kill " + killStreak + " / 3 of the Orthros outside the village.";
+        ChangeState("", status);
     }
 
     protected override void SetQuestStepState(string state)

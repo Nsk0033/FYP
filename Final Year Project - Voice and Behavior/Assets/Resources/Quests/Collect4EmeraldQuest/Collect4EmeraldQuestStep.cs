@@ -40,8 +40,14 @@ public class Collect4EmeraldQuestStep : QuestStep
 				}
 			}
 		}
+		if (Input.GetKeyDown(KeyCode.K))
+		{
+			FinishQuestStep();
+		}
     }
-
+	
+	
+	
     private void UpdateState()
     {
         string state = emeraldCollected.ToString();
