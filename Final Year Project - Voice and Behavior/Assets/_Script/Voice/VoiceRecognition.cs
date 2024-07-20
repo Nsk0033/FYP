@@ -45,6 +45,10 @@ namespace StarterAssets
 			actions.Add("back", Back);
 			actions.Add("item", Back);
 			
+			actions.Add("interact", Interact);
+			actions.Add("hi", Interact);
+			actions.Add("hello", Interact);
+			actions.Add("talk", Interact);
 			// Display the contents of the actions dictionary
 			Debug.Log("Actions dictionary contents:");
 			foreach (var kvp in actions)
@@ -98,6 +102,12 @@ namespace StarterAssets
 		{
 			Debug.Log("Down");
 			starterAssetsInputs.ShootInput(true);
+		}
+		
+		private void Interact()
+		{
+			Debug.Log("Down");
+			starterAssetsInputs.InteractInput(true);
 		}
 	}
 }

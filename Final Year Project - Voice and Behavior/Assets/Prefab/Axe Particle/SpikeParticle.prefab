@@ -19716,6 +19716,7 @@ GameObject:
   - component: {fileID: 199520779413681640}
   - component: {fileID: 4249247719397070105}
   - component: {fileID: 6922783696662300429}
+  - component: {fileID: -3902264790220852957}
   m_Layer: 2
   m_Name: SpikeParticle
   m_TagString: Projectile
@@ -24726,6 +24727,20 @@ CapsuleCollider:
   m_Height: 6.78
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3902264790220852957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295870212731232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f7da0c957c41f42bfc592bca4d95ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 11
+  volume: 0.759
 --- !u!1 &1418484957977078
 GameObject:
   m_ObjectHideFlags: 0

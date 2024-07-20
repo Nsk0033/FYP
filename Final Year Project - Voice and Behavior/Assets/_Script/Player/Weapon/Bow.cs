@@ -210,7 +210,7 @@ public class Bow : MonoBehaviour
 		
 		if(starterAssetsInputs.skillE)
 		{
-			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying)
+			if(playerActionPoint.currentActionPointAvailable > 0 && !isUltiPlaying && !isSkillEPlaying)
 			{
 				animator.SetTrigger("SkillE");
 				starterAssetsInputs.skillE = false;

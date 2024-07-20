@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SmallHedge.SoundManager;
 
 public class PlayerLimit : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerLimit : MonoBehaviour
 	[SerializeField] private int increaseAmount = 1;
     [SerializeField] private float increaseInterval = 1f;
 	[SerializeField] private float smoothSpeed = 8f;
+	[SerializeField] private bool soundTriggered;
 	
 	private void Start()
 	{
@@ -63,7 +65,15 @@ public class PlayerLimit : MonoBehaviour
 		if(currentLimit >= maxLimit)
 		{
 			currentLimit = maxLimit;
+			if (!soundTriggered)
+			{	
+				soundTriggered = true;
+				SoundType soundToPlay = SoundType.LIMIT;
+				SoundManager.PlaySound(soundToPlay, null, 1f);
+			}
 		}
+		else
+			soundTriggered = false;
     }
 	
 	private IEnumerator IncreaseLimitOverTime()

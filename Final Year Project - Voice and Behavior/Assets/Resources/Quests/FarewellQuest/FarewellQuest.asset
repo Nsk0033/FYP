@@ -15,7 +15,8 @@ MonoBehaviour:
   <id>k__BackingField: FarewellQuest
   displayName: Farewell
   levelRequirement: 0
-  questPrerequisites: []
+  questPrerequisites:
+  - {fileID: 11400000, guid: 38643595000bc224ab4600536b991e89, type: 2}
   questStepPrefabs:
   - {fileID: 3909279453721564571, guid: e13f2892983a6cc4bbde00611f921cb7, type: 3}
   goldReward: 0

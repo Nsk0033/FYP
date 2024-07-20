@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SmallHedge.SoundManager;
 
 public class PlayerActionPoint : MonoBehaviour
 {
@@ -97,6 +98,8 @@ public class PlayerActionPoint : MonoBehaviour
 			else
 			{
 				currentActionPointAvailable++;
+				SoundType soundToPlay = SoundType.AP;
+				SoundManager.PlaySound(soundToPlay, null, 0.5f);
 				currentActionPointValue = 0f;
 			}
 		}

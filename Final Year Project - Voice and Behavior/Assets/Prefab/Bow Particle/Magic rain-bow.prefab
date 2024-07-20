@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8462577209519485031}
   - component: {fileID: 7084873098928516015}
   - component: {fileID: -6909601155679259618}
+  - component: {fileID: 8248012859838466724}
   m_Layer: 0
   m_Name: Magic rain-bow
   m_TagString: Projectile
@@ -103,6 +104,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healAmount: 10
   startDelay: 0.5
+--- !u!114 &8248012859838466724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045616407055387644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f7da0c957c41f42bfc592bca4d95ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 24
+  volume: 1
 --- !u!1001 &6802006832239623151
 PrefabInstance:
   m_ObjectHideFlags: 0

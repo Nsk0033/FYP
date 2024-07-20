@@ -69,7 +69,7 @@ public class BulletProjectileChase : MonoBehaviour
             if (closestEnemy != null)
 			{
 				// Adjust target position to aim higher (e.g., towards the body)
-				Vector3 targetPosition = closestEnemy.position + new Vector3(0, 1.5f, 0); // Adjust the y offset as needed
+				Vector3 targetPosition = closestEnemy.position + new Vector3(0, 1.1f, 0); // Adjust the y offset as needed
 				Vector3 targetDirection = (targetPosition - transform.position).normalized;
 				Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 

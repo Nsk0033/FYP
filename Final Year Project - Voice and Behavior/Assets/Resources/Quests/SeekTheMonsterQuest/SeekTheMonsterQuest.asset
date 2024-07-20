@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SeekTheMonsterQuest
   m_EditorClassIdentifier: 
   <id>k__BackingField: SeekTheMonsterQuest
-  displayName: 
+  displayName: Seek The Hidden Monster
   levelRequirement: 0
   questPrerequisites: []
   questStepPrefabs:

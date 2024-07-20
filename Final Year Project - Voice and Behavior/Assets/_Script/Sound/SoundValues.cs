@@ -1,0 +1,33 @@
+namespace SmallHedge.SoundManager
+{
+    public enum SoundType
+    {
+        SWORD,
+		AXE,
+		BOW,
+		SWORDLIMIT,
+		BOWLIMITSTART,
+		BOWLIMITEND,
+		AXELIMITSTART,
+		AXELIMITEND,
+		SWORDE,
+		BOWE,
+		AXEESTART,
+		AXEESPIKE,
+		SWORD1,
+		BOW1,
+		AXE1,
+		SWORD2,
+		BOW2,
+		AXE2,
+		SWORD3,
+		BOW3,
+		AXE3,
+		INJURED,
+		AP,
+		LIMIT,
+		BOWLIMITEXPLODE,
+		BOWICELOOP,
+		SWORDLIMITAURA
+    }
+}
