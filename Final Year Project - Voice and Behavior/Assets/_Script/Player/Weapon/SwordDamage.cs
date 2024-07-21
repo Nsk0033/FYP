@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EmeraldAI;
+using SmallHedge.SoundManager;
 
 public class SwordDamage : MonoBehaviour
 {
@@ -60,6 +61,9 @@ public class SwordDamage : MonoBehaviour
 				// Set the particle system's forward direction
 				hitvfx.transform.forward = directionAwayEnemy;
 				bloodvfx.transform.forward = directionAwayEnemy;
+				
+				SoundType soundToPlay = SoundType.SWORDDAMAGE;
+				SoundManager.PlaySound(soundToPlay, null, 0.5f);
 			}
 		}
 	}

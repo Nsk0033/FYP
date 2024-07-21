@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SmallHedge.SoundManager;
 
 public class AxeDamage : MonoBehaviour
 {
@@ -77,6 +78,9 @@ public class AxeDamage : MonoBehaviour
 				// Set the particle system's forward direction
 				hitvfx.transform.forward = directionAwayEnemy;
 				bloodvfx.transform.forward = directionAwayEnemy;
+				
+				SoundType soundToPlay = SoundType.AXEDAMAGE;
+				SoundManager.PlaySound(soundToPlay, null, 0.4f);
 			}
 		}
 	}

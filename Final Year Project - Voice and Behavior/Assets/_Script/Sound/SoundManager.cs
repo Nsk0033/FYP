@@ -39,6 +39,18 @@ namespace SmallHedge.SoundManager
                 instance.audioSource.PlayOneShot(randomClip, volume * soundList.volume);
             }
         }
+		
+		public static void PlaySound(string soundName, AudioSource source = null, float volume = 1)
+        {
+            if (Enum.TryParse(soundName, true, out SoundType sound))
+            {
+                PlaySound(sound, source, volume);
+            }
+            else
+            {
+                Debug.LogWarning("SoundManager: Sound not found for name " + soundName);
+            }
+        }
     }
 
     [Serializable]

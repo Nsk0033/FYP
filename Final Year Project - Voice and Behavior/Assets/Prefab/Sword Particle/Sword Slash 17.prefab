@@ -39361,6 +39361,7 @@ GameObject:
   - component: {fileID: 4926534412602151126}
   - component: {fileID: 7018070789669548741}
   - component: {fileID: 4062317622582312314}
+  - component: {fileID: -1293404067397777395}
   m_Layer: 2
   m_Name: Sword Slash 17
   m_TagString: Untagged
@@ -44349,6 +44350,21 @@ MonoBehaviour:
   detectionInterval: 0.05
   detectionDuration: 0.6
   startDelay: 0.25
+  canGainApAndLimit: 1
+--- !u!114 &-1293404067397777395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602379607235420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f7da0c957c41f42bfc592bca4d95ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 28
+  volume: 0.715
 --- !u!1 &1786439614695670
 GameObject:
   m_ObjectHideFlags: 0

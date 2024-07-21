@@ -4910,6 +4910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4843212862663062497}
   - component: {fileID: -4371422917525068093}
+  - component: {fileID: -4182131839627326587}
   m_Layer: 0
   m_Name: Effect_22_Impactbow
   m_TagString: Untagged
@@ -4946,3 +4947,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DestroytTime: 1
+--- !u!114 &-4182131839627326587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857648624183353826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f7da0c957c41f42bfc592bca4d95ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 2
+  volume: 1

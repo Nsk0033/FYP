@@ -1068,16 +1068,30 @@ ModelImporter:
         floatParameter: 180
         intParameter: 20
         messageOptions: 0
-      - time: 0.6896016
-        functionName: CameraStopShaking
-        data: 
+      - time: 0.08326725
+        functionName: PlaySoundEffect
+        data: AXE
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
+        floatParameter: 180
+        intParameter: 20
+        messageOptions: 0
+      - time: 0.1592817
+        functionName: PlaySoundEffect
+        data: AXE
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 180
         intParameter: 20
         messageOptions: 0
       - time: 0.16806723
         functionName: IceSlashStart
         data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 180
+        intParameter: 20
+        messageOptions: 0
+      - time: 0.32120952
+        functionName: PlaySoundEffect
+        data: AXE
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 180
         intParameter: 20
@@ -1089,9 +1103,23 @@ ModelImporter:
         floatParameter: 180
         intParameter: 20
         messageOptions: 0
+      - time: 0.46455392
+        functionName: PlaySoundEffect
+        data: AXE
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 180
+        intParameter: 20
+        messageOptions: 0
       - time: 0.4840336
         functionName: IceSlashStart
         data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 180
+        intParameter: 20
+        messageOptions: 0
+      - time: 0.62277323
+        functionName: PlaySoundEffect
+        data: AXE
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 180
         intParameter: 20
@@ -1101,6 +1129,13 @@ ModelImporter:
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 180
+        intParameter: 20
+        messageOptions: 0
+      - time: 0.6896016
+        functionName: CameraStopShaking
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
         intParameter: 20
         messageOptions: 0
       transformMask:

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using StarterAssets;
 using FirstGearGames.SmoothCameraShaker;
+using SmallHedge.SoundManager;
 
 public class PlayerAnimationEventTrigger : MonoBehaviour
 {
@@ -1018,5 +1019,10 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 		s_Skill3Shield.SetActive(false);
 		CanDamageTrue();
 	}
+	
+	public void PlaySoundEffect(string soundName)
+    {
+        SoundManager.PlaySound(soundName);
+    }
 	
 }

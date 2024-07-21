@@ -190,7 +190,7 @@ public class Bow : MonoBehaviour
 			}
 			else
 			{
-				if (canChargedAttack && playerActionPoint.currentActionPointValue > 15f && !isUltiPlaying)
+				if (canChargedAttack && /*playerActionPoint.currentActionPointValue > 15f &&*/ !isUltiPlaying)
 				{
 					chargedLastUsedTime = Time.time;
 					// Trigger the charged attack animation
