@@ -14656,6 +14656,7 @@ GameObject:
   - component: {fileID: 6294411342718572768}
   - component: {fileID: -7857275947375634764}
   - component: {fileID: 5972480306150728962}
+  - component: {fileID: 6096349676389725547}
   m_Layer: 2
   m_Name: Effect_07_DimentionCutterSlash-modify
   m_TagString: Projectile
@@ -14777,6 +14778,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f589a18514ce49e47bdb3b61a58598b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6096349676389725547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715385927650515369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f7da0c957c41f42bfc592bca4d95ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 42
+  volume: 1
 --- !u!1 &1715385928821728871
 GameObject:
   m_ObjectHideFlags: 0

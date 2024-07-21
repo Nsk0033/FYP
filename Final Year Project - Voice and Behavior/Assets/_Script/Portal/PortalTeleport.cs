@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SmallHedge.SoundManager;
 
 public class PortalTeleport : MonoBehaviour
 {
@@ -24,7 +25,10 @@ public class PortalTeleport : MonoBehaviour
         Vector3 startPosition = playerTransform.position;
         Vector3 endPosition = teleportDestination.position;
         float elapsedTime = 0f;
-
+		
+		SoundType soundToPlay = SoundType.PORTAL;
+		SoundManager.PlaySound(soundToPlay, null, 0.8f);
+		
         // Smoothly move the player to the teleport destination over time
         while (elapsedTime < teleportTime)
         {

@@ -70,8 +70,9 @@ MonoBehaviour:
     sounds: []
   - name: BOWE
     volume: 1
-    mixer: {fileID: 0}
-    sounds: []
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 1b46b3559daa7d54ab1a7753c464b73e, type: 3}
   - name: AXEESTART
     volume: 1
     mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
@@ -94,8 +95,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: fe3b797ec81f61d4daf3032fd0980b1e, type: 3}
   - name: AXE1
     volume: 1
-    mixer: {fileID: 0}
-    sounds: []
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 89268e57456f4a141a0864bfbdb06daa, type: 3}
   - name: SWORD2
     volume: 1
     mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
@@ -156,12 +158,14 @@ MonoBehaviour:
     - {fileID: 8300000, guid: d047a38f51f8c2648b63a55f5e82942e, type: 3}
   - name: SWORDCHARGED1
     volume: 1
-    mixer: {fileID: 0}
-    sounds: []
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 85226985b4910cc47ae99b17ea0eec38, type: 3}
   - name: SWORDCHARGED2
     volume: 1
-    mixer: {fileID: 0}
-    sounds: []
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 69bf397cb95afda4d94c6ae5b99f9ab7, type: 3}
   - name: BOWCHARGED
     volume: 1
     mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
@@ -172,9 +176,12 @@ MonoBehaviour:
     mixer: {fileID: 0}
     sounds: []
   - name: SWORDRANGED
-    volume: 1
-    mixer: {fileID: 0}
-    sounds: []
+    volume: 0.545
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: af9ee2bdcea53a24da3a61a1e16c885f, type: 3}
+    - {fileID: 8300000, guid: b687689d8ceae964fb66536d41fcfcb2, type: 3}
+    - {fileID: 8300000, guid: 69d6f41851abb19428bf0705e38b89d7, type: 3}
   - name: BOWRANGED
     volume: 1
     mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
@@ -191,8 +198,11 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 697c21c956ae28a4dbb837bdc7cdf59e, type: 3}
   - name: SWORDDAMAGE
     volume: 1
-    mixer: {fileID: 0}
-    sounds: []
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: b5ce4889c664fb54c8337547c5c30013, type: 3}
+    - {fileID: 8300000, guid: b77d3601846fcc2419bfac5432eb7a59, type: 3}
+    - {fileID: 8300000, guid: 667b554eed44e2949984f9147ff9e68c, type: 3}
   - name: AXEDAMAGE
     volume: 1
     mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
@@ -201,6 +211,55 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 6dc5543baa0beb74497828d0b74c7035, type: 3}
     - {fileID: 8300000, guid: 417a103da7ceadc4bb0eca4f13739869, type: 3}
   - name: BOWDAMAGE
+    volume: 0.508
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 128af1ae423f7dd4b9f03edc1f9bd578, type: 3}
+    - {fileID: 8300000, guid: 988fb24f359eeee49a8180d2b62ea5f9, type: 3}
+    - {fileID: 8300000, guid: efbcc1ba3bdd2284884f37d7e91e7607, type: 3}
+    - {fileID: 8300000, guid: 46daef8e657077446b83983edddf45fe, type: 3}
+  - name: BOWTHUNDERARROW
     volume: 1
-    mixer: {fileID: 0}
-    sounds: []
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: fac67c5519ce01b48b7217e806fdd99e, type: 3}
+  - name: AXETHUNDERSTRIKE
+    volume: 1
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: b0a8eed5bd1a6bf4da6ed27000c89dfd, type: 3}
+  - name: SWORDFIRECRAW
+    volume: 1
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 85c68b551bea95e44a09a2fada76581d, type: 3}
+    - {fileID: 8300000, guid: 0a02c63624281a740bc9102aab44fd75, type: 3}
+    - {fileID: 8300000, guid: f95f475721773c04a9c42c732e1ce229, type: 3}
+  - name: AXEICESLASH
+    volume: 1
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 6e4c6a31e81890c4f92dcecf2e728d68, type: 3}
+    - {fileID: 8300000, guid: 4c3e116e97cc9274389b7835c92ae0ec, type: 3}
+    - {fileID: 8300000, guid: 35cb08f2dfc9d4441ac9e80ac8a759ef, type: 3}
+    - {fileID: 8300000, guid: 019e460e9548d734e8a74e5c57f6fb4e, type: 3}
+  - name: PORTAL
+    volume: 1
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: d047a38f51f8c2648b63a55f5e82942e, type: 3}
+  - name: SWORDMELEE4SKILL
+    volume: 1
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 47948014129ff1d4bbf356863f1dd7ad, type: 3}
+  - name: AXEFIRERING
+    volume: 1
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: b685d5291965b7d4a868e6cc906248ef, type: 3}
+  - name: AXEGRAB
+    volume: 1
+    mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: bc8f58271038e0647ab8c86760cc1fee, type: 3}

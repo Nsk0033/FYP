@@ -9842,6 +9842,7 @@ GameObject:
   - component: {fileID: 5086710538185244842}
   - component: {fileID: 4318974866063426787}
   - component: {fileID: -6754156543803887251}
+  - component: {fileID: 8707869362622511974}
   m_Layer: 2
   m_Name: FlameSlash
   m_TagString: Untagged
@@ -9914,6 +9915,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DestroytTime: 2
+--- !u!114 &8707869362622511974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704351818114845919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f7da0c957c41f42bfc592bca4d95ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 39
+  volume: 0.637
 --- !u!1 &8142495739804377303
 GameObject:
   m_ObjectHideFlags: 0

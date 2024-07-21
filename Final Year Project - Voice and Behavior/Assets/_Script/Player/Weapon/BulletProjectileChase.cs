@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EmeraldAI;
+using SmallHedge.SoundManager;
 
 public class BulletProjectileChase : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class BulletProjectileChase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Destroy(gameObject, 15f);
+        Destroy(gameObject, 7f);
 
         if (canChase)
         {
@@ -107,6 +108,8 @@ public class BulletProjectileChase : MonoBehaviour
 		GameObject hitvfx = Instantiate(vfxHit, transform.position, Quaternion.identity);
         Vector3 directionAwayEnemy = -1*(other.transform.position - transform.position).normalized;
 		hitvfx.transform.forward = directionAwayEnemy;
+		SoundType soundToPlay = SoundType.BOWDAMAGE;
+		SoundManager.PlaySound(soundToPlay, null, 0.3f);
         Destroy(gameObject);
 	}
 	
