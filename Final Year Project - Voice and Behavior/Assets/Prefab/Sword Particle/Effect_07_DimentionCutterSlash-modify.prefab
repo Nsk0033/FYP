@@ -14715,7 +14715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd36453e29f1054d9e12ef88cbf954f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageOutput: 8
+  damageOutput: 10
   startDelay: 0.5
   canGainApAndLimit: 1
 --- !u!65 &6294411342718572768

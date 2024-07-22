@@ -125,6 +125,10 @@ public class Sword : MonoBehaviour
 			Vector3 aimDirection = (worldAimTarget - mainCharacter.transform.position).normalized;
 			
 			mainCharacter.transform.forward = Vector3.Lerp(mainCharacter.transform.forward, aimDirection, Time.deltaTime * 20f);
+			if(starterAssetsInputs.chargedAttack)
+			{
+				starterAssetsInputs.chargedAttack = false;
+			}
 		}
 		else
 		{

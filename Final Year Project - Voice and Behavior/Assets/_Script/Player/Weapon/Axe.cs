@@ -164,6 +164,10 @@ public class Axe : MonoBehaviour
 					starterAssetsInputs.shoot = false;
 				}
 			}
+			else if(starterAssetsInputs.chargedAttack)
+			{
+				starterAssetsInputs.chargedAttack = false;
+			}
 			else if(starterAssetsInputs.shoot && !hasWeapon)
 			{
 				WeaponStartPull();

@@ -10,6 +10,7 @@ public class BulletProjectile : MonoBehaviour
 	[SerializeField] private float speed = 20f;
 	[SerializeField] private GameObject vfxHit;
 	[SerializeField] private int damageOutput = 2;
+	[SerializeField] private SoundType sound;
 	
 	private void Awake()
 	{
@@ -50,8 +51,7 @@ public class BulletProjectile : MonoBehaviour
 			GameObject hitvfx = Instantiate(vfxHit, transform.position, Quaternion.identity);
 			Vector3 directionAwayEnemy = -1*(other.transform.position - transform.position).normalized;
 			hitvfx.transform.forward = directionAwayEnemy;
-			SoundType soundToPlay = SoundType.BOWDAMAGE;
-			SoundManager.PlaySound(soundToPlay, null, 0.3f);
+			SoundManager.PlaySound(sound, null, 0.3f);
 		}
         
         Destroy(gameObject);

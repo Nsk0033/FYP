@@ -46,6 +46,10 @@ namespace SmallHedge.SoundManager
 		PORTAL,
 		SWORDMELEE4SKILL,
 		AXEFIRERING,
-		AXEGRAB
+		AXEGRAB,
+		BOWSKILL1DAMAGE,
+		villageBGM,
+		exploreBGM,
+		battleBGM
     }
 }

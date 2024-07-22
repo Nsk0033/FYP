@@ -117,6 +117,11 @@ public class Bow : MonoBehaviour
 			Vector3 aimDirection = (worldAimTarget - mainCharacter.transform.position).normalized;
 			
 			mainCharacter.transform.forward = Vector3.Lerp(mainCharacter.transform.forward, aimDirection, Time.deltaTime * 20f);
+			
+			if(starterAssetsInputs.chargedAttack)
+			{
+				starterAssetsInputs.chargedAttack = false;
+			}
 		}
 		else
 		{
@@ -166,6 +171,7 @@ public class Bow : MonoBehaviour
 						rangeLastUsedTime = Time.time;
 						// if attacking then do ntg
 					}
+					
 				}
 				else
 					starterAssetsInputs.shoot = false;
