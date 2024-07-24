@@ -78,7 +78,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 		switch (CurrentWeaponIndex)
 		{
 			case 1:
-				if(thirdPersonController.isDodgePlaying) 
+				if(thirdPersonController.isDodgePlaying || thirdPersonController.isDyingPlaying) 
 					animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
 				else
 					animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 1f, Time.deltaTime * 10f));
@@ -93,7 +93,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 				
 				break;
 			case 2:
-				if(thirdPersonController.isDodgePlaying) 
+				if(thirdPersonController.isDodgePlaying || thirdPersonController.isDyingPlaying) 
 					animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
 				else
 					animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f));
@@ -107,7 +107,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 				animator.SetInteger("LayerSelection", 1);
 				break;
 			case 3:
-				if(thirdPersonController.isDodgePlaying)
+				if(thirdPersonController.isDodgePlaying || thirdPersonController.isDyingPlaying) 
 					animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 0f, Time.deltaTime * 10f));
 				else
 					animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 1f, Time.deltaTime * 10f));

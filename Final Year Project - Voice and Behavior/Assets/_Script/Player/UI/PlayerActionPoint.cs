@@ -104,7 +104,10 @@ public class PlayerActionPoint : MonoBehaviour
 			}
 		}
 	
-		
+		if(Input.GetKey(KeyCode.U))
+		{
+			currentActionPointAvailable++;
+		}
 		
         // Example: increase the fill amount by 0.01 per frame
         if (Input.GetKey(KeyCode.UpArrow))

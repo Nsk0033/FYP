@@ -81,6 +81,7 @@ namespace StarterAssets
 		[Tooltip("For locking player movement")]
         public bool CanMove = true;
 		public bool isDodgePlaying = false;
+		public bool isDyingPlaying = false;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -175,15 +176,22 @@ namespace StarterAssets
         {
             _hasAnimator = TryGetComponent(out _animator);
 			isDodgePlaying = _animator.GetCurrentAnimatorStateInfo(0).IsName("Dodge");
+			isDyingPlaying = _animator.GetCurrentAnimatorStateInfo(0).IsName("Dead") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Lying") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Stand Up");
 			
-            JumpAndGravity();
-            GroundedCheck();
-			DodgeCheck();
-			AutoMove();
-			if(CanMove)
+			if(!isDyingPlaying)
 			{
-				Move();
-			}
+				_input.enabled = true;
+				JumpAndGravity();
+				GroundedCheck();
+				DodgeCheck();
+				AutoMove();
+				if(CanMove)
+				{
+					Move();
+				}
+			}	
+			else
+				_input.enabled = false;
         }
 
         private void LateUpdate()
@@ -471,6 +479,17 @@ namespace StarterAssets
 				// Move the player forward
 				_controller.Move(forwardDirection.normalized * (6.6f * Time.deltaTime));
 			}
+		}
+		
+		public void DeadAnimationTrigger()
+		{
+			_animator.SetTrigger("Die");
+			
+		}
+		
+		public void RespawnAnimationTrigger()
+		{
+			_animator.SetTrigger("Respawn");
 		}
     }
 
