@@ -820,7 +820,7 @@ MonoBehaviour:
   DamageAmountRun: 5
   WanderRadius: 9
   TabNumber: 1
-  TemperamentTabNumber: 5
+  TemperamentTabNumber: 2
   DetectionTagsTabNumber: 0
   AnimationTabNumber: 2
   SoundTabNumber: 0

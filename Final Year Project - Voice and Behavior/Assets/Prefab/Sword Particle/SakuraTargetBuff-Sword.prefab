@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1120575351982154985}
   - component: {fileID: 7173926876969614151}
   - component: {fileID: 3289387524134316791}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Petals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4920,7 +4920,7 @@ GameObject:
   - component: {fileID: 8011275522466632420}
   - component: {fileID: 7665758738628851637}
   - component: {fileID: 3771867285714913746}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WindWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9829,7 +9829,7 @@ GameObject:
   - component: {fileID: 4209295632960265952}
   - component: {fileID: 4446538924209358674}
   - component: {fileID: 2923295321259802231}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14738,7 +14738,7 @@ GameObject:
   - component: {fileID: 404103335673048791}
   - component: {fileID: 1785627458286734259}
   - component: {fileID: 2904964140679537589}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19696,9 +19696,9 @@ GameObject:
   - component: {fileID: 2385209562931193360}
   - component: {fileID: 665326114352243130}
   - component: {fileID: 2273564269760182063}
-  - component: {fileID: 416825616042058178}
   - component: {fileID: 525308668203430366}
-  m_Layer: 0
+  - component: {fileID: -4763019790707557452}
+  m_Layer: 2
   m_Name: SakuraTargetBuff-Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24608,7 +24608,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!82 &416825616042058178
+--- !u!114 &525308668203430366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2723757474378306570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fe273677430814fb90e92f252f7adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DestroytTime: 3
+--- !u!82 &-4763019790707557452
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24620,18 +24633,18 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3b180c7596abb2c4aa71bd0a3be0756d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 0
+  DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 40
+  MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -24639,68 +24652,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.025
+      time: 0
       value: 1
-      inSlope: -40.015934
-      outSlope: -40.015934
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.05
-      value: 0.5
-      inSlope: -10.0039835
-      outSlope: -10.0039835
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.1
-      value: 0.25
-      inSlope: -2.5009959
-      outSlope: -2.5009959
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.2
-      value: 0.125
-      inSlope: -0.62524897
-      outSlope: -0.62524897
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.4
-      value: 0.0625
-      inSlope: -0.15631224
-      outSlope: -0.15631224
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.79580384
-      value: 0.018814087
-      inSlope: -0.03907806
-      outSlope: -0.03907806
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.02500997
-      outSlope: -0.02500997
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -24709,7 +24677,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -24724,15 +24692,6 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
       value: 0
       inSlope: 0
       outSlope: 0
@@ -24758,19 +24717,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &525308668203430366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2723757474378306570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61fe273677430814fb90e92f252f7adb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_DestroytTime: 3
 --- !u!1 &3088923675119162729
 GameObject:
   m_ObjectHideFlags: 0
@@ -24782,7 +24728,7 @@ GameObject:
   - component: {fileID: 6700651131660406941}
   - component: {fileID: 4037785837263563878}
   - component: {fileID: 6488930140429174961}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trails(Optional)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29692,7 +29638,7 @@ GameObject:
   - component: {fileID: 5508100316529575106}
   - component: {fileID: 739312643829289859}
   - component: {fileID: 8142315047165414124}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34592,7 +34538,7 @@ GameObject:
   - component: {fileID: 57496127556045316}
   - component: {fileID: 773472499173752263}
   - component: {fileID: 3946609125060108448}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39492,7 +39438,7 @@ GameObject:
   - component: {fileID: 5384127883983943554}
   - component: {fileID: 582960998389117780}
   - component: {fileID: 8236337991198945135}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CoreWind2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44428,7 +44374,7 @@ GameObject:
   - component: {fileID: 6647386899699612132}
   - component: {fileID: 1961073818861186429}
   - component: {fileID: 2381674907397555305}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Aura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49328,7 +49274,7 @@ GameObject:
   - component: {fileID: 1902892617504302645}
   - component: {fileID: 7723033893798017101}
   - component: {fileID: 3307478753967121120}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54228,7 +54174,7 @@ GameObject:
   - component: {fileID: 902833590298834472}
   - component: {fileID: 6257695910323182066}
   - component: {fileID: 2819169953053752031}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Distortion(Delete for HD and LW)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

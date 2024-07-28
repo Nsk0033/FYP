@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: New Ability
   AbilityDescription: Ability Description
-  AbilityDamage: 30
+  AbilityDamage: 40
   MinAbilityDamage: 5
   MaxAbilityDamage: 10
   AbilityDamagePerIncrement: 5

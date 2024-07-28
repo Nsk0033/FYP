@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1369367378653769363}
   - component: {fileID: 8807102097998640387}
   - component: {fileID: 5437460993259237587}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bow_SkillE
   m_TagString: Projectile
   m_Icon: {fileID: 0}

@@ -106,12 +106,23 @@ namespace StarterAssets
 			actions.Add("sort", Sword);
 			actions.Add("sot", Sword);
 			actions.Add("knife", Sword);
+			actions.Add("blade", Sword);
 			actions.Add("bow", Bow);
 			actions.Add("boom", Bow);
 			actions.Add("bowl", Bow);
 			actions.Add("arrow", Bow);
 			actions.Add("axe", Axe);
 			actions.Add("ex", Axe);
+			
+			actions.Add("pause", Pause);
+			actions.Add("stop", Pause);
+			actions.Add("wait", Pause);
+			actions.Add("escape", Pause);
+			
+			actions.Add("map", Map);
+			actions.Add("indicator", Map);
+			actions.Add("guide", Map);
+			
 			
 			// Display the contents of the actions dictionary
 			Debug.Log("Actions dictionary contents:");
@@ -231,5 +242,16 @@ namespace StarterAssets
 			thirdPersonShooterController.CurrentWeaponIndex = 3;
 		}
 		
+		private void Pause()
+		{
+			Debug.Log("Pause");
+			starterAssetsInputs.PauseInput(true);
+		}
+		
+		private void Map()
+		{
+			Debug.Log("Map");
+			starterAssetsInputs.MapInput(true);
+		}
 	}
 }

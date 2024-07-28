@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: New Ability
   AbilityDescription: Ability Description
-  AbilityDamage: 20
+  AbilityDamage: 25
   MinAbilityDamage: 5
   MaxAbilityDamage: 10
   AbilityDamagePerIncrement: 5
@@ -70,4 +70,4 @@ MonoBehaviour:
   UseCriticalHits: 0
   UseCustomAbilityIcon: 0
   UseCreateEffect: 0
-  AbilityEditorTabs: 0
+  AbilityEditorTabs: 1

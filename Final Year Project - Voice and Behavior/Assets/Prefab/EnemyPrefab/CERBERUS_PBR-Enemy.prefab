@@ -1298,12 +1298,12 @@ MonoBehaviour:
   MeleeAttackPickType: 2
   MeleeAttacks:
   - AttackAnimaition: 0
-    MinDamage: 50
+    MinDamage: 20
     MaxDamage: 50
     AttackOdds: 1
     AttackImpactEffect: {fileID: 0}
   - AttackAnimaition: 1
-    MinDamage: 50
+    MinDamage: 20
     MaxDamage: 50
     AttackOdds: 1
     AttackImpactEffect: {fileID: 0}
@@ -1788,14 +1788,14 @@ MonoBehaviour:
   DamageAmountRun: 5
   WanderRadius: 16
   TabNumber: 1
-  TemperamentTabNumber: 5
+  TemperamentTabNumber: 2
   DetectionTagsTabNumber: 1
   AnimationTabNumber: 2
   SoundTabNumber: 0
   MovementTabNumber: 1
   WeaponTypeTabNumber: 0
   WeaponTypeCombatTabNumber: 0
-  WeaponTypeControlTabNumber: 0
+  WeaponTypeControlTabNumber: 1
   AttackAnimationNumber: 1
   RunAttackAnimationNumber: 1
   IdleAnimationNumber: 1
@@ -1995,7 +1995,7 @@ MonoBehaviour:
   CreateHealthBarsRef: 0
   UseNonAITagRef: 1
   UseMagicEffectsPackRef: 0
-  RandomizeDamageRef: 1
+  RandomizeDamageRef: 0
   CustomizeHealthBarRef: 0
   UseCustomFontRef: 0
   DisplayAINameRef: 0
