@@ -13,6 +13,7 @@ namespace StarterAssets
 		private Dictionary<string, System.Action> actions = new Dictionary<string, System.Action>();
 		
 		private StarterAssetsInputs starterAssetsInputs;
+		private ThirdPersonShooterController thirdPersonShooterController;
 		
 		
 		private void Awake()
@@ -20,30 +21,93 @@ namespace StarterAssets
 			
 			
 			starterAssetsInputs = GetComponent<StarterAssetsInputs>();
-			
+			thirdPersonShooterController = GetComponent<ThirdPersonShooterController>();
 			
 		}
 		
 		void Start()
 		{
-			actions.Add("forward", Forward);
+			actions.Add("attack", MeleeAttack);
+			actions.Add("shoot", MeleeAttack);
+			actions.Add("charge", ChargedAttack);
+			actions.Add("charged", ChargedAttack);
+			actions.Add("heavy", ChargedAttack);
+			actions.Add("jump", Jump);
+			actions.Add("up", Jump);
 			
-			actions.Add("up", Up);
-			actions.Add("lift", Up);
-			actions.Add("action", Up);
-			actions.Add("jump", Up);
+			actions.Add("interact", Interact);
+			actions.Add("hi", Interact);
+			actions.Add("hello", Interact);
+			actions.Add("talk", Interact);
+			actions.Add("next", Interact);
+			actions.Add("hey", Interact);
 			
-			actions.Add("down", Down);
-			actions.Add("don't", Down);
-			actions.Add("dow", Down);
-			actions.Add("done", Down);
-			actions.Add("dal", Down);
-			actions.Add("da", Down);
-			actions.Add("skill", Down);
-			actions.Add("attack", Down);
+			actions.Add("limit", Limit);
+			actions.Add("ultimate", Limit);
+			actions.Add("ulti", Limit);
+			actions.Add("q", Limit);
 			
-			actions.Add("back", Back);
-			actions.Add("item", Back);
+			actions.Add("e", SkillE);
+			actions.Add("skill", SkillE);
+			actions.Add("ability", SkillE);
+			actions.Add("scale", SkillE);
+			actions.Add("kill", SkillE);
+			
+			actions.Add("one", Skill1);
+			actions.Add("fire", Skill1);
+			actions.Add("flame", Skill1);
+			actions.Add("blaze", Skill1);
+			actions.Add("inferno", Skill1);
+			actions.Add("burn", Skill1);
+			
+			actions.Add("two", Skill2);
+			actions.Add("ice", Skill2);
+			actions.Add("blizzard", Skill2);
+			actions.Add("cold", Skill2);
+			actions.Add("frost", Skill2);
+			actions.Add("frozen", Skill2);
+			
+			actions.Add("three", Skill3);
+			actions.Add("thunder", Skill3);
+			actions.Add("lightning", Skill3);
+			actions.Add("flash", Skill3);
+			actions.Add("spark", Skill3);
+			actions.Add("electrical", Skill3);
+			actions.Add("electric", Skill3);
+			
+			actions.Add("dodge", Dodge);
+			actions.Add("dog", Dodge);
+			actions.Add("leap", Dodge);
+			actions.Add("evade", Dodge);
+			actions.Add("avoid", Dodge);
+			actions.Add("lunge", Dodge);
+			
+			actions.Add("sword", Sword);
+			actions.Add("word", Sword);
+			actions.Add("sort", Sword);
+			actions.Add("sot", Sword);
+			actions.Add("knife", Sword);
+			actions.Add("blade", Sword);
+			actions.Add("bow", Bow);
+			actions.Add("boom", Bow);
+			actions.Add("bowl", Bow);
+			actions.Add("arrow", Bow);
+			actions.Add("axe", Axe);
+			actions.Add("ex", Axe);
+			
+			actions.Add("pause", Pause);
+			actions.Add("stop", Pause);
+			actions.Add("wait", Pause);
+			actions.Add("escape", Pause);
+			
+			actions.Add("map", Map);
+			actions.Add("indicator", Map);
+			actions.Add("guide", Map);
+			
+			actions.Add("quest", QuestLog);
+			actions.Add("list", QuestLog);
+			actions.Add("log", QuestLog);
+			
 			
 			// Display the contents of the actions dictionary
 			Debug.Log("Actions dictionary contents:");
@@ -87,17 +151,98 @@ namespace StarterAssets
 			Debug.Log("Back");
 		}
 		
-		private void Up()
+		private void Jump()
 		{
-			Debug.Log("Up");
+			Debug.Log("Jump");
 			starterAssetsInputs.JumpInput(true);
 			
 		}
 		
-		private void Down()
+		private void MeleeAttack()
 		{
-			Debug.Log("Down");
+			Debug.Log("Melee");
 			starterAssetsInputs.ShootInput(true);
+		}
+		
+		private void ChargedAttack()
+		{
+			Debug.Log("ChargedAttack");
+			starterAssetsInputs.ChargedAttackInput(true);
+		}
+		
+		private void Interact()
+		{
+			Debug.Log("Interact");
+			starterAssetsInputs.InteractInput(true);
+		}
+		
+		private void Limit()
+		{
+			Debug.Log("Limit");
+			starterAssetsInputs.SkillQInput(true);
+		}
+		
+		private void SkillE()
+		{
+			Debug.Log("E");
+			starterAssetsInputs.SkillEInput(true);
+		}
+		
+		private void Skill1()
+		{
+			Debug.Log("1");
+			starterAssetsInputs.Skill1Input(true);
+		}
+		
+		private void Skill2()
+		{
+			Debug.Log("2");
+			starterAssetsInputs.Skill2Input(true);
+		}
+		
+		private void Skill3()
+		{
+			Debug.Log("3");
+			starterAssetsInputs.Skill3Input(true);
+		}
+		
+		private void Dodge()
+		{
+			Debug.Log("Dodge");
+			starterAssetsInputs.DodgeInput(true);
+		}
+		
+		private void Sword()
+		{
+			thirdPersonShooterController.CurrentWeaponIndex = 1;
+		}
+		
+		private void Bow()
+		{
+			thirdPersonShooterController.CurrentWeaponIndex = 2;
+		}
+		
+		private void Axe()
+		{
+			thirdPersonShooterController.CurrentWeaponIndex = 3;
+		}
+		
+		private void Pause()
+		{
+			Debug.Log("Pause");
+			starterAssetsInputs.PauseInput(true);
+		}
+		
+		private void Map()
+		{
+			Debug.Log("Map");
+			starterAssetsInputs.MapInput(true);
+		}
+		
+		private void QuestLog()
+		{
+			Debug.Log("Map");
+			starterAssetsInputs.questLogToggleInput(true);
 		}
 	}
 }

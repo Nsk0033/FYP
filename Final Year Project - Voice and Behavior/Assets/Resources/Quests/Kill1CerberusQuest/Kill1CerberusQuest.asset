@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccdfea60bd46efe42b3ff510c64abd1a, type: 3}
+  m_Name: Kill1CerberusQuest
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: Kill1CerberusQuest
+  displayName: Kill the Cerberus
+  levelRequirement: 0
+  questPrerequisites:
+  - {fileID: 11400000, guid: fcf60ff2f394b3340859abb3e52454b7, type: 2}
+  questStepPrefabs:
+  - {fileID: 6616396752375580702, guid: eabc1983811a9c54da1982f16bbdab88, type: 3}
+  goldReward: 0
+  experienceReward: 0

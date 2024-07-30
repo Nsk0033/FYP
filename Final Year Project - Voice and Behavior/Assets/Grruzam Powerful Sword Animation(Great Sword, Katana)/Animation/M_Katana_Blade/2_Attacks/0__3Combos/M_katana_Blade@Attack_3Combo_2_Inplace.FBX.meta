@@ -489,25 +489,39 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.12618296
-        functionName: OnAttackStart
+      - time: 0.08892718
+        functionName: CameraStartShakingDelay
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0.3
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.11817866
+        functionName: CameraStopShaking
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0.3
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.14916945
+        functionName: Attack4SlashStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.15048543
-        functionName: OnAttackStart
+      - time: 0.17001545
+        functionName: FlameSlashStart
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
+        floatParameter: 135
         intParameter: 0
         messageOptions: 0
-      - time: 0.67022455
-        functionName: OnAttackEnd
+      - time: 0.19318262
+        functionName: FlameSlashStart
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
+        floatParameter: 45
         intParameter: 0
         messageOptions: 0
       transformMask:

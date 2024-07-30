@@ -45,18 +45,18 @@ public class AimOutline : MonoBehaviour
 			if (objectDetected == null)
 			{
 				objectDetected = raycastHit.collider.gameObject;
-				if (objectDetected.GetComponent<Outline>() != null)
+				if (objectDetected.GetComponent<OutlineQ>() != null)
 				{
-					objectDetected.GetComponent<Outline>().enabled = true;
+					objectDetected.GetComponent<OutlineQ>().enabled = true;
 				}
 				
 			}
 			else if (objectDetected != raycastHit.collider.gameObject)
 			{
 				objectDetected = raycastHit.collider.gameObject;
-				if (objectDetected.GetComponent<Outline>() != null)
+				if (objectDetected.GetComponent<OutlineQ>() != null)
 				{
-					objectDetected.GetComponent<Outline>().enabled = true;
+					objectDetected.GetComponent<OutlineQ>().enabled = true;
 				}
 				
 			}
@@ -65,9 +65,9 @@ public class AimOutline : MonoBehaviour
 		{
 			if(objectDetected != null)
 			{
-				if (objectDetected.GetComponent<Outline>() != null)
+				if (objectDetected.GetComponent<OutlineQ>() != null)
 				{
-					objectDetected.GetComponent<Outline>().enabled = false;
+					objectDetected.GetComponent<OutlineQ>().enabled = false;
 				}
 				
 				if (objectDetected.GetComponent<OutlineMarking>() != null)
@@ -82,9 +82,9 @@ public class AimOutline : MonoBehaviour
 	
 	private void DetectionChecking()
 	{
-		if (objectDetected.GetComponent<Outline>() != null)
+		if (objectDetected.GetComponent<OutlineQ>() != null)
 		{
-			objectDetected.GetComponent<Outline>().enabled = false;
+			objectDetected.GetComponent<OutlineQ>().enabled = false;
 		}
 		
 		if (objectDetected.GetComponent<OutlineMarking>() != null)

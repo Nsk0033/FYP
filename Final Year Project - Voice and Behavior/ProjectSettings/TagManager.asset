@@ -6,8 +6,11 @@ TagManager:
   tags:
   - CinemachineTarget
   - Projectile
-  - Companion
   - Enemy
+  - ground
+  - Breakable
+  - ChaseTarget
+  - Freezable
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - Ally
   - Player
   - Camera
-  - 
+  - MinimapIcon
   - 
   - 
   - 

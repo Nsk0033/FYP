@@ -41,6 +41,7 @@ Material:
     - _ShinnySpeed: 120
     - _UFlowSpeed: 4
     - _UseShinny: 0
+    - _Usedepth: 0
     - _VFlowSpeed: 2
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
