@@ -6,7 +6,7 @@ namespace UniBT.Examples.Scripts.Behavior
     {
         
         [SerializeField] 
-        private float threshold = 10;
+        private float distance = 10;
         
         private Enemy enemy;
         
@@ -17,7 +17,7 @@ namespace UniBT.Examples.Scripts.Behavior
 
         protected override bool IsUpdatable()
         {
-            return enemy.Love > threshold;
+            return enemy.Love > distance;
         }
     }
 }

@@ -7,18 +7,22 @@ namespace UniBT.Examples.Scripts.Behavior
         [SerializeField]
         private bool useLerp = false;
 
-        [SerializeField]
-        private Transform target;
+        public Transform target;
 
         private Transform transform;
+
+        Enemy enemy;
 
         public override void Awake()
         {
             transform = gameObject.transform;
+            enemy = gameObject.GetComponent<Enemy>();
         }
 
         protected override Status OnUpdate()
         {
+            target = enemy.followTarget;
+
             if (useLerp)
             {
                 var from = transform.position;

@@ -1,3 +1,4 @@
+using UniBT.Examples.Scripts.Behavior;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,14 +11,20 @@ namespace UniBT.Examples.Scripts
 
         public bool Attacking { get; private set; }
 
+        public Transform followTarget;
+        public Transform enemy;
+
         [SerializeField]
         private Transform player;
 
-        public Transform enemy;
-        
+        [SerializeField]
+        private Transform respawn;
+
         private Rigidbody rigid;
         
         private NavMeshAgent navMeshAgent;
+
+        FollowAction followAction;
 
         private void Awake()
         {
@@ -25,24 +32,17 @@ namespace UniBT.Examples.Scripts
             navMeshAgent = GetComponent<NavMeshAgent>();
         }
 
+        private void Start()
+        {
+            followAction = GetComponent<FollowAction>();
+        }
+
         private void Update()
         {
-            if (enemy != null)
+            if (enemy == null)
             {
-                var enemydistance = Vector3.Distance(transform.position, enemy.position);
-
-                if (enemydistance < 5)
-                {
-                    Hate = 20;
-                }
-                else if (enemydistance < 10)
-                {
-                    Hate = 9;
-                }
-                else
-                {
-                    Hate = 0;
-                }
+                Hate = 0;
+                followTarget = player;
             }
 
             var playerdistance = Vector3.Distance(transform.position, player.position);
@@ -58,27 +58,57 @@ namespace UniBT.Examples.Scripts
             {
                 Love = 0;
             }
+            
+            if (enemy != null)
+            {
+                followTarget = enemy;
+
+                var enemydistance = Vector3.Distance(transform.position, enemy.position);
+                if (enemydistance < 5)
+                {
+                    Hate = 20;
+                }
+                else if (enemydistance < 10)
+                {
+                    Hate = 9;
+                }
+                else
+                {
+                    Hate = 0;
+                }
+            }
+            
+            if (Input.GetKey(KeyCode.R))
+            {
+                navMeshAgent.Warp(respawn.position);
+                enemy = null;
+                followTarget = null;
+            }
         }
 
-        public void Attack(float force)
+        public void Attack()
         {
             Attacking = true;
-            navMeshAgent.enabled = false;
-            rigid.isKinematic = false;
-            rigid.AddForce(Vector3.up * force, ForceMode.Impulse);
+            //navMeshAgent.enabled = false;
+            //rigid.isKinematic = false;
         }
 
-        private void OnCollisionStay(Collision other)
+        private void OnTriggerStay(Collider other)
         {
-            // TODO other.collider.name cause GC.Alloc by Object.GetName
-            if (Attacking && other.collider.name == "Ground" && Mathf.Abs(rigid.velocity.y) < 0.1)
-            {
-                CancelAttack();
-            }
-
-            if (other.collider.tag == "Enemy")
+            if (this.tag == "Companion" && other.CompareTag("Enemy"))
             {
                 enemy = other.transform;
+                followTarget = enemy;
+            }
+            else if (this.tag == "Enemy" && (other.CompareTag("Companion") || other.CompareTag("Player")))
+            {
+                enemy = other.transform;
+                followTarget = enemy;
+            }
+            else
+            {
+                enemy = null;
+                followTarget = null;
             }
         }
 

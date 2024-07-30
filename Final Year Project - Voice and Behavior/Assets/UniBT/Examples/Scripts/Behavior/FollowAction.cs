@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using static Codice.Client.Common.WebApi.WebApiEndpoints;
 
 namespace UniBT.Examples.Scripts.Behavior
 {
@@ -7,9 +8,7 @@ namespace UniBT.Examples.Scripts.Behavior
     {
 
         private static readonly int Walking = Animator.StringToHash("Walking");
-        
-        [SerializeField] 
-        private Transform target;
+        public Transform target;
 
         [SerializeField] 
         private float speed;
@@ -21,10 +20,13 @@ namespace UniBT.Examples.Scripts.Behavior
 
         private NavMeshAgent navMeshAgent;
 
+        Enemy enemy;
+
         public override void Awake()
         {
             navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
             animator = gameObject.GetComponent<Animator>();
+            enemy = gameObject.GetComponent<Enemy>();
         }
 
         protected override Status OnUpdate()
@@ -33,13 +35,14 @@ namespace UniBT.Examples.Scripts.Behavior
             navMeshAgent.isStopped = false;
             navMeshAgent.speed = speed;
             navMeshAgent.stoppingDistance = stoppingDistance;
+            target = enemy.followTarget;
             navMeshAgent.SetDestination(target.position);
+            Debug.Log(navMeshAgent.pathPending);
             if (IsDone)
             {
                 SetWalking(false);
                 return Status.Success;
             }
-
             SetWalking(true);
             return Status.Running;
         }
