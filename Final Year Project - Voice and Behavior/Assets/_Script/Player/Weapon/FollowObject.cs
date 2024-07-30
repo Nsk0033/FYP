@@ -9,6 +9,6 @@ public class FollowObject : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //gameObject.transform = followObject;
+        transform.position = followObject.position;
     }
 }

@@ -271,7 +271,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: c8b621cf689d0834cb40b80517a1f87e, type: 3}
   - name: villageBGM
     volume: 1
-    mixer: {fileID: 24300002, guid: b94bf5e1d522daa4a9dbf009a8c10880, type: 2}
+    mixer: {fileID: 4931704784090383209, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
     sounds:
     - {fileID: 8300000, guid: 9015f213f0345dd40bf05a9d5b6e7a7e, type: 3}
     - {fileID: 8300000, guid: fedea079a93cc2e4aaaeb62fe38f4b01, type: 3}
@@ -279,14 +279,14 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 6917f68417b2db24f927390803a82bbe, type: 3}
   - name: exploreBGM
     volume: 1
-    mixer: {fileID: 24300002, guid: b94bf5e1d522daa4a9dbf009a8c10880, type: 2}
+    mixer: {fileID: 4931704784090383209, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
     sounds:
     - {fileID: 8300000, guid: c0e9e2821e262314d81815d724ffa187, type: 3}
     - {fileID: 8300000, guid: 9fbfe48486e7824478e1dc001b2bacbc, type: 3}
     - {fileID: 8300000, guid: 5013cd905d4b75147859bd2fdb815506, type: 3}
   - name: battleBGM
     volume: 1
-    mixer: {fileID: 24300002, guid: b94bf5e1d522daa4a9dbf009a8c10880, type: 2}
+    mixer: {fileID: 4931704784090383209, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
     sounds:
     - {fileID: 8300000, guid: f5974bf6211540049af3570deb0b120f, type: 3}
     - {fileID: 8300000, guid: 65bada38f30ca5d4bb9368d9c7514748, type: 3}

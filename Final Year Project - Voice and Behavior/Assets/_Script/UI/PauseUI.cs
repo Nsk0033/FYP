@@ -7,6 +7,7 @@ public class PauseUI : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] private GameObject ControlMenu;
+    [SerializeField] private GameObject SettingMenu;
 	
 	private void OnEnable()
     {
@@ -55,5 +56,10 @@ public class PauseUI : MonoBehaviour
 	public void ShowControlUI()
 	{
 		ControlMenu.SetActive(true);
+	}
+	
+	public void ShowSettingUI()
+	{
+		SettingMenu.SetActive(true);
 	}
 }

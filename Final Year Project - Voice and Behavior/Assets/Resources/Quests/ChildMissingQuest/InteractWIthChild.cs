@@ -127,6 +127,7 @@ public class InteractWIthChild : QuestStep, IInteractable
 	
 	private void HideChild()
 	{
+		PlayerStateManager.instance.SetCanMove(true);
 		Destroy(spawnedObject);
 		Instantiate(childStand,childLocation2.position,childLocation2.rotation);
 	}

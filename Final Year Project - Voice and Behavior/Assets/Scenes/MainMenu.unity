@@ -8330,7 +8330,7 @@ GameObject:
   - component: {fileID: 1611789560}
   - component: {fileID: 1611789562}
   m_Layer: 0
-  m_Name: BGM'
+  m_Name: VolumeControlManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

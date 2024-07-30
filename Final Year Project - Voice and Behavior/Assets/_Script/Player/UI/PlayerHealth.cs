@@ -58,6 +58,7 @@ public class PlayerHealth : MonoBehaviour
         
         if (Input.GetKey(KeyCode.UpArrow))
         {
+			PlayerStateManager.instance.SetCanMove(true);
             if (CurrentHealth < maxHealth)
                 CurrentHealth++;
             else
