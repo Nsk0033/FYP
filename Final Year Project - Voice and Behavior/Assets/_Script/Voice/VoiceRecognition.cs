@@ -27,25 +27,6 @@ namespace StarterAssets
 		
 		void Start()
 		{
-			//actions.Add("forward", Forward);
-			
-			/*
-			actions.Add("lift", Up);
-			actions.Add("action", Up);
-			
-			
-			actions.Add("down", Down);
-			actions.Add("don't", Down);
-			actions.Add("dow", Down);
-			actions.Add("done", Down);
-			actions.Add("dal", Down);
-			actions.Add("da", Down);
-			actions.Add("skill", Down);
-			
-			
-			actions.Add("back", Back);
-			actions.Add("item", Back);*/
-			
 			actions.Add("attack", MeleeAttack);
 			actions.Add("shoot", MeleeAttack);
 			actions.Add("charge", ChargedAttack);
@@ -122,6 +103,10 @@ namespace StarterAssets
 			actions.Add("map", Map);
 			actions.Add("indicator", Map);
 			actions.Add("guide", Map);
+			
+			actions.Add("quest", QuestLog);
+			actions.Add("list", QuestLog);
+			actions.Add("log", QuestLog);
 			
 			
 			// Display the contents of the actions dictionary
@@ -252,6 +237,12 @@ namespace StarterAssets
 		{
 			Debug.Log("Map");
 			starterAssetsInputs.MapInput(true);
+		}
+		
+		private void QuestLog()
+		{
+			Debug.Log("Map");
+			starterAssetsInputs.questLogToggleInput(true);
 		}
 	}
 }

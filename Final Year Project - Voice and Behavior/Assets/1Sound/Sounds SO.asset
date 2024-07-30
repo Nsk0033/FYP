@@ -66,8 +66,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: ac34990831054984d9d97419823c3045, type: 3}
   - name: SWORDE
     volume: 1
-    mixer: {fileID: 0}
-    sounds: []
+    mixer: {fileID: 24300002, guid: b94bf5e1d522daa4a9dbf009a8c10880, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 3b180c7596abb2c4aa71bd0a3be0756d, type: 3}
   - name: BOWE
     volume: 1
     mixer: {fileID: 24300002, guid: 710fb66b7d626ce4a888145825411f5d, type: 2}
