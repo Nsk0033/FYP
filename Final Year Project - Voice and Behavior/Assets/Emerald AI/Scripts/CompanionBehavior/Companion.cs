@@ -13,9 +13,7 @@ namespace UniBT.Examples.Scripts
 
         public Transform followTarget;
         public Transform enemyTarget;
-
-        [SerializeField]
-        private Transform player;
+        public Transform player;
 
         [SerializeField]
         private Transform respawn;
@@ -24,7 +22,6 @@ namespace UniBT.Examples.Scripts
         
         private NavMeshAgent navMeshAgent;
 
-        FollowAction followAction;
 
         private void Awake()
         {
@@ -34,7 +31,7 @@ namespace UniBT.Examples.Scripts
 
         private void Start()
         {
-            followAction = GetComponent<FollowAction>();
+
         }
 
         private void Update()

@@ -11,9 +11,16 @@ namespace UniBT.Examples.Scripts.Behavior
         private int type;
         [SerializeField]
         private int damagevalue;
+        [SerializeField]
+        private GameObject punch;
+        [SerializeField]
+        private GameObject swipe;
+        [SerializeField]
+        private GameObject roll;
 
         private float atkTimer;
         private float ultTimer;
+        private float rollTimer;
 
         private Companion companion;
 
@@ -33,6 +40,7 @@ namespace UniBT.Examples.Scripts.Behavior
         {
             atkTimer += Time.deltaTime;
             ultTimer += Time.deltaTime;
+            rollTimer += Time.deltaTime;
             if (triggered)
             {
 
@@ -41,15 +49,24 @@ namespace UniBT.Examples.Scripts.Behavior
                     if (type == 1 && atkTimer >= 2)
                     {
                         animator.SetTrigger("Attack1");
+                        GameObject.Instantiate(punch, gameObject.transform.position, gameObject.transform.rotation);
                         DealDamage(damagevalue);
                         atkTimer = 0;
                         return Status.Running;
                     }
-                    else if (type == 2 && ultTimer >= 5) //(&&playerhp<?%)
+                    else if (type == 2 && ultTimer >= 5)
                     {
                         animator.SetTrigger("Ult");
+                        GameObject.Instantiate(swipe, gameObject.transform.position, gameObject.transform.rotation);
                         DealDamage(damagevalue);
                         ultTimer = 0;
+                        return Status.Running;
+                    }
+                    else if (type == 3 && rollTimer >= 10)
+                    {
+                        animator.SetTrigger("Roll");
+                        GameObject.Instantiate(roll, gameObject.transform.position, gameObject.transform.rotation);
+                        rollTimer = 0;
                         return Status.Running;
                     }
                 }
@@ -71,7 +88,7 @@ namespace UniBT.Examples.Scripts.Behavior
         {
             if (companion.enemyTarget.GetComponent<EmeraldAI.EmeraldAISystem>() != null)
             {
-                companion.enemyTarget.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(damagevalue, EmeraldAI.EmeraldAISystem.TargetType.Player, gameObject.transform, 400);
+                companion.enemyTarget.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(damagevalue, EmeraldAI.EmeraldAISystem.TargetType.AI, gameObject.transform, 400);
             }
         }
     }
