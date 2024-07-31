@@ -12,7 +12,6 @@ public class AxeDamage : MonoBehaviour
 	[SerializeField] private Transform MainCharacter;
 	[SerializeField] private GameObject Skill2Object;
 	[SerializeField] private int damageOutput;
-	
 	//private PlayerActionPoint playerActionPoint;
 	//private PlayerLimit playerLimit;
 	
